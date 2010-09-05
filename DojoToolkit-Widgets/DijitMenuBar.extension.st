@@ -1,32 +1,7 @@
 Extension { #name : #DijitMenuBar }
 
 { #category : '*DojoToolkit-Widgets' }
-DijitMenuBar >> focusChild: item [ 
-	"  Focus widget. "
-
-	self call: 'focusChild' withArguments: (Array with: item)
-]
-
-{ #category : '*DojoToolkit-Widgets' }
 DijitMenuBar classSide >> functionName [
 
 	^ 'dijit.MenuBar'
-]
-
-{ #category : '*DojoToolkit-Widgets' }
-DijitMenuBar >> onClose: anObject [
-	"  Called when this widget is being displayed as a popup (ex: a Calendar popped up from a DateTextBox), and it is hidden.
-	This is called from the dijit.popup code, and should not be called directly.
-	Also used as a parameter for children of dijit.layout.StackContainer or subclasses.
-	Callback if a user tries to close the child.
-	Child will be closed if this function returns true. "
-
-	self eventAt: 'onClose' put: (anObject asFunction: #())
-]
-
-{ #category : '*DojoToolkit-Widgets' }
-DijitMenuBar >> onItemClick: anObject [
-	"  Handle clicks on an item. "
-
-	self eventAt: 'onItemClick' put: (anObject asFunction: #(#item #event))
 ]

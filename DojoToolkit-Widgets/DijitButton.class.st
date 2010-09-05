@@ -13,14 +13,14 @@ DijitButton class >> functionName [
 	^ 'dijit.form.Button'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitButton >> onClick: e [
 	"  Connect to this function to receive notifications of mouse click events. "
 
 	self eventAt: 'onClick' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitButton >> setLabel: content [ 
 	"  Deprecated.
 	Use set('label', ...) instead. "
@@ -28,7 +28,7 @@ DijitButton >> setLabel: content [
 	self call: 'setLabel' withArguments: (Array with: content)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitButton >> showLabel [
 	"  Set this to true to hide the label text and display only the icon.
 	(If showLabel=false then iconClass must be specified.) Especially useful for toolbars.
@@ -39,7 +39,7 @@ DijitButton >> showLabel [
 	self access: 'showLabel'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitButton >> showLabel: aBoolean [
 	"  Set this to true to hide the label text and display only the icon.
 	(If showLabel=false then iconClass must be specified.) Especially useful for toolbars.

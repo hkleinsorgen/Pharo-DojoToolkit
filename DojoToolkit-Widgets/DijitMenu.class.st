@@ -10,14 +10,14 @@ DijitMenu class >> functionName [
 	^ 'dijit.Menu'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenu >> bindDomNode: node [ 
 	"  Attach menu to given node "
 
 	self call: 'bindDomNode' withArguments: (Array with: node)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> contextMenuForWindow [
 	"  If true, right clicking anywhere on the window will cause this context menu to open.
 	If false, must specify targetNodeIds. "
@@ -25,7 +25,7 @@ DijitMenu >> contextMenuForWindow [
 	self access: 'contextMenuForWindow'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> contextMenuForWindow: aBoolean [
 	"  If true, right clicking anywhere on the window will cause this context menu to open.
 	If false, must specify targetNodeIds. "
@@ -33,7 +33,7 @@ DijitMenu >> contextMenuForWindow: aBoolean [
 	self propertyAt: 'contextMenuForWindow' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenu >> getPlaceholders: label [ 
 	"  returns an array of placeholders with the given label.
 	There can be multiples. "
@@ -41,21 +41,21 @@ DijitMenu >> getPlaceholders: label [
 	self call: 'getPlaceholders' withArguments: (Array with: label)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> leftClickToOpen [
 	"  If true, menu will open on left click instead of right click, similiar to a file menu. "
 
 	self access: 'leftClickToOpen'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> leftClickToOpen: aBoolean [
 	"  If true, menu will open on left click instead of right click, similiar to a file menu. "
 
 	self propertyAt: 'leftClickToOpen' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitMenu >> onClose: anObject [
 	"  Called when this widget is being displayed as a popup (ex: a Calendar popped up from a DateTextBox), and it is hidden.
 	This is called from the dijit.popup code, and should not be called directly.
@@ -66,21 +66,21 @@ DijitMenu >> onClose: anObject [
 	self eventAt: 'onClose' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> refocus [
 	"  When this menu closes, re-focus the element which had focus before it was opened. "
 
 	self access: 'refocus'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> refocus: aBoolean [
 	"  When this menu closes, re-focus the element which had focus before it was opened. "
 
 	self propertyAt: 'refocus' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> targetNodeIds [
 	"  Array of dom node ids of nodes to attach to.
 	Fill this with nodeIds upon widget creation and it becomes context menu for those nodes. "
@@ -88,7 +88,7 @@ DijitMenu >> targetNodeIds [
 	self access: 'targetNodeIds'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenu >> targetNodeIds: aJsObject [
 	"  Array of dom node ids of nodes to attach to.
 	Fill this with nodeIds upon widget creation and it becomes context menu for those nodes. "
@@ -96,7 +96,7 @@ DijitMenu >> targetNodeIds: aJsObject [
 	self propertyAt: 'targetNodeIds' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenu >> unBindDomNode: nodeName [ 
 	"  Detach menu from given node "
 

@@ -10,32 +10,32 @@ DijitPopupMenuItem class >> functionName [
 	^ 'dijit.PopupMenuItem'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitPopupMenuItem >> dropDownContainer [
 	
 	self access: 'dropDownContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitPopupMenuItem >> dropDownContainer: aJsObject [
 	
 	self propertyAt: 'dropDownContainer' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitPopupMenuItem >> onClick: evt [
 	"  Connect to this function to receive notifications of mouse click events. "
 
 	self eventAt: 'onClick' put: (evt asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitPopupMenuItem >> popup [
 	
 	self access: 'popup'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitPopupMenuItem >> popup: aJsObject [
 	
 	self propertyAt: 'popup' put: aJsObject

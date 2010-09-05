@@ -13,7 +13,7 @@ DijitStop class >> functionName [
 	^ 'dijit.typematic.stop'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitStop >> constructor [
 	"  A reference to the constructor function for this object. "
 

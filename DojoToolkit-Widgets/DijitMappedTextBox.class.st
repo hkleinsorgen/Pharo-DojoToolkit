@@ -13,7 +13,7 @@ DijitMappedTextBox class >> functionName [
 	^ 'dijit.form.MappedTextBox'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'function overrides-generated' }
 DijitMappedTextBox >> overrideSerialize: aFunction [
 	"  Overridable function used to convert the attr('value') result to a canonical (non-localized) string.
 	For example, will print dates in ISO format, and numbers the same way as they are represented in javascript. "
@@ -21,7 +21,7 @@ DijitMappedTextBox >> overrideSerialize: aFunction [
 	self override: 'serialize' with: (aFunction asFunction: #(#val #options))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMappedTextBox >> serialize: val options: options [ 
 	"  Overridable function used to convert the attr('value') result to a canonical (non-localized) string.
 	For example, will print dates in ISO format, and numbers the same way as they are represented in javascript. "

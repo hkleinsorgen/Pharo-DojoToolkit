@@ -13,21 +13,21 @@ DijitCurrencyTextBox class >> functionName [
 	^ 'dijit.form.CurrencyTextBox'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCurrencyTextBox >> currency [
 	"  the [ISO4217](http://en.wikipedia.org/wiki/ISO_4217) currency code, a three letter sequence like 'USD' "
 
 	self access: 'currency'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCurrencyTextBox >> currency: aString [
 	"  the [ISO4217](http://en.wikipedia.org/wiki/ISO_4217) currency code, a three letter sequence like 'USD' "
 
 	self propertyAt: 'currency' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'function overrides-generated' }
 DijitCurrencyTextBox >> overrideRegExpGen: aFunction [
 	"  Overridable function used to generate regExp when dependent on constraints.
 	Do not specify both regExp and regExpGen. "
@@ -35,7 +35,7 @@ DijitCurrencyTextBox >> overrideRegExpGen: aFunction [
 	self override: 'regExpGen' with: (aFunction asFunction: #(#constraints))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitCurrencyTextBox >> regExpGen: constraints [ 
 	"  Overridable function used to generate regExp when dependent on constraints.
 	Do not specify both regExp and regExpGen. "

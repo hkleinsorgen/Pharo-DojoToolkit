@@ -13,14 +13,14 @@ DijitStackContainer class >> functionName [
 	^ 'dijit.layout.StackContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitStackContainer >> back [
 	"  Go back to previous page. "
 
 	self call: 'back'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitStackContainer >> closeChild: page [ 
 	"  Callback when user clicks the [X] to remove a page.
 	If onClose() returns true then remove and destroy the child. "
@@ -28,49 +28,49 @@ DijitStackContainer >> closeChild: page [
 	self call: 'closeChild' withArguments: (Array with: page)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitStackContainer >> doLayout [
 	"  If true, change the size of my currently displayed child to match my size "
 
 	self access: 'doLayout'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitStackContainer >> doLayout: aBoolean [
 	"  If true, change the size of my currently displayed child to match my size "
 
 	self propertyAt: 'doLayout' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitStackContainer >> forward [
 	"  Advance to next page. "
 
 	self call: 'forward'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitStackContainer >> persist [
 	"  Remembers the selected child across sessions "
 
 	self access: 'persist'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitStackContainer >> persist: aBoolean [
 	"  Remembers the selected child across sessions "
 
 	self propertyAt: 'persist' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitStackContainer >> selectChild: page animate: animate [ 
 	"  Show the given widget (which must be one of my children) "
 
 	self call: 'selectChild' withArguments: (Array with: page with: animate)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitStackContainer >> selectedChildWidget [
 	"  References the currently selected child widget, if any.
 	Adjust selected child with selectChild() method. "
@@ -78,7 +78,7 @@ DijitStackContainer >> selectedChildWidget [
 	self access: 'selectedChildWidget'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitStackContainer >> selectedChildWidget: aJsObject [
 	"  References the currently selected child widget, if any.
 	Adjust selected child with selectChild() method. "

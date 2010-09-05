@@ -13,26 +13,26 @@ DijitSimpleTextarea class >> functionName [
 	^ 'dijit.form.SimpleTextarea'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSimpleTextarea >> cols [
 	
 	self access: 'cols'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSimpleTextarea >> cols: aString [
 	
 	self propertyAt: 'cols' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSimpleTextarea >> rows [
 	"  The number of characters per line. "
 
 	self access: 'rows'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSimpleTextarea >> rows: aNumber [
 	"  The number of characters per line. "
 

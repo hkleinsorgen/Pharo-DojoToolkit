@@ -13,28 +13,28 @@ DijitCheckedMenuItem class >> functionName [
 	^ 'dijit.CheckedMenuItem'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCheckedMenuItem >> checked [
 	"  Our checked state "
 
 	self access: 'checked'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCheckedMenuItem >> checked: aBoolean [
 	"  Our checked state "
 
 	self propertyAt: 'checked' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitCheckedMenuItem >> onChange: checked [
 	"  User defined function to handle check/uncheck events "
 
 	self eventAt: 'onChange' put: (checked asFunction: #(#checked))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitCheckedMenuItem >> onClick: evt [
 	"  Connect to this function to receive notifications of mouse click events. "
 

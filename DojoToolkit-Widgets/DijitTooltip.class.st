@@ -13,21 +13,21 @@ DijitTooltip class >> functionName [
 	^ 'dijit.Tooltip'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltip >> addTarget: id [ 
 	"  Attach tooltip to specified node, if it's not already connected "
 
 	self call: 'addTarget' withArguments: (Array with: id)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltip >> close [
 	"  Hide the tooltip or cancel timer for show of tooltip "
 
 	self call: 'close'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> connectId [
 	"  Id's of domNodes to attach the tooltip to.
 	When user hovers over any of the specified dom nodes, the tooltip will appear.
@@ -36,7 +36,7 @@ DijitTooltip >> connectId [
 	self access: 'connectId'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> connectId: aJsObject [
 	"  Id's of domNodes to attach the tooltip to.
 	When user hovers over any of the specified dom nodes, the tooltip will appear.
@@ -45,19 +45,19 @@ DijitTooltip >> connectId: aJsObject [
 	self propertyAt: 'connectId' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> defaultPosition [
 	
 	self access: 'defaultPosition'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> defaultPosition: anArray [
 	
 	self propertyAt: 'defaultPosition' put: anArray
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltip >> onHide: anObject [
 	"  Called when another widget becomes the selected pane in a dijit.layout.TabContainer, dijit.layout.StackContainer, dijit.layout.AccordionContainer, etc.
 	Also called to indicate hide of a dijit.Dialog, dijit.TooltipDialog, or dijit.TitlePane. "
@@ -65,7 +65,7 @@ DijitTooltip >> onHide: anObject [
 	self eventAt: 'onHide' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltip >> onShow: anObject [
 	"  Called when this widget becomes the selected pane in a dijit.layout.TabContainer, dijit.layout.StackContainer, dijit.layout.AccordionContainer, etc.
 	Also called to indicate display of a dijit.Dialog, dijit.TooltipDialog, or dijit.TitlePane. "
@@ -73,42 +73,42 @@ DijitTooltip >> onShow: anObject [
 	self eventAt: 'onShow' put: (anObject asFunction: #(#target #position))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltip >> open: target [ 
 	"  Display the tooltip; usually not called directly. "
 
 	self call: 'open' withArguments: (Array with: target)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> position [
 	"  See description of dijit.Tooltip.defaultPosition for details on position parameter. "
 
 	self access: 'position'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> position: aJsObject [
 	"  See description of dijit.Tooltip.defaultPosition for details on position parameter. "
 
 	self propertyAt: 'position' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltip >> removeTarget: node [ 
 	"  Detach tooltip from specified node "
 
 	self call: 'removeTarget' withArguments: (Array with: node)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> showDelay [
 	"  Number of milliseconds to wait after hovering over/focusing on the object, before the tooltip is displayed. "
 
 	self access: 'showDelay'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltip >> showDelay: aNumber [
 	"  Number of milliseconds to wait after hovering over/focusing on the object, before the tooltip is displayed. "
 

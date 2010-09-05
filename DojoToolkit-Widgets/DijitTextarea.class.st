@@ -13,7 +13,7 @@ DijitTextarea class >> functionName [
 	^ 'dijit.form.Textarea'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTextarea >> resize [
 	"  Resizes the textarea vertically (should be called after a style/value change) "
 

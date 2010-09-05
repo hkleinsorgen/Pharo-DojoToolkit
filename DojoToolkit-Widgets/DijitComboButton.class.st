@@ -13,28 +13,28 @@ DijitComboButton class >> functionName [
 	^ 'dijit.form.ComboButton'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitComboButton >> focus: position [ 
 	"  Put focus on this widget "
 
 	self call: 'focus' withArguments: (Array with: position)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitComboButton >> onClick: e [
 	"  Connect to this function to receive notifications of mouse click events. "
 
 	self eventAt: 'onClick' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitComboButton >> optionsTitle [
 	"  Text that describes the options menu (accessibility) "
 
 	self access: 'optionsTitle'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitComboButton >> optionsTitle: aString [
 	"  Text that describes the options menu (accessibility) "
 

@@ -13,26 +13,26 @@ DijitDndSelector class >> functionName [
 	^ 'dijit.tree.dndSelector'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> anchor [
 	
 	self access: 'anchor'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> anchor: aJsObject [
 	
 	self propertyAt: 'anchor' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitDndSelector >> forInSelectedItems: f o: o [ 
 	"  Iterates over selected items; see dojo.dnd.Container.forInItems() for details "
 
 	self call: 'forInSelectedItems' withArguments: (Array with: f with: o)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitDndSelector >> getSelectedNodes [
 	"  Returns the set of selected nodes.
 	Used by dndSource on the start of a drag. "
@@ -40,35 +40,35 @@ DijitDndSelector >> getSelectedNodes [
 	self call: 'getSelectedNodes'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitDndSelector >> onMouseDown: e [
 	"  Event processor for onmousedown "
 
 	self eventAt: 'onMouseDown' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitDndSelector >> onMouseMove: e [
 	"  mouse event "
 
 	self eventAt: 'onMouseMove' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitDndSelector >> onMouseUp: e [
 	"  Event processor for onmouseup "
 
 	self eventAt: 'onMouseUp' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitDndSelector >> selectNone [
 	"  Unselects all items "
 
 	self call: 'selectNone'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> selection [
 	"  DomNode> (id, DomNode) map for every TreeNode that's currently selected.
 	The DOMNode is the TreeNode.rowNode. "
@@ -76,7 +76,7 @@ DijitDndSelector >> selection [
 	self access: 'selection'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> selection: aJsObject [
 	"  DomNode> (id, DomNode) map for every TreeNode that's currently selected.
 	The DOMNode is the TreeNode.rowNode. "
@@ -84,19 +84,19 @@ DijitDndSelector >> selection: aJsObject [
 	self propertyAt: 'selection' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> simpleSelection [
 	
 	self access: 'simpleSelection'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> simpleSelection: aJsObject [
 	
 	self propertyAt: 'simpleSelection' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> singular [
 	"  Allows selection of only one element, if true.
 	Tree hasn't been tested in singular=true mode, unclear if it works. "
@@ -104,7 +104,7 @@ DijitDndSelector >> singular [
 	self access: 'singular'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitDndSelector >> singular: aBoolean [
 	"  Allows selection of only one element, if true.
 	Tree hasn't been tested in singular=true mode, unclear if it works. "

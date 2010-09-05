@@ -13,7 +13,7 @@ DijitToggleButton class >> functionName [
 	^ 'dijit.form.ToggleButton'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToggleButton >> checked [
 	"  Corresponds to the native HTML <input> element's attribute.
 	In markup, specified as 'checked='checked'' or just 'checked'.
@@ -22,7 +22,7 @@ DijitToggleButton >> checked [
 	self access: 'checked'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToggleButton >> checked: aBoolean [
 	"  Corresponds to the native HTML <input> element's attribute.
 	In markup, specified as 'checked='checked'' or just 'checked'.
@@ -31,21 +31,21 @@ DijitToggleButton >> checked: aBoolean [
 	self propertyAt: 'checked' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitToggleButton >> onClick: e [
 	"  Connect to this function to receive notifications of mouse click events. "
 
 	self eventAt: 'onClick' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToggleButton >> reset [
 	"  Reset the widget's value to what it was at initialization time "
 
 	self call: 'reset'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToggleButton >> setChecked: checked [ 
 	"  Deprecated.
 	Use set('checked', true/false) instead. "

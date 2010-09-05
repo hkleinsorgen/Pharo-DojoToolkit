@@ -13,7 +13,7 @@ DijitAccordionPane class >> functionName [
 	^ 'dijit.layout.AccordionPane'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitAccordionPane >> onSelected: anObject [
 	"  called when this pane is selected "
 

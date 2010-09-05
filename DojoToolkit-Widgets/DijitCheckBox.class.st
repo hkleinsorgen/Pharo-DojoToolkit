@@ -13,26 +13,26 @@ DijitCheckBox class >> functionName [
 	^ 'dijit.form.CheckBox'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCheckBox >> checkedAttrSetting [
 	
 	self access: 'checkedAttrSetting'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCheckBox >> checkedAttrSetting: aJsObject [
 	
 	self propertyAt: 'checkedAttrSetting' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitCheckBox >> onClick: e [
 	"  Connect to this function to receive notifications of mouse click events. "
 
 	self eventAt: 'onClick' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCheckBox >> readOnly [
 	"  Should this widget respond to user input? In markup, this is specified as 'readOnly'.
 	Similar to disabled except readOnly form values are submitted. "
@@ -40,7 +40,7 @@ DijitCheckBox >> readOnly [
 	self access: 'readOnly'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCheckBox >> readOnly: aBoolean [
 	"  Should this widget respond to user input? In markup, this is specified as 'readOnly'.
 	Similar to disabled except readOnly form values are submitted. "

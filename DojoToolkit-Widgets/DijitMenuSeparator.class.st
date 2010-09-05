@@ -13,19 +13,19 @@ DijitMenuSeparator class >> functionName [
 	^ 'dijit.MenuSeparator'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> declaredClass [
 	
 	self access: 'declaredClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> declaredClass: aJsObject [
 	
 	self propertyAt: 'declaredClass' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenuSeparator >> getIndexInParent [
 	"  Returns the index of this widget within its container parent.
 	It returns -1 if the parent does not exist, or if the parent is not a dijit._Container "
@@ -33,28 +33,28 @@ DijitMenuSeparator >> getIndexInParent [
 	self call: 'getIndexInParent'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenuSeparator >> getNextSibling [
 	"  Returns null if this is the last child of the parent, otherwise returns the next element sibling to the 'right'. "
 
 	self call: 'getNextSibling'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenuSeparator >> getParent [
 	"  Returns the parent widget of this widget, assuming the parent specifies isContainer "
 
 	self call: 'getParent'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenuSeparator >> getPreviousSibling [
 	"  Returns null if this is the first child of the parent, otherwise returns the next element sibling to the 'left'. "
 
 	self call: 'getPreviousSibling'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> templatePath [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -62,7 +62,7 @@ DijitMenuSeparator >> templatePath [
 	self access: 'templatePath'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> templatePath: aString [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -70,7 +70,7 @@ DijitMenuSeparator >> templatePath: aString [
 	self propertyAt: 'templatePath' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> templateString [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -80,7 +80,7 @@ DijitMenuSeparator >> templateString [
 	self access: 'templateString'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> templateString: aJsObject [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -90,14 +90,14 @@ DijitMenuSeparator >> templateString: aJsObject [
 	self propertyAt: 'templateString' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> widgetsInTemplate [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 
 	self access: 'widgetsInTemplate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMenuSeparator >> widgetsInTemplate: aBoolean [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 

@@ -13,7 +13,7 @@ DijitPopupMenuBarItem class >> functionName [
 	^ 'dijit.PopupMenuBarItem'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitPopupMenuBarItem >> onClick: evt [
 	"  Connect to this function to receive notifications of mouse click events. "
 

@@ -13,14 +13,14 @@ DijitLayoutWidget class >> functionName [
 	^ 'dijit.layout.LayoutWidget'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> addChild: child insertIndex: insertIndex [ 
 	"  Inserts specified child widget's dom node as a child of this widget's container node, and possibly does other processing (such as layout) "
 
 	self call: 'addChild' withArguments: (Array with: child with: insertIndex)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> getIndexInParent [
 	"  Returns the index of this widget within its container parent.
 	It returns -1 if the parent does not exist, or if the parent is not a dijit._Container "
@@ -28,41 +28,41 @@ DijitLayoutWidget >> getIndexInParent [
 	self call: 'getIndexInParent'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> getIndexOfChild: child [ 
 	"  Gets the index of the child in this container or -1 if not found "
 
 	self call: 'getIndexOfChild' withArguments: (Array with: child)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> getNextSibling [
 	"  Returns null if this is the last child of the parent, otherwise returns the next element sibling to the 'right'. "
 
 	self call: 'getNextSibling'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> getParent [
 	"  Returns the parent widget of this widget, assuming the parent specifies isContainer "
 
 	self call: 'getParent'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitLayoutWidget >> getParent: aJsObject [
 	
 	self propertyAt: 'getParent' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> getPreviousSibling [
 	"  Returns null if this is the first child of the parent, otherwise returns the next element sibling to the 'left'. "
 
 	self call: 'getPreviousSibling'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> hasChildren [
 	"  Returns true if widget has children, i.e.
 	if this.containerNode contains something. "
@@ -70,7 +70,7 @@ DijitLayoutWidget >> hasChildren [
 	self call: 'hasChildren'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitLayoutWidget >> isContainer [
 	"  Indicates that this widget acts as a 'parent' to the descendant widgets.
 	When the parent is started it will call startup() on the child widgets.
@@ -79,7 +79,7 @@ DijitLayoutWidget >> isContainer [
 	self access: 'isContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitLayoutWidget >> isContainer: aBoolean [
 	"  Indicates that this widget acts as a 'parent' to the descendant widgets.
 	When the parent is started it will call startup() on the child widgets.
@@ -88,21 +88,21 @@ DijitLayoutWidget >> isContainer: aBoolean [
 	self propertyAt: 'isContainer' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitLayoutWidget >> isLayoutContainer [
 	"  Indicates that this widget is going to call resize() on its children widgets, setting their size, when they become visible. "
 
 	self access: 'isLayoutContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitLayoutWidget >> isLayoutContainer: aBoolean [
 	"  Indicates that this widget is going to call resize() on its children widgets, setting their size, when they become visible. "
 
 	self propertyAt: 'isLayoutContainer' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> layout [
 	"  Widgets override this method to size and position their contents/children.
 	When this is called this._contentBox is guaranteed to be set (see resize()).
@@ -111,7 +111,7 @@ DijitLayoutWidget >> layout [
 	self call: 'layout'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> removeChild: child [ 
 	"  Removes the passed widget instance from this widget but does not destroy it.
 	You can also pass in an integer indicating the index within the container to remove "
@@ -119,7 +119,7 @@ DijitLayoutWidget >> removeChild: child [
 	self call: 'removeChild' withArguments: (Array with: child)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitLayoutWidget >> resize: changeSize resultSize: resultSize [ 
 	"  Change size mode: When changeSize is specified, changes the marginBox of this widget and forces it to relayout its contents accordingly.
 	changeSize may specify height, width, or both.

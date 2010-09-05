@@ -13,14 +13,14 @@ DijitMenuBar class >> functionName [
 	^ 'dijit.MenuBar'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMenuBar >> focusChild: item [ 
 	"  Focus widget. "
 
 	self call: 'focusChild' withArguments: (Array with: item)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitMenuBar >> onClose: anObject [
 	"  Called when this widget is being displayed as a popup (ex: a Calendar popped up from a DateTextBox), and it is hidden.
 	This is called from the dijit.popup code, and should not be called directly.
@@ -31,7 +31,7 @@ DijitMenuBar >> onClose: anObject [
 	self eventAt: 'onClose' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitMenuBar >> onItemClick: anObject [
 	"  Handle clicks on an item. "
 

@@ -16,7 +16,7 @@ DijitWidget class >> functionName [
 	^ 'dijit.Widget'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #accessing }
 DijitWidget >> arguments [
 
 	^ self sourceNode notNil 
@@ -24,42 +24,42 @@ DijitWidget >> arguments [
 		ifFalse: [ Array with: self properties ]
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> attr: name value: value [ 
 	"  This method is deprecated, use get() or set() directly "
 
 	self call: 'attr' withArguments: (Array with: name with: value)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> baseClass [
 	"  Root CSS class of the widget (ex: dijitTextBox), used to construct CSS classes to indicate widget state. "
 
 	self access: 'baseClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> baseClass: aString [
 	"  Root CSS class of the widget (ex: dijitTextBox), used to construct CSS classes to indicate widget state. "
 
 	self propertyAt: 'baseClass' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> buildRendering [
 	"  Most widgets will mixin dijit._Templated, which implements this method "
 
 	self call: 'buildRendering'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> class: aString [
 	"  HTML class attribute "
 
 	self propertyAt: 'class' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> closable [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	True if user can close (destroy) this child, such as (for example) clicking the X on the tab. "
@@ -67,7 +67,7 @@ DijitWidget >> closable [
 	self access: 'closable'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> closable: aBoolean [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	True if user can close (destroy) this child, such as (for example) clicking the X on the tab. "
@@ -75,21 +75,21 @@ DijitWidget >> closable: aBoolean [
 	self propertyAt: 'closable' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> colspan [
 	"  The number of columns this widget should span. "
 
 	self access: 'colspan'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> colspan: aNumber [
 	"  The number of columns this widget should span. "
 
 	self propertyAt: 'colspan' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> column [
 	"  Column of the grid to place the widget.
 	Defined only if dojo.require('dojox.layout.GridContainerLite') is done. "
@@ -97,7 +97,7 @@ DijitWidget >> column [
 	self access: 'column'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> column: aString [
 	"  Column of the grid to place the widget.
 	Defined only if dojo.require('dojox.layout.GridContainerLite') is done. "
@@ -105,7 +105,7 @@ DijitWidget >> column: aString [
 	self propertyAt: 'column' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> connect: obj event: event method: method [ 
 	"  Provide widget-specific analog to dojo.connect, except with the implicit use of this widget as the target object.
 	This version of connect also provides a special 'ondijitclick' event which triggers on a click or space or enter keyup "
@@ -113,7 +113,7 @@ DijitWidget >> connect: obj event: event method: method [
 	self call: 'connect' withArguments: (Array with: obj with: event with: method)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> containerNode [
 	"  Designates where children of the source DOM node will be placed.
 	'Children' in this case refers to both DOM nodes and widgets.
@@ -123,7 +123,7 @@ DijitWidget >> containerNode [
 	self access: 'containerNode'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> containerNode: aNode [
 	"  Designates where children of the source DOM node will be placed.
 	'Children' in this case refers to both DOM nodes and widgets.
@@ -133,7 +133,7 @@ DijitWidget >> containerNode: aNode [
 	self propertyAt: 'containerNode' put: aNode
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> create: params srcNodeRef: srcNodeRef [ 
 	"  Create calls a number of widget methods (postMixInProperties, buildRendering, postCreate, etc.), some of which of you'll want to override.
 	See http://docs.dojocampus.org/dijit/_Widget for a discussion of the widget creation lifecycle.
@@ -142,7 +142,7 @@ DijitWidget >> create: params srcNodeRef: srcNodeRef [
 	self call: 'create' withArguments: (Array with: params with: srcNodeRef)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> destroy: preserveDom [ 
 	"  Destroy this widget, but not its descendants.
 	This method will, however, destroy internal widgets such as those used within a template. "
@@ -150,14 +150,14 @@ DijitWidget >> destroy: preserveDom [
 	self call: 'destroy' withArguments: (Array with: preserveDom)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> destroyDescendants: preserveDom [ 
 	"  Recursively destroy the children of this widget and their descendants. "
 
 	self call: 'destroyDescendants' withArguments: (Array with: preserveDom)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> destroyRecursive: preserveDom [ 
 	"  This is the generic 'destructor' function that all widget users should call to cleanly discard with a widget.
 	Once a widget is destroyed, it is removed from the manager object "
@@ -165,14 +165,14 @@ DijitWidget >> destroyRecursive: preserveDom [
 	self call: 'destroyRecursive' withArguments: (Array with: preserveDom)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> destroyRendering: preserveDom [ 
 	"  Destroys the DOM nodes associated with this widget "
 
 	self call: 'destroyRendering' withArguments: (Array with: preserveDom)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dir [
 	"  Bi-directional support, as defined by the [HTML DIR](http://www.w3.org/TR/html401/struct/dirlang.html#adef-dir) attribute.
 	Either left-to-right 'ltr' or right-to-left 'rtl'.
@@ -181,7 +181,7 @@ DijitWidget >> dir [
 	self access: 'dir'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dir: aString [
 	"  Bi-directional support, as defined by the [HTML DIR](http://www.w3.org/TR/html401/struct/dirlang.html#adef-dir) attribute.
 	Either left-to-right 'ltr' or right-to-left 'rtl'.
@@ -190,7 +190,7 @@ DijitWidget >> dir: aString [
 	self propertyAt: 'dir' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> disconnect: handles [ 
 	"  Disconnects handle created by connect.
 	Also removes handle from this widget's list of connects. "
@@ -198,59 +198,59 @@ DijitWidget >> disconnect: handles [
 	self call: 'disconnect' withArguments: (Array with: handles)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dndType [
 	"  Defines a type of widget. "
 
 	self access: 'dndType'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dndType: aString [
 	"  Defines a type of widget. "
 
 	self propertyAt: 'dndType' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dojoAttachEvent [
 	
 	self access: 'dojoAttachEvent'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dojoAttachEvent: aString [
 	
 	self propertyAt: 'dojoAttachEvent' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dojoAttachPoint [
 	
 	self access: 'dojoAttachPoint'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dojoAttachPoint: aString [
 	
 	self propertyAt: 'dojoAttachPoint' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> domNode [
 	"  This is our visible representation of the widget! Other DOM Nodes may by assigned to other properties, usually through the template system's dojoAttachPoint syntax, but the domNode property is the canonical 'top level' node in widget UI. "
 
 	self access: 'domNode'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> domNode: aNode [
 	"  This is our visible representation of the widget! Other DOM Nodes may by assigned to other properties, usually through the template system's dojoAttachPoint syntax, but the domNode property is the canonical 'top level' node in widget UI. "
 
 	self propertyAt: 'domNode' put: aNode
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dragRestriction [
 	"  If true, the widget can not be draggable.
 	Defined only if dojo.require('dojox.layout.GridContainerLite') is done. "
@@ -258,7 +258,7 @@ DijitWidget >> dragRestriction [
 	self access: 'dragRestriction'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> dragRestriction: aBoolean [
 	"  If true, the widget can not be draggable.
 	Defined only if dojo.require('dojox.layout.GridContainerLite') is done. "
@@ -266,7 +266,7 @@ DijitWidget >> dragRestriction: aBoolean [
 	self propertyAt: 'dragRestriction' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> get: name [ 
 	"  Get a named property from a widget.
 	The property may potentially be retrieved via a getter method.
@@ -276,7 +276,7 @@ DijitWidget >> get: name [
 	self call: 'get' withArguments: (Array with: name)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> getChildren [
 	"  Returns all the widgets contained by this, i.e., all widgets underneath this.containerNode.
 	Does not return nested widgets, nor widgets that are part of this widget's template. "
@@ -284,7 +284,7 @@ DijitWidget >> getChildren [
 	self call: 'getChildren'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> getDescendants [
 	"  Returns all the widgets contained by this, i.e., all widgets underneath this.containerNode.
 	This method should generally be avoided as it returns widgets declared in templates, which are supposed to be internal/hidden, but it's left here for back-compat reasons. "
@@ -292,7 +292,7 @@ DijitWidget >> getDescendants [
 	self call: 'getDescendants'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> iconClass [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	CSS Class specifying icon to use in label associated with this pane. "
@@ -300,7 +300,7 @@ DijitWidget >> iconClass [
 	self access: 'iconClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> iconClass: aString [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	CSS Class specifying icon to use in label associated with this pane. "
@@ -308,7 +308,7 @@ DijitWidget >> iconClass: aString [
 	self propertyAt: 'iconClass' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> id [
 	"  A unique, opaque ID string that can be assigned by users or by the system.
 	If the developer passes an ID which is known not to be unique, the specified ID is ignored and the system-generated ID is used instead. "
@@ -316,42 +316,42 @@ DijitWidget >> id [
 	self access: 'id'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #accessing }
 DijitWidget >> id: aString [
 	" compatibility/convencience code: WATagBrush>>#script: sends #id: to the widget "
 
 	self sourceNode: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> isFocusable [
 	"  Return true if this widget can currently be focused and false if not "
 
 	self call: 'isFocusable'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> isLeftToRight [
 	"  Return this widget's explicit or implicit orientation (true for LTR, false for RTL) "
 
 	self call: 'isLeftToRight'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> label [
 	"  The label to display for a given widget "
 
 	self access: 'label'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> label: aString [
 	"  The label to display for a given widget "
 
 	self propertyAt: 'label' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> lang [
 	"  Rarely used.
 	Overrides the default Dojo locale used to render this widget, as defined by the [HTML LANG](http://www.w3.org/TR/html401/struct/dirlang.html#adef-lang) attribute.
@@ -360,7 +360,7 @@ DijitWidget >> lang [
 	self access: 'lang'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> lang: aString [
 	"  Rarely used.
 	Overrides the default Dojo locale used to render this widget, as defined by the [HTML LANG](http://www.w3.org/TR/html401/struct/dirlang.html#adef-lang) attribute.
@@ -369,7 +369,7 @@ DijitWidget >> lang: aString [
 	self propertyAt: 'lang' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> layoutAlign [
 	"  'none', 'left', 'right', 'bottom', 'top', and 'client'.
 	See the LayoutContainer description for details on this parameter. "
@@ -377,7 +377,7 @@ DijitWidget >> layoutAlign [
 	self access: 'layoutAlign'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> layoutAlign: aString [
 	"  'none', 'left', 'right', 'bottom', 'top', and 'client'.
 	See the LayoutContainer description for details on this parameter. "
@@ -385,7 +385,7 @@ DijitWidget >> layoutAlign: aString [
 	self propertyAt: 'layoutAlign' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> maxSize [
 	"  Parameter for children of dijit.layout.BorderContainer.
 	Specifies a maximum size (in pixels) for this widget when resized by a splitter. "
@@ -393,7 +393,7 @@ DijitWidget >> maxSize [
 	self access: 'maxSize'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> maxSize: aNumber [
 	"  Parameter for children of dijit.layout.BorderContainer.
 	Specifies a maximum size (in pixels) for this widget when resized by a splitter. "
@@ -401,7 +401,7 @@ DijitWidget >> maxSize: aNumber [
 	self propertyAt: 'maxSize' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> minSize [
 	"  Parameter for children of dijit.layout.BorderContainer.
 	Specifies a minimum size (in pixels) for this widget when resized by a splitter. "
@@ -409,7 +409,7 @@ DijitWidget >> minSize [
 	self access: 'minSize'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> minSize: aNumber [
 	"  Parameter for children of dijit.layout.BorderContainer.
 	Specifies a minimum size (in pixels) for this widget when resized by a splitter. "
@@ -417,47 +417,47 @@ DijitWidget >> minSize: aNumber [
 	self propertyAt: 'minSize' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> nodesWithKeyClick [
 	"  List of nodes that correctly handle click events via native browser support, and don't need dijit's help "
 
 	self access: 'nodesWithKeyClick'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> nodesWithKeyClick: aJsObject [
 	"  List of nodes that correctly handle click events via native browser support, and don't need dijit's help "
 
 	self propertyAt: 'nodesWithKeyClick' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> observer [
 	
 	self access: 'observer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> observer: aString [
 	
 	self propertyAt: 'observer' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onBlur: anObject [
 	"  Called when the widget stops being 'active' because focus moved to something outside of it, or the user clicked somewhere outside of it, or the widget was hidden. "
 
 	self eventAt: 'onBlur' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onClick: event [
 	"  Connect to this function to receive notifications of mouse click events. "
 
 	self eventAt: 'onClick' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onClose: anObject [
 	"  Called when this widget is being displayed as a popup (ex: a Calendar popped up from a DateTextBox), and it is hidden.
 	This is called from the dijit.popup code, and should not be called directly.
@@ -468,21 +468,21 @@ DijitWidget >> onClose: anObject [
 	self eventAt: 'onClose' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onDblClick: event [
 	"  Connect to this function to receive notifications of mouse double click events. "
 
 	self eventAt: 'onDblClick' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onFocus: anObject [
 	"  Called when the widget becomes 'active' because it or a widget inside of it either has focus, or has recently been clicked. "
 
 	self eventAt: 'onFocus' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onHide: anObject [
 	"  Called when another widget becomes the selected pane in a dijit.layout.TabContainer, dijit.layout.StackContainer, dijit.layout.AccordionContainer, etc.
 	Also called to indicate hide of a dijit.Dialog, dijit.TooltipDialog, or dijit.TitlePane. "
@@ -490,77 +490,77 @@ DijitWidget >> onHide: anObject [
 	self eventAt: 'onHide' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onKeyDown: event [
 	"  Connect to this function to receive notifications of keys being pressed down. "
 
 	self eventAt: 'onKeyDown' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onKeyPress: event [
 	"  Connect to this function to receive notifications of printable keys being typed. "
 
 	self eventAt: 'onKeyPress' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onKeyUp: event [
 	"  Connect to this function to receive notifications of keys being released. "
 
 	self eventAt: 'onKeyUp' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseDown: event [
 	"  Connect to this function to receive notifications of when the mouse button is pressed down. "
 
 	self eventAt: 'onMouseDown' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseEnter: event [
 	"  Connect to this function to receive notifications of when the mouse moves onto this widget. "
 
 	self eventAt: 'onMouseEnter' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseLeave: event [
 	"  Connect to this function to receive notifications of when the mouse moves off of this widget. "
 
 	self eventAt: 'onMouseLeave' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseMove: event [
 	"  Connect to this function to receive notifications of when the mouse moves over nodes contained within this widget. "
 
 	self eventAt: 'onMouseMove' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseOut: event [
 	"  Connect to this function to receive notifications of when the mouse moves off of nodes contained within this widget. "
 
 	self eventAt: 'onMouseOut' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseOver: event [
 	"  Connect to this function to receive notifications of when the mouse moves onto nodes contained within this widget. "
 
 	self eventAt: 'onMouseOver' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onMouseUp: event [
 	"  Connect to this function to receive notifications of when the mouse button is released. "
 
 	self eventAt: 'onMouseUp' put: (event asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitWidget >> onShow: anObject [
 	"  Called when this widget becomes the selected pane in a dijit.layout.TabContainer, dijit.layout.StackContainer, dijit.layout.AccordionContainer, etc.
 	Also called to indicate display of a dijit.Dialog, dijit.TooltipDialog, or dijit.TitlePane. "
@@ -568,26 +568,26 @@ DijitWidget >> onShow: anObject [
 	self eventAt: 'onShow' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> params [
 	
 	self access: 'params'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> params: aJsObject [
 	
 	self propertyAt: 'params' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> placeAt: reference position: position [ 
 	"  A convenience function provided in all _Widgets, providing a simple shorthand mechanism to put an existing (or newly created) Widget somewhere in the dom, and allow chaining "
 
 	self call: 'placeAt' withArguments: (Array with: reference with: position)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> postCreate [
 	"  Called after the DOM fragment has been created, but not necessarily added to the document.
 	Do not include any operations which rely on node dimensions or placement "
@@ -595,7 +595,7 @@ DijitWidget >> postCreate [
 	self call: 'postCreate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> postMixInProperties [
 	"  Called after the parameters to the widget have been read-in, but before the widget template is instantiated.
 	Especially useful to set properties that are referenced in the widget template. "
@@ -603,7 +603,7 @@ DijitWidget >> postMixInProperties [
 	self call: 'postMixInProperties'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> postscript: params srcNodeRef: srcNodeRef [ 
 	"  Kicks off widget instantiation.
 	See create() for details. "
@@ -611,7 +611,7 @@ DijitWidget >> postscript: params srcNodeRef: srcNodeRef [
 	self call: 'postscript' withArguments: (Array with: params with: srcNodeRef)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> region [
 	"  Parameter for children of dijit.layout.BorderContainer.
 	Values: 'top', 'bottom', 'leading', 'trailing', 'left', 'right', 'center'.
@@ -620,7 +620,7 @@ DijitWidget >> region [
 	self access: 'region'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> region: aString [
 	"  Parameter for children of dijit.layout.BorderContainer.
 	Values: 'top', 'bottom', 'leading', 'trailing', 'left', 'right', 'center'.
@@ -629,7 +629,7 @@ DijitWidget >> region: aString [
 	self propertyAt: 'region' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> selected [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	Specifies that this widget should be the initially displayed pane.
@@ -638,7 +638,7 @@ DijitWidget >> selected [
 	self access: 'selected'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> selected: aBoolean [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	Specifies that this widget should be the initially displayed pane.
@@ -647,7 +647,7 @@ DijitWidget >> selected: aBoolean [
 	self propertyAt: 'selected' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> set: name value: value [ 
 	"  Sets named properties on a widget which may potentially be handled by a setter in the widget.
 	For example, if the widget has a properties 'foo' and 'bar' and a method named 'setFooAttr', calling: myWidget.set('foo', 'Howdy!'); would be equivalent to writing: widget.setFooAttr('Howdy!'); and: myWidget.set('bar', 3); would be equivalent to writing: widget.bar = 3; set() may also be called with a hash of name/value pairs, ex: myWidget.set({ foo: 'Howdy', bar: 3 }) This is equivalent to calling set(foo, 'Howdy') and set(bar, 3) "
@@ -655,7 +655,7 @@ DijitWidget >> set: name value: value [
 	self call: 'set' withArguments: (Array with: name with: value)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> setAttribute: attr value: value [ 
 	"  Deprecated.
 	Use set() instead. "
@@ -663,7 +663,7 @@ DijitWidget >> setAttribute: attr value: value [
 	self call: 'setAttribute' withArguments: (Array with: attr with: value)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> showTitle [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	When true, display title of this widget as tab label etc., rather than just using icon specified in iconClass "
@@ -671,7 +671,7 @@ DijitWidget >> showTitle [
 	self access: 'showTitle'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> showTitle: aBoolean [
 	"  Parameter for children of dijit.layout.StackContainer or subclasses.
 	When true, display title of this widget as tab label etc., rather than just using icon specified in iconClass "
@@ -679,7 +679,7 @@ DijitWidget >> showTitle: aBoolean [
 	self propertyAt: 'showTitle' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> sizeMin [
 	"  Deprecated.
 	Parameter for children of dijit.layout.SplitContainer.
@@ -689,7 +689,7 @@ DijitWidget >> sizeMin [
 	self access: 'sizeMin'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> sizeMin: aNumber [
 	"  Deprecated.
 	Parameter for children of dijit.layout.SplitContainer.
@@ -699,7 +699,7 @@ DijitWidget >> sizeMin: aNumber [
 	self propertyAt: 'sizeMin' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> sizeShare [
 	"  Deprecated.
 	Parameter for children of dijit.layout.SplitContainer.
@@ -710,7 +710,7 @@ DijitWidget >> sizeShare [
 	self access: 'sizeShare'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> sizeShare: aNumber [
 	"  Deprecated.
 	Parameter for children of dijit.layout.SplitContainer.
@@ -721,7 +721,7 @@ DijitWidget >> sizeShare: aNumber [
 	self propertyAt: 'sizeShare' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> slideFrom [
 	"  A parameter needed by RadioGroupSlide only.
 	An optional paramter to force the ContentPane to slide in from a set direction.
@@ -730,7 +730,7 @@ DijitWidget >> slideFrom [
 	self access: 'slideFrom'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> slideFrom: aString [
 	"  A parameter needed by RadioGroupSlide only.
 	An optional paramter to force the ContentPane to slide in from a set direction.
@@ -739,21 +739,21 @@ DijitWidget >> slideFrom: aString [
 	self propertyAt: 'slideFrom' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #accessing }
 DijitWidget >> sourceNode [
 	" a reference to the source node of this widget "
 
 	^ sourceNode
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #accessing }
 DijitWidget >> sourceNode: aSourceNode [ 
 	" a reference to the source node of this widget "
 
 	sourceNode := aSourceNode.
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> spanLabel [
 	"  Setting spanLabel to true makes the widget take up both the label and value cells.
 	Defaults to false. "
@@ -761,7 +761,7 @@ DijitWidget >> spanLabel [
 	self access: 'spanLabel'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> spanLabel: aBoolean [
 	"  Setting spanLabel to true makes the widget take up both the label and value cells.
 	Defaults to false. "
@@ -769,7 +769,7 @@ DijitWidget >> spanLabel: aBoolean [
 	self propertyAt: 'spanLabel' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> splitter [
 	"  Parameter for child of dijit.layout.BorderContainer where region != 'center'.
 	If true, enables user to resize the widget by putting a draggable splitter between this widget and the region=center widget. "
@@ -777,7 +777,7 @@ DijitWidget >> splitter [
 	self access: 'splitter'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> splitter: aBoolean [
 	"  Parameter for child of dijit.layout.BorderContainer where region != 'center'.
 	If true, enables user to resize the widget by putting a draggable splitter between this widget and the region=center widget. "
@@ -785,21 +785,21 @@ DijitWidget >> splitter: aBoolean [
 	self propertyAt: 'splitter' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> srcNodeRef [
 	"  pointer to original DOM node "
 
 	self access: 'srcNodeRef'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> srcNodeRef: aNode [
 	"  pointer to original DOM node "
 
 	self propertyAt: 'srcNodeRef' put: aNode
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> startup [
 	"  Called after a widget and its children have been created and added to the page, and all related widgets have finished their create() cycle, up through postCreate().
 	This is useful for composite widgets that need to control or layout sub-widgets.
@@ -808,28 +808,28 @@ DijitWidget >> startup [
 	self call: 'startup'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> style [
 	"  HTML style attributes as cssText string or name/value hash "
 
 	self access: 'style'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> style: aJsObject [
 	"  HTML style attributes as cssText string or name/value hash "
 
 	self propertyAt: 'style' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> subscribe: topic method: method [ 
 	"  Provide widget-specific analog to dojo.subscribe, except with the implicit use of this widget as the target object "
 
 	self call: 'subscribe' withArguments: (Array with: topic with: method)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> title [
 	"  The label to display for a given widget.
 	This is interchangeable with the 'label' parameter, as some widgets already have a use for the 'label', and this can be used instead to avoid conflicts. "
@@ -837,7 +837,7 @@ DijitWidget >> title [
 	self access: 'title'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> title: aString [
 	"  The label to display for a given widget.
 	This is interchangeable with the 'label' parameter, as some widgets already have a use for the 'label', and this can be used instead to avoid conflicts. "
@@ -845,14 +845,14 @@ DijitWidget >> title: aString [
 	self propertyAt: 'title' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> toString [
 	"  Returns a string representation of the object. "
 
 	self call: 'toString'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> toggleSplitterClosedThreshold [
 	"  a css size value (e.g.
 	'100px') "
@@ -860,7 +860,7 @@ DijitWidget >> toggleSplitterClosedThreshold [
 	self access: 'toggleSplitterClosedThreshold'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> toggleSplitterClosedThreshold: aString [
 	"  a css size value (e.g.
 	'100px') "
@@ -868,45 +868,45 @@ DijitWidget >> toggleSplitterClosedThreshold: aString [
 	self propertyAt: 'toggleSplitterClosedThreshold' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> toggleSplitterOpen [
 	
 	self access: 'toggleSplitterOpen'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> toggleSplitterOpen: aBoolean [
 	
 	self propertyAt: 'toggleSplitterOpen' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> toggleSplitterOpenSize [
 	
 	self access: 'toggleSplitterOpenSize'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> toggleSplitterOpenSize: aString [
 	
 	self propertyAt: 'toggleSplitterOpenSize' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> tooltip [
 	"  When this widget's title attribute is used to for a tab label, accordion pane title, etc., this specifies the tooltip to appear when the mouse is hovered over that text. "
 
 	self access: 'tooltip'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> tooltip: aString [
 	"  When this widget's title attribute is used to for a tab label, accordion pane title, etc., this specifies the tooltip to appear when the mouse is hovered over that text. "
 
 	self propertyAt: 'tooltip' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> uninitialize [
 	"  Stub function.
 	Override to implement custom widget tear-down behavior. "
@@ -914,7 +914,7 @@ DijitWidget >> uninitialize [
 	self call: 'uninitialize'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitWidget >> unsubscribe: handle [ 
 	"  Unsubscribes handle created by this.subscribe.
 	Also removes handle from this widget's list of subscriptions "
@@ -922,31 +922,31 @@ DijitWidget >> unsubscribe: handle [
 	self call: 'unsubscribe' withArguments: (Array with: handle)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> waiRole [
 	
 	self access: 'waiRole'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> waiRole: aString [
 	
 	self propertyAt: 'waiRole' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> waiState [
 	
 	self access: 'waiState'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitWidget >> waiState: aString [
 	
 	self propertyAt: 'waiState' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #accessing }
 DijitWidget >> widgetId: aString [
 	" compatibility/convencience code: WATagBrush>>#script: sends #id: to the widget "
 

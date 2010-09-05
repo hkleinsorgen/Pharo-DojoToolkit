@@ -13,7 +13,7 @@ DijitTextBox class >> functionName [
 	^ 'dijit.form.TextBox'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> displayedValue [
 	"  For subclasses like ComboBox where the displayed value (ex: Kentucky) and the serialized value (ex: KY) are different, this represents the displayed value.
 	Setting 'displayedValue' through attr('displayedValue', ...) updates 'value', and vice-versa.
@@ -24,7 +24,7 @@ DijitTextBox >> displayedValue [
 	self access: 'displayedValue'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> displayedValue: aString [
 	"  For subclasses like ComboBox where the displayed value (ex: Kentucky) and the serialized value (ex: KY) are different, this represents the displayed value.
 	Setting 'displayedValue' through attr('displayedValue', ...) updates 'value', and vice-versa.
@@ -35,7 +35,7 @@ DijitTextBox >> displayedValue: aString [
 	self propertyAt: 'displayedValue' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTextBox >> filter: val [ 
 	"  For MappedTextBox subclasses, this is called twice - once with the display value - once the value as set/returned by attr('value', ...) and attr('value'), ex: a Number for NumberTextBox.
 	In the latter case it does corrections like converting null to NaN.
@@ -45,14 +45,14 @@ DijitTextBox >> filter: val [
 	self call: 'filter' withArguments: (Array with: val)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTextBox >> format: value constraints: constraints [ 
 	"  Replacable function to convert a value to a properly formatted string. "
 
 	self call: 'format' withArguments: (Array with: value with: constraints)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTextBox >> getDisplayedValue [
 	"  Deprecated.
 	Use set('displayedValue') instead. "
@@ -60,7 +60,7 @@ DijitTextBox >> getDisplayedValue [
 	self call: 'getDisplayedValue'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> lowercase [
 	"  Converts all characters to lowercase if true.
 	Default is false. "
@@ -68,7 +68,7 @@ DijitTextBox >> lowercase [
 	self access: 'lowercase'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> lowercase: aBoolean [
 	"  Converts all characters to lowercase if true.
 	Default is false. "
@@ -76,28 +76,28 @@ DijitTextBox >> lowercase: aBoolean [
 	self propertyAt: 'lowercase' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> maxLength [
 	"  HTML INPUT tag maxLength declaration. "
 
 	self access: 'maxLength'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> maxLength: aString [
 	"  HTML INPUT tag maxLength declaration. "
 
 	self propertyAt: 'maxLength' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTextBox >> parse: value constraints: constraints [ 
 	"  Replacable function to convert a formatted string to a value "
 
 	self call: 'parse' withArguments: (Array with: value with: constraints)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> placeHolder [
 	"  Defines a hint to help users fill out the input field (as defined in HTML 5).
 	This should only contain plain text (no html markup).
@@ -106,7 +106,7 @@ DijitTextBox >> placeHolder [
 	self access: 'placeHolder'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> placeHolder: aString [
 	"  Defines a hint to help users fill out the input field (as defined in HTML 5).
 	This should only contain plain text (no html markup).
@@ -115,35 +115,35 @@ DijitTextBox >> placeHolder: aString [
 	self propertyAt: 'placeHolder' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> propercase [
 	"  Converts the first character of each word to uppercase if true. "
 
 	self access: 'propercase'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> propercase: aBoolean [
 	"  Converts the first character of each word to uppercase if true. "
 
 	self propertyAt: 'propercase' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> selectOnClick [
 	"  If true, all text will be selected when focused with mouse "
 
 	self access: 'selectOnClick'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> selectOnClick: aBoolean [
 	"  If true, all text will be selected when focused with mouse "
 
 	self propertyAt: 'selectOnClick' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTextBox >> setDisplayedValue: value [ 
 	"  Deprecated.
 	Use set('displayedValue', ...) instead. "
@@ -151,7 +151,7 @@ DijitTextBox >> setDisplayedValue: value [
 	self call: 'setDisplayedValue' withArguments: (Array with: value)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> trim [
 	"  Removes leading and trailing whitespace if true.
 	Default is false. "
@@ -159,7 +159,7 @@ DijitTextBox >> trim [
 	self access: 'trim'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> trim: aBoolean [
 	"  Removes leading and trailing whitespace if true.
 	Default is false. "
@@ -167,7 +167,7 @@ DijitTextBox >> trim: aBoolean [
 	self propertyAt: 'trim' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> uppercase [
 	"  Converts all characters to uppercase if true.
 	Default is false. "
@@ -175,7 +175,7 @@ DijitTextBox >> uppercase [
 	self access: 'uppercase'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTextBox >> uppercase: aBoolean [
 	"  Converts all characters to uppercase if true.
 	Default is false. "

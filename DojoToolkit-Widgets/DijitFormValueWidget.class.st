@@ -13,7 +13,7 @@ DijitFormValueWidget class >> functionName [
 	^ 'dijit.form.FormValueWidget'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFormValueWidget >> readOnly [
 	"  Should this widget respond to user input? In markup, this is specified as 'readOnly'.
 	Similar to disabled except readOnly form values are submitted. "
@@ -21,7 +21,7 @@ DijitFormValueWidget >> readOnly [
 	self access: 'readOnly'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFormValueWidget >> readOnly: aBoolean [
 	"  Should this widget respond to user input? In markup, this is specified as 'readOnly'.
 	Similar to disabled except readOnly form values are submitted. "
@@ -29,14 +29,14 @@ DijitFormValueWidget >> readOnly: aBoolean [
 	self propertyAt: 'readOnly' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitFormValueWidget >> reset [
 	"  Reset the widget's value to what it was at initialization time "
 
 	self call: 'reset'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitFormValueWidget >> undo [
 	"  Restore the value to the last value passed to onChange "
 

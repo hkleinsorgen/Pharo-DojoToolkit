@@ -13,46 +13,46 @@ DijitMultiSelect class >> functionName [
 	^ 'dijit.form.MultiSelect'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMultiSelect >> addSelected: select [ 
 	"  Move the selected nodes of a passed Select widget instance to this Select widget. "
 
 	self call: 'addSelected' withArguments: (Array with: select)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMultiSelect >> getSelected [
 	"  Access the NodeList of the selected options directly "
 
 	self call: 'getSelected'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMultiSelect >> invertSelection: onChange [ 
 	"  Invert the selection "
 
 	self call: 'invertSelection' withArguments: (Array with: onChange)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMultiSelect >> multiple [
 	
 	self access: 'multiple'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMultiSelect >> multiple: aJsObject [
 	
 	self propertyAt: 'multiple' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitMultiSelect >> resize: size [ 
 	
 	self call: 'resize' withArguments: (Array with: size)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMultiSelect >> size [
 	"  Number of elements to display on a page NOTE: may be removed in version 2.0, since elements may have variable height; set the size via style='...' or CSS class names instead.
 	for Form "
@@ -60,7 +60,7 @@ DijitMultiSelect >> size [
 	self access: 'size'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitMultiSelect >> size: aNumber [
 	"  Number of elements to display on a page NOTE: may be removed in version 2.0, since elements may have variable height; set the size via style='...' or CSS class names instead.
 	for Form "

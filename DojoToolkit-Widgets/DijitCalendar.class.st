@@ -13,19 +13,19 @@ DijitCalendar class >> functionName [
 	^ 'dijit.Calendar'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> attributeMap [
 	
 	self access: 'attributeMap'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> attributeMap: aJsObject [
 	
 	self propertyAt: 'attributeMap' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> cssStateNodes [
 	"  List of sub-nodes within the widget that need CSS classes applied on mouse hover/press and focus .
 	Each entry in the hash is a an attachpoint names (like 'upArrowButton') mapped to a CSS class names (like 'dijitUpArrowButton').
@@ -34,7 +34,7 @@ DijitCalendar >> cssStateNodes [
 	self access: 'cssStateNodes'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> cssStateNodes: aJsObject [
 	"  List of sub-nodes within the widget that need CSS classes applied on mouse hover/press and focus .
 	Each entry in the hash is a an attachpoint names (like 'upArrowButton') mapped to a CSS class names (like 'dijitUpArrowButton').
@@ -43,43 +43,43 @@ DijitCalendar >> cssStateNodes: aJsObject [
 	self propertyAt: 'cssStateNodes' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dateClassObj [
 	
 	self access: 'dateClassObj'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dateClassObj: aJsObject [
 	
 	self propertyAt: 'dateClassObj' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dateFuncObj [
 	
 	self access: 'dateFuncObj'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dateFuncObj: aJsObject [
 	
 	self propertyAt: 'dateFuncObj' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dateLocaleModule [
 	
 	self access: 'dateLocaleModule'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dateLocaleModule: aJsObject [
 	
 	self propertyAt: 'dateLocaleModule' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> datePackage [
 	"  JavaScript namespace to find Calendar routines.
 	Uses Gregorian Calendar routines at dojo.date by default. "
@@ -87,7 +87,7 @@ DijitCalendar >> datePackage [
 	self access: 'datePackage'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> datePackage: aString [
 	"  JavaScript namespace to find Calendar routines.
 	Uses Gregorian Calendar routines at dojo.date by default. "
@@ -95,7 +95,7 @@ DijitCalendar >> datePackage: aString [
 	self propertyAt: 'datePackage' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dayWidth [
 	"  How to represent the days of the week in the calendar header.
 	See dojo.date.locale "
@@ -103,7 +103,7 @@ DijitCalendar >> dayWidth [
 	self access: 'dayWidth'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> dayWidth: aString [
 	"  How to represent the days of the week in the calendar header.
 	See dojo.date.locale "
@@ -111,45 +111,45 @@ DijitCalendar >> dayWidth: aString [
 	self propertyAt: 'dayWidth' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> declaredClass [
 	
 	self access: 'declaredClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> declaredClass: aJsObject [
 	
 	self propertyAt: 'declaredClass' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> displayMonth [
 	
 	self access: 'displayMonth'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> displayMonth: aJsObject [
 	
 	self propertyAt: 'displayMonth' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitCalendar >> getClassForDate: dateObject locale: locale [ 
 	"  May be overridden to return CSS classes to associate with the date entry for the given dateObject, for example to indicate a holiday in specified locale. "
 
 	self call: 'getClassForDate' withArguments: (Array with: dateObject with: locale)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitCalendar >> goToToday [
 	"  Sets calendar's value to today's date "
 
 	self call: 'goToToday'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitCalendar >> isDisabledDate: dateObject locale: locale [ 
 	"  May be overridden to disable certain dates in the calendar e.g.
 	isDisabledDate=dojo.date.locale.isWeekend "
@@ -157,21 +157,21 @@ DijitCalendar >> isDisabledDate: dateObject locale: locale [
 	self call: 'isDisabledDate' withArguments: (Array with: dateObject with: locale)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitCalendar >> onChange: date [
 	"  Called only when the selected date has changed "
 
 	self eventAt: 'onChange' put: (date asFunction: #(#date))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitCalendar >> onValueSelected: date [
 	"  Used by dijit.form._DateTimeTextBox (and thus dijit.form.DateTextBox) to get notification when the user has clicked a date "
 
 	self eventAt: 'onValueSelected' put: (date asFunction: #(#date))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitCalendar >> setValue: value [ 
 	"  Deprecated.
 	Used attr('value', ...) instead. "
@@ -179,21 +179,21 @@ DijitCalendar >> setValue: value [
 	self call: 'setValue' withArguments: (Array with: value)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> tabIndex [
 	"  Order fields are traversed when user hits the tab key "
 
 	self access: 'tabIndex'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> tabIndex: aNumber [
 	"  Order fields are traversed when user hits the tab key "
 
 	self propertyAt: 'tabIndex' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> templatePath [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -201,7 +201,7 @@ DijitCalendar >> templatePath [
 	self access: 'templatePath'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> templatePath: aString [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -209,7 +209,7 @@ DijitCalendar >> templatePath: aString [
 	self propertyAt: 'templatePath' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> templateString [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -219,7 +219,7 @@ DijitCalendar >> templateString [
 	self access: 'templateString'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> templateString: aJsObject [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -229,28 +229,28 @@ DijitCalendar >> templateString: aJsObject [
 	self propertyAt: 'templateString' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> value [
 	"  The currently selected Date "
 
 	self access: 'value'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> value: aDate [
 	"  The currently selected Date "
 
 	self propertyAt: 'value' put: aDate
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> widgetsInTemplate [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 
 	self access: 'widgetsInTemplate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitCalendar >> widgetsInTemplate: aBoolean [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 

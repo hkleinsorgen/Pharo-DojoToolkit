@@ -13,28 +13,28 @@ DijitAccordionContainer class >> functionName [
 	^ 'dijit.layout.AccordionContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitAccordionContainer >> buttonWidget [
 	"  The name of the widget used to display the title of each pane "
 
 	self access: 'buttonWidget'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitAccordionContainer >> buttonWidget: aString [
 	"  The name of the widget used to display the title of each pane "
 
 	self propertyAt: 'buttonWidget' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitAccordionContainer >> duration [
 	"  Amount of time (in ms) it takes to slide panes "
 
 	self access: 'duration'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitAccordionContainer >> duration: aNumber [
 	"  Amount of time (in ms) it takes to slide panes "
 

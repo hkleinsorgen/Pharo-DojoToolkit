@@ -13,33 +13,33 @@ DijitFilteringSelect class >> functionName [
 	^ 'dijit.form.FilteringSelect'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> autoComplete [
 	"  If user types in a partial string, and then tab out of the <input> box, automatically copy the first entry displayed in the drop down list to the <input> field "
 
 	self access: 'autoComplete'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> autoComplete: aBoolean [
 	"  If user types in a partial string, and then tab out of the <input> box, automatically copy the first entry displayed in the drop down list to the <input> field "
 
 	self propertyAt: 'autoComplete' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> comboNode [
 	
 	self access: 'comboNode'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> comboNode: aJsObject [
 	
 	self propertyAt: 'comboNode' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitFilteringSelect >> compositionend: evt [ 
 	"  When inputting characters using an input method, such as Asian languages, it will generate this event instead of onKeyDown event.
 	Note: this event is only triggered in FF (not in IE/safari) "
@@ -47,7 +47,7 @@ DijitFilteringSelect >> compositionend: evt [
 	self call: 'compositionend' withArguments: (Array with: evt)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitFilteringSelect >> doHighlight: label find: find [ 
 	"  Highlights the string entered by the user in the menu.
 	By default this highlights the first occurence found.
@@ -56,7 +56,7 @@ DijitFilteringSelect >> doHighlight: label find: find [
 	self call: 'doHighlight' withArguments: (Array with: label with: find)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> fetchProperties [
 	"  Mixin to the dojo.data store's fetch.
 	For example, to set the sort order of the ComboBox menu, pass: { sort: {attribute:'name',descending: true} } To override the default queryOptions so that deep=false, do: { queryOptions: {ignoreCase: true, deep: false} } "
@@ -64,7 +64,7 @@ DijitFilteringSelect >> fetchProperties [
 	self access: 'fetchProperties'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> fetchProperties: aJsObject [
 	"  Mixin to the dojo.data store's fetch.
 	For example, to set the sort order of the ComboBox menu, pass: { sort: {attribute:'name',descending: true} } To override the default queryOptions so that deep=false, do: { queryOptions: {ignoreCase: true, deep: false} } "
@@ -72,7 +72,7 @@ DijitFilteringSelect >> fetchProperties: aJsObject [
 	self propertyAt: 'fetchProperties' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> hasDownArrow [
 	"  Set this textbox to have a down arrow button, to display the drop down list.
 	Defaults to true. "
@@ -80,7 +80,7 @@ DijitFilteringSelect >> hasDownArrow [
 	self access: 'hasDownArrow'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> hasDownArrow: aBoolean [
 	"  Set this textbox to have a down arrow button, to display the drop down list.
 	Defaults to true. "
@@ -88,7 +88,7 @@ DijitFilteringSelect >> hasDownArrow: aBoolean [
 	self propertyAt: 'hasDownArrow' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> highlightMatch [
 	"  One of: 'first', 'all' or 'none'.
 	If the ComboBox/FilteringSelect opens with the search results and the searched string can be found, it will be highlighted.
@@ -97,7 +97,7 @@ DijitFilteringSelect >> highlightMatch [
 	self access: 'highlightMatch'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> highlightMatch: aString [
 	"  One of: 'first', 'all' or 'none'.
 	If the ComboBox/FilteringSelect opens with the search results and the searched string can be found, it will be highlighted.
@@ -106,35 +106,35 @@ DijitFilteringSelect >> highlightMatch: aString [
 	self propertyAt: 'highlightMatch' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> ignoreCase [
 	"  Set true if the ComboBox/FilteringSelect should ignore case when matching possible items "
 
 	self access: 'ignoreCase'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> ignoreCase: aBoolean [
 	"  Set true if the ComboBox/FilteringSelect should ignore case when matching possible items "
 
 	self propertyAt: 'ignoreCase' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> item [
 	"  This is the item returned by the dojo.data.store implementation that provides the data for this ComboBox, it's the currently selected item. "
 
 	self access: 'item'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> item: aJsObject [
 	"  This is the item returned by the dojo.data.store implementation that provides the data for this ComboBox, it's the currently selected item. "
 
 	self propertyAt: 'item' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> labelAttr [
 	"  The entries in the drop down list come from this attribute in the dojo.data items.
 	If not specified, the searchAttr attribute is used instead. "
@@ -142,7 +142,7 @@ DijitFilteringSelect >> labelAttr [
 	self access: 'labelAttr'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> labelAttr: aString [
 	"  The entries in the drop down list come from this attribute in the dojo.data items.
 	If not specified, the searchAttr attribute is used instead. "
@@ -150,14 +150,14 @@ DijitFilteringSelect >> labelAttr: aString [
 	self propertyAt: 'labelAttr' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitFilteringSelect >> labelFunc: item store: store [ 
 	"  Computes the label to display based on the dojo.data store item. "
 
 	self call: 'labelFunc' withArguments: (Array with: item with: store)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> labelType [
 	"  Specifies how to interpret the labelAttr in the data store items.
 	Can be 'html' or 'text'. "
@@ -165,7 +165,7 @@ DijitFilteringSelect >> labelType [
 	self access: 'labelType'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> labelType: aString [
 	"  Specifies how to interpret the labelAttr in the data store items.
 	Can be 'html' or 'text'. "
@@ -173,7 +173,7 @@ DijitFilteringSelect >> labelType: aString [
 	self propertyAt: 'labelType' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitFilteringSelect >> open [
 	"  Opens the drop down menu.
 	TODO: rename to _open. "
@@ -181,7 +181,7 @@ DijitFilteringSelect >> open [
 	self call: 'open'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> query [
 	"  A query that can be passed to 'store' to initially filter the items, before doing further filtering based on searchAttr and the key.
 	Any reference to the searchAttr is ignored. "
@@ -189,7 +189,7 @@ DijitFilteringSelect >> query [
 	self access: 'query'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> query: aJsObject [
 	"  A query that can be passed to 'store' to initially filter the items, before doing further filtering based on searchAttr and the key.
 	Any reference to the searchAttr is ignored. "
@@ -197,7 +197,7 @@ DijitFilteringSelect >> query: aJsObject [
 	self propertyAt: 'query' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> queryExpr [
 	"  This specifies what query ComboBox/FilteringSelect sends to the data store, based on what the user has typed.
 	Changing this expression will modify whether the drop down shows only exact matches, a 'starting with' match, etc.
@@ -210,7 +210,7 @@ DijitFilteringSelect >> queryExpr [
 	self access: 'queryExpr'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> queryExpr: aString [
 	"  This specifies what query ComboBox/FilteringSelect sends to the data store, based on what the user has typed.
 	Changing this expression will modify whether the drop down shows only exact matches, a 'starting with' match, etc.
@@ -223,54 +223,54 @@ DijitFilteringSelect >> queryExpr: aString [
 	self propertyAt: 'queryExpr' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> searchAttr [
 	"  Search for items in the data store where this attribute (in the item) matches what the user typed "
 
 	self access: 'searchAttr'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> searchAttr: aString [
 	"  Search for items in the data store where this attribute (in the item) matches what the user typed "
 
 	self propertyAt: 'searchAttr' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> searchDelay [
 	"  Delay in milliseconds between when user types something and we start searching based on that value "
 
 	self access: 'searchDelay'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> searchDelay: aNumber [
 	"  Delay in milliseconds between when user types something and we start searching based on that value "
 
 	self propertyAt: 'searchDelay' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> searchTimer [
 	
 	self access: 'searchTimer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> searchTimer: aJsObject [
 	
 	self propertyAt: 'searchTimer' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> store [
 	"  Reference to data provider object used by this ComboBox "
 
 	self access: 'store'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitFilteringSelect >> store: aJsObject [
 	"  Reference to data provider object used by this ComboBox "
 

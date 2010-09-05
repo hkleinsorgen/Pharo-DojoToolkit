@@ -13,255 +13,255 @@ DijitSplitContainer class >> functionName [
 	^ 'dijit.layout.SplitContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> activeSizing [
 	"  If true, the children's size changes as you drag the bar; otherwise, the sizes don't change until you drop the bar (by mouse-up) "
 
 	self access: 'activeSizing'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> activeSizing: aBoolean [
 	"  If true, the children's size changes as you drag the bar; otherwise, the sizes don't change until you drop the bar (by mouse-up) "
 
 	self propertyAt: 'activeSizing' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitSplitContainer >> beginSizing: e i: i [ 
 	
 	self call: 'beginSizing' withArguments: (Array with: e with: i)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitSplitContainer >> changeSizing: e [ 
 	
 	self call: 'changeSizing' withArguments: (Array with: e)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> cover [
 	
 	self access: 'cover'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> cover: aJsObject [
 	
 	self propertyAt: 'cover' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> dragOffset [
 	
 	self access: 'dragOffset'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> dragOffset: aNumber [
 	
 	self propertyAt: 'dragOffset' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitSplitContainer >> endSizing: e [ 
 	
 	self call: 'endSizing' withArguments: (Array with: e)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> isDraggingLeft [
 	
 	self access: 'isDraggingLeft'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> isDraggingLeft: aJsObject [
 	
 	self propertyAt: 'isDraggingLeft' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> isHorizontal [
 	
 	self access: 'isHorizontal'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> isHorizontal: aJsObject [
 	
 	self propertyAt: 'isHorizontal' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> isSizing [
 	
 	self access: 'isSizing'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> isSizing: aJsObject [
 	
 	self propertyAt: 'isSizing' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> lastPoint [
 	
 	self access: 'lastPoint'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> lastPoint: aString [
 	
 	self propertyAt: 'lastPoint' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitSplitContainer >> legaliseSplitPoint: a [ 
 	
 	self call: 'legaliseSplitPoint' withArguments: (Array with: a)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitSplitContainer >> movePoint [
 	
 	self call: 'movePoint'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> orientation [
 	"  either 'horizontal' or vertical; indicates whether the children are arranged side-by-side or up/down. "
 
 	self access: 'orientation'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> orientation: aString [
 	"  either 'horizontal' or vertical; indicates whether the children are arranged side-by-side or up/down. "
 
 	self propertyAt: 'orientation' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> originPos [
 	
 	self access: 'originPos'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> originPos: aJsObject [
 	
 	self propertyAt: 'originPos' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> paneHeight [
 	
 	self access: 'paneHeight'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> paneHeight: aJsObject [
 	
 	self propertyAt: 'paneHeight' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> paneWidth [
 	
 	self access: 'paneWidth'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> paneWidth: aJsObject [
 	
 	self propertyAt: 'paneWidth' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> persist [
 	"  Save splitter positions in a cookie "
 
 	self access: 'persist'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> persist: aBoolean [
 	"  Save splitter positions in a cookie "
 
 	self propertyAt: 'persist' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> screenToClientOffset [
 	
 	self access: 'screenToClientOffset'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> screenToClientOffset: aNumber [
 	
 	self propertyAt: 'screenToClientOffset' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> sizerWidth [
 	"  Size in pixels of the bar between each child FIXME: this should be a CSS attribute (at 7 because css wants it to be 7 until we fix to css) "
 
 	self access: 'sizerWidth'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> sizerWidth: aNumber [
 	"  Size in pixels of the bar between each child FIXME: this should be a CSS attribute (at 7 because css wants it to be 7 until we fix to css) "
 
 	self propertyAt: 'sizerWidth' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> sizers [
 	
 	self access: 'sizers'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> sizers: anArray [
 	
 	self propertyAt: 'sizers' put: anArray
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> sizingSplitter [
 	
 	self access: 'sizingSplitter'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> sizingSplitter: aJsObject [
 	
 	self propertyAt: 'sizingSplitter' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> startPoint [
 	
 	self access: 'startPoint'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> startPoint: aJsObject [
 	
 	self propertyAt: 'startPoint' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> virtualSizer [
 	
 	self access: 'virtualSizer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitSplitContainer >> virtualSizer: aJsObject [
 	
 	self propertyAt: 'virtualSizer' put: aJsObject

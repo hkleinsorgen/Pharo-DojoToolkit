@@ -13,7 +13,7 @@ DijitTooltipDialog class >> functionName [
 	^ 'dijit.TooltipDialog'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> autofocus [
 	"  A Toggle to modify the default focus behavior of a Dialog, which is to focus on the first dialog element after opening the dialog.
 	False will disable autofocusing.
@@ -22,7 +22,7 @@ DijitTooltipDialog >> autofocus [
 	self access: 'autofocus'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> autofocus: aBoolean [
 	"  A Toggle to modify the default focus behavior of a Dialog, which is to focus on the first dialog element after opening the dialog.
 	False will disable autofocusing.
@@ -31,7 +31,7 @@ DijitTooltipDialog >> autofocus: aBoolean [
 	self propertyAt: 'autofocus' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> connectChildren [
 	"  Connects to the onChange function of all children to track valid state changes.
 	You can call this function directly, ex.
@@ -40,19 +40,19 @@ DijitTooltipDialog >> connectChildren [
 	self call: 'connectChildren'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> declaredClass [
 	
 	self access: 'declaredClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> declaredClass: aJsObject [
 	
 	self propertyAt: 'declaredClass' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> execute: formContents [ 
 	"  After the user has pressed the submit button, the Dialog first calls onExecute() to notify the container to hide the dialog and restore focus to wherever it used to be.
 	Then this method is called.
@@ -61,27 +61,27 @@ DijitTooltipDialog >> execute: formContents [
 	self call: 'execute' withArguments: (Array with: formContents)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> getValues [
 	
 	self call: 'getValues'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> isValid [
 	"  Returns true if all of the widgets are valid "
 
 	self call: 'isValid'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltipDialog >> onCancel: anObject [
 	"  Developer shouldn't override or connect to this method; it's a private communication device between the TooltipDialog and the thing that opened it (ex: dijit.form.DropDownButton) type: protected "
 
 	self eventAt: 'onCancel' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltipDialog >> onClose: anObject [
 	"  Called when this widget is being displayed as a popup (ex: a Calendar popped up from a DateTextBox), and it is hidden.
 	This is called from the dijit.popup code, and should not be called directly.
@@ -92,14 +92,14 @@ DijitTooltipDialog >> onClose: anObject [
 	self eventAt: 'onClose' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltipDialog >> onExecute: anObject [
 	"  Developer shouldn't override or connect to this method; it's a private communication device between the TooltipDialog and the thing that opened it (ex: dijit.form.DropDownButton) type: protected "
 
 	self eventAt: 'onExecute' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltipDialog >> onOpen: pos [
 	"  Called when dialog is displayed.
 	This is called from the dijit.popup code, and should not be called directly. "
@@ -107,14 +107,14 @@ DijitTooltipDialog >> onOpen: pos [
 	self eventAt: 'onOpen' put: (pos asFunction: #(#pos))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitTooltipDialog >> onValidStateChange: isValid [
 	"  Stub function to connect to if you want to do something (like disable/enable a submit button) when the valid state changes on the form as a whole. "
 
 	self eventAt: 'onValidStateChange' put: (isValid asFunction: #(#isValid))
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> orient: node aroundCorner: aroundCorner corner: corner [ 
 	"  Configure widget to be displayed in given position relative to the button.
 	This is called from the dijit.popup code, and should not be called directly. "
@@ -122,19 +122,19 @@ DijitTooltipDialog >> orient: node aroundCorner: aroundCorner corner: corner [
 	self call: 'orient' withArguments: (Array with: node with: aroundCorner with: corner)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> reset [
 	
 	self call: 'reset'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> setValues: val [ 
 	
 	self call: 'setValues' withArguments: (Array with: val)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> templatePath [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -142,7 +142,7 @@ DijitTooltipDialog >> templatePath [
 	self access: 'templatePath'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> templatePath: aString [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -150,7 +150,7 @@ DijitTooltipDialog >> templatePath: aString [
 	self propertyAt: 'templatePath' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> templateString [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -160,7 +160,7 @@ DijitTooltipDialog >> templateString [
 	self access: 'templateString'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> templateString: aJsObject [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -170,7 +170,7 @@ DijitTooltipDialog >> templateString: aJsObject [
 	self propertyAt: 'templateString' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitTooltipDialog >> validate [
 	"  returns if the form is valid - same as isValid - but provides a few additional (ui-specific) features.
 	1 - it will highlight any sub-widgets that are not valid 2 - it will call focus() on the first invalid sub-widget "
@@ -178,14 +178,14 @@ DijitTooltipDialog >> validate [
 	self call: 'validate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> widgetsInTemplate [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 
 	self access: 'widgetsInTemplate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTooltipDialog >> widgetsInTemplate: aBoolean [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 

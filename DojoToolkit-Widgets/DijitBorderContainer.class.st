@@ -13,40 +13,40 @@ DijitBorderContainer class >> functionName [
 	^ 'dijit.layout.BorderContainer'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> cs [
 	
 	self access: 'cs'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> cs: aJsObject [
 	
 	self propertyAt: 'cs' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> design [
 	"  Which design is used for the layout: - 'headline' (default) where the top and bottom extend the full width of the container - 'sidebar' where the left and right sides extend from top to bottom. "
 
 	self access: 'design'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> design: aString [
 	"  Which design is used for the layout: - 'headline' (default) where the top and bottom extend the full width of the container - 'sidebar' where the left and right sides extend from top to bottom. "
 
 	self propertyAt: 'design' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitBorderContainer >> getSplitter: region [ 
 	"  Returns the widget responsible for rendering the splitter associated with region "
 
 	self call: 'getSplitter' withArguments: (Array with: region)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> gutters [
 	"  Give each pane a border and margin.
 	Margin determined by domNode.paddingLeft.
@@ -56,7 +56,7 @@ DijitBorderContainer >> gutters [
 	self access: 'gutters'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> gutters: aBoolean [
 	"  Give each pane a border and margin.
 	Margin determined by domNode.paddingLeft.
@@ -66,35 +66,35 @@ DijitBorderContainer >> gutters: aBoolean [
 	self propertyAt: 'gutters' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> liveSplitters [
 	"  Specifies whether splitters resize as you drag (true) or only upon mouseup (false) "
 
 	self access: 'liveSplitters'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> liveSplitters: aBoolean [
 	"  Specifies whether splitters resize as you drag (true) or only upon mouseup (false) "
 
 	self propertyAt: 'liveSplitters' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> persist [
 	"  Save splitter positions in a cookie. "
 
 	self access: 'persist'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitBorderContainer >> persist: aBoolean [
 	"  Save splitter positions in a cookie. "
 
 	self propertyAt: 'persist' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitBorderContainer >> resize: newSize currentSize: currentSize [ 
 	"  Change size mode: When changeSize is specified, changes the marginBox of this widget and forces it to relayout its contents accordingly.
 	changeSize may specify height, width, or both.

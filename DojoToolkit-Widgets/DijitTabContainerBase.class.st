@@ -13,19 +13,19 @@ DijitTabContainerBase class >> functionName [
 	^ 'dijit.layout.TabContainerBase'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> declaredClass [
 	
 	self access: 'declaredClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> declaredClass: aJsObject [
 	
 	self propertyAt: 'declaredClass' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> nested [
 	"  If true, use styling for a TabContainer nested inside another TabContainer.
 	For tundra etc., makes tabs look like links, and hides the outer border since the outer TabContainer already has a border. "
@@ -33,7 +33,7 @@ DijitTabContainerBase >> nested [
 	self access: 'nested'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> nested: aBoolean [
 	"  If true, use styling for a TabContainer nested inside another TabContainer.
 	For tundra etc., makes tabs look like links, and hides the outer border since the outer TabContainer already has a border. "
@@ -41,7 +41,7 @@ DijitTabContainerBase >> nested: aBoolean [
 	self propertyAt: 'nested' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> tabPosition [
 	"  Defines where tabs go relative to tab content.
 	'top', 'bottom', 'left-h', 'right-h' "
@@ -49,7 +49,7 @@ DijitTabContainerBase >> tabPosition [
 	self access: 'tabPosition'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> tabPosition: aString [
 	"  Defines where tabs go relative to tab content.
 	'top', 'bottom', 'left-h', 'right-h' "
@@ -57,21 +57,21 @@ DijitTabContainerBase >> tabPosition: aString [
 	self propertyAt: 'tabPosition' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> tabStrip [
 	"  Defines whether the tablist gets an extra class for layouting, putting a border/shading around the set of tabs. "
 
 	self access: 'tabStrip'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> tabStrip: aBoolean [
 	"  Defines whether the tablist gets an extra class for layouting, putting a border/shading around the set of tabs. "
 
 	self propertyAt: 'tabStrip' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> templatePath [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -79,7 +79,7 @@ DijitTabContainerBase >> templatePath [
 	self access: 'templatePath'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> templatePath: aString [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -87,7 +87,7 @@ DijitTabContainerBase >> templatePath: aString [
 	self propertyAt: 'templatePath' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> templateString [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -97,7 +97,7 @@ DijitTabContainerBase >> templateString [
 	self access: 'templateString'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> templateString: aJsObject [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -107,14 +107,14 @@ DijitTabContainerBase >> templateString: aJsObject [
 	self propertyAt: 'templateString' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> widgetsInTemplate [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 
 	self access: 'widgetsInTemplate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabContainerBase >> widgetsInTemplate: aBoolean [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 

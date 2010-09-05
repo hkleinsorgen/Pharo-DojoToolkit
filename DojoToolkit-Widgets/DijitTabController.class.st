@@ -13,7 +13,7 @@ DijitTabController class >> functionName [
 	^ 'dijit.layout.TabController'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabController >> tabPosition [
 	"  Defines where tabs go relative to the content.
 	'top', 'bottom', 'left-h', 'right-h' "
@@ -21,7 +21,7 @@ DijitTabController >> tabPosition [
 	self access: 'tabPosition'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitTabController >> tabPosition: aString [
 	"  Defines where tabs go relative to the content.
 	'top', 'bottom', 'left-h', 'right-h' "

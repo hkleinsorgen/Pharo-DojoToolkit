@@ -13,14 +13,14 @@ DijitToolbar class >> functionName [
 	^ 'dijit.Toolbar'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> addChild: widget insertIndex: insertIndex [ 
 	"  Add a child to our _Container "
 
 	self call: 'addChild' withArguments: (Array with: widget with: insertIndex)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> connectKeyNavHandlers: prevKeyCodes nextKeyCodes: nextKeyCodes [ 
 	"  Call in postCreate() to attach the keyboard handlers to the container.
 	preKeyCodes: dojo.keys[] Key codes for navigating to the previous child. "
@@ -28,75 +28,75 @@ DijitToolbar >> connectKeyNavHandlers: prevKeyCodes nextKeyCodes: nextKeyCodes [
 	self call: 'connectKeyNavHandlers' withArguments: (Array with: prevKeyCodes with: nextKeyCodes)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> declaredClass [
 	
 	self access: 'declaredClass'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> declaredClass: aJsObject [
 	
 	self propertyAt: 'declaredClass' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> focus [
 	"  Default focus() implementation: focus the first child. "
 
 	self call: 'focus'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> focusChild: widget last: last [ 
 	"  Focus widget. "
 
 	self call: 'focusChild' withArguments: (Array with: widget with: last)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> focusFirstChild [
 	"  Focus the first focusable child in the container. "
 
 	self call: 'focusFirstChild'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> focusNext [
 	"  Focus the next widget "
 
 	self call: 'focusNext'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> focusPrev [
 	"  Focus the last focusable node in the previous widget (ex: go to the ComboButton icon section rather than button section) "
 
 	self call: 'focusPrev'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> focusedChild [
 	"  The currently focused child widget, or null if there isn't one "
 
 	self access: 'focusedChild'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> focusedChild: aJsObject [
 	"  The currently focused child widget, or null if there isn't one "
 
 	self propertyAt: 'focusedChild' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitToolbar >> startupKeyNavChildren [
 	"  Call in startup() to set child tabindexes to -1 "
 
 	self call: 'startupKeyNavChildren'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> tabIndex [
 	"  Tab index of the container; same as HTML tabIndex attribute.
 	Note then when user tabs into the container, focus is immediately moved to the first item in the container. "
@@ -104,7 +104,7 @@ DijitToolbar >> tabIndex [
 	self access: 'tabIndex'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> tabIndex: aNumber [
 	"  Tab index of the container; same as HTML tabIndex attribute.
 	Note then when user tabs into the container, focus is immediately moved to the first item in the container. "
@@ -112,7 +112,7 @@ DijitToolbar >> tabIndex: aNumber [
 	self propertyAt: 'tabIndex' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> templatePath [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -120,7 +120,7 @@ DijitToolbar >> templatePath [
 	self access: 'templatePath'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> templatePath: aString [
 	"  Path to template (HTML file) for this widget relative to dojo.baseUrl.
 	Deprecated: use templateString with dojo.cache() instead. "
@@ -128,7 +128,7 @@ DijitToolbar >> templatePath: aString [
 	self propertyAt: 'templatePath' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> templateString [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -138,7 +138,7 @@ DijitToolbar >> templateString [
 	self access: 'templateString'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> templateString: aString [
 	"  A string that represents the widget template.
 	Pre-empts the templatePath.
@@ -148,14 +148,14 @@ DijitToolbar >> templateString: aString [
 	self propertyAt: 'templateString' put: aString
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> widgetsInTemplate [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 
 	self access: 'widgetsInTemplate'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'properties-generated' }
 DijitToolbar >> widgetsInTemplate: aBoolean [
 	"  Should we parse the template to find widgets that might be declared in markup inside it? False by default. "
 

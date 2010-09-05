@@ -13,7 +13,7 @@ DijitRadioButton class >> functionName [
 	^ 'dijit.form.RadioButton'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'events-generated' }
 DijitRadioButton >> onClick: e [
 	"  Connect to this function to receive notifications of mouse click events. "
 

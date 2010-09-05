@@ -13,14 +13,14 @@ DijitDye class >> functionName [
 	^ 'dijit.Dye'
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitDye >> fillCell: cell blankGif: blankGif [ 
 	"  Add cell DOMNode inner structure "
 
 	self call: 'fillCell' withArguments: (Array with: cell with: blankGif)
 ]
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'functions-generated' }
 DijitDye >> getValue [
 	"  For example color hex value, emoticon ascii value etc, entity hex value "
 
