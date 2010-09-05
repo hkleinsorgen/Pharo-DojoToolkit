@@ -4,26 +4,26 @@ Class {
 	#category : 'DojoToolkit-UI'
 }
 
-{ #category : '*DojoToolkit-UI' }
+{ #category : #events }
 DijitWidgetQuery >> connectEvent: eventName context: contextObject method: functionOrName dontFix: dontFix [ 
 
 	^ self dojo connect: self event: eventName context: contextObject method: functionOrName dontFix: dontFix
 ]
 
-{ #category : '*DojoToolkit-UI' }
+{ #category : #events }
 DijitWidgetQuery >> connectEvent: eventName method: functionOrName [ 
 
 	^ self dojo connect: self event: eventName method: functionOrName
 ]
 
-{ #category : '*DojoToolkit-UI' }
+{ #category : #query }
 DijitWidgetQuery >> id: aString [ 
 	"Select a DOM node by id "
 
 	^ self setArguments: (Array with: aString )
 ]
 
-{ #category : '*DojoToolkit-UI' }
+{ #category : #subscribtions }
 DijitWidgetQuery >> subscribe: topic method: method [ 
 	"  Provide widget-specific analog to dojo.subscribe, except with the implicit use of this widget as the target object "
 
