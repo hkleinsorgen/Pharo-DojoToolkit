@@ -11,33 +11,33 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoConstructableObject >> arguments [
 
 	^ Array with: self properties
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> createNewObject [
 	" send by the constructor "
 
 	self create
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> eventAt: aKey put: aHandler [ 
 
 	^ self propertyAt: aKey put: aHandler asFunction
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> isNewObject [
 	" true if this object has been created with 'new' "
 
 	^ self owner notNil and: [ self owner constructsObjects ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #printing }
 DojoConstructableObject >> javascriptContentOn: aStream [ 
 
 	self isNewObject 
@@ -51,7 +51,7 @@ DojoConstructableObject >> javascriptContentOn: aStream [
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoConstructableObject >> override: functionName with: aFunction [ 
 	" for new objects, the override is added to the properties.
 	this allows overriding multple functions (since Javascript does not support cascades) "
@@ -61,31 +61,31 @@ DojoConstructableObject >> override: functionName with: aFunction [
 		ifFalse: [ super override: functionName with: aFunction  ].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> properties [
 
 	^ properties ifNil: [ properties := GRSmallDictionary new ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> propertyAt: aKey put: aValue [ 
 
 	^ self properties at: aKey put: aValue
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoConstructableObject >> requiredPackages [
 
 	^ Array with: self class functionName
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> variable [
 
 	^ variable
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructableObject >> variable: aVariable [ 
 
 	variable := aVariable.

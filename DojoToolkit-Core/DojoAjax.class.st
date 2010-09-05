@@ -16,7 +16,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #parameters }
 DojoAjax >> addParameter: anObject [
 	"Add the request parameter anObject, a single value or an association."
 
@@ -29,7 +29,7 @@ DojoAjax >> addParameter: anObject [
 	]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #parameters }
 DojoAjax >> addParameters: aCollection [
 	"Add multiple request parameters from aCollection."
 
@@ -38,27 +38,27 @@ DojoAjax >> addParameters: aCollection [
 	].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - rendering' }
 DojoAjax >> append: aRenderable [ 
 	"Defines a html rendering callback."
 
 	self render: aRenderable applyResponseWith: #append
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoAjax >> applyResponseWith: aNodeListFunction [ 
 	" call the node list function on the reponse "
 
 	^ (( self query call: aNodeListFunction with: ( JSStream on: 'response' )) return: ( JSStream on: 'response' )) asFunction: #( #response #io )
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjax >> arguments [
 
 	^ Array with: self options
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #callbacks }
 DojoAjax >> callback: aBlock [
 	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. The primary callback must generate a response."
 
@@ -66,7 +66,7 @@ DojoAjax >> callback: aBlock [
 	callback := aBlock fixCallbackTemps
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #callbacks }
 DojoAjax >> callback: aBlock translator: aCallbackTranslator [ 
 	" Register aBlock as a secondary callback. The block is evaluated with a single object, usually a dictionary.
 	The translator generates a Javascript expression that is evaluated  on the client side and returns a data string.
@@ -77,7 +77,7 @@ DojoAjax >> callback: aBlock translator: aCallbackTranslator [
 		value: aCallbackTranslator asJavascript.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #callbacks }
 DojoAjax >> callback: aBlock value: anObject [
 	"Register aBlock as a secondary callback. anObject is a reference to a Javascript object on the client-side. 
 	The object will be sent back to the server as a string and passed into aBlock. Multiple secondary callbacks can be defined with one receiver." 
@@ -88,14 +88,14 @@ DojoAjax >> callback: aBlock value: anObject [
 			-> anObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - convenience' }
 DojoAjax >> callbackWithArgument: aBlock [
 	" registers a callback that is evaluated with the first argument  "
 
 	self callbackWithArguments: aBlock translator: (DojoCallbackTranslator argumentTranslator)
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #callbacks }
 DojoAjax >> callbackWithArguments: aBlock translator: aCallbackTranslator [ 
 	" similar to #callback:translator:, with one difference:
 	aBlock is evaluated with all arguments in the orders specified by the translator
@@ -106,14 +106,14 @@ DojoAjax >> callbackWithArguments: aBlock translator: aCallbackTranslator [
 		value: (JSStream on: aCallbackTranslator asJavascript).
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> content [
 	" the objects passed to the reciever (aka Seaside) "
 
 	^ self options at: 'content' ifAbsentPut: [ GRSmallDictionary new ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - private' }
 DojoAjax >> enableCallbacks [
 
 	self hasCallback ifTrue: [ ^ self ].
@@ -123,7 +123,7 @@ DojoAjax >> enableCallbacks [
 		store: (JSAjaxCallback on: [ self processCallback ]))
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - scripts' }
 DojoAjax >> errorScript: errorScriptBlock [ 
 
 	| script |
@@ -131,7 +131,7 @@ DojoAjax >> errorScript: errorScriptBlock [
 	self onError: ( script asFunction: #( #error #io )).
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> failOk: aBoolean [
 	" By default, dojo.xhrGet outputs an error to the console when there is a transport error.
 	Setting failOk to true will prevent that behavior and will suppress the error message."
@@ -139,7 +139,7 @@ DojoAjax >> failOk: aBoolean [
 	self optionAt: 'ailOk' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> handleAs: type [
 	" Original documentation:
 		This parameter specifies how to handle the data returned from the server. It usually takes values of 'text', 'xml', or 'json'
@@ -149,131 +149,131 @@ DojoAjax >> handleAs: type [
 	self options at: 'handleAs' put: type
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> handleAsJSON [
 
 	self handleAs: 'json'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> handleAsJavascript [
 
 	self handleAs: 'javascript'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> handleAsText [
 
 	self handleAs: 'text'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> handleAsXML [
 
 	self handleAs: 'xml'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - private' }
 DojoAjax >> hasCallback [
 	^ callbackId notNil
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> headers: aDictionary [
 	" These are the headers to send as part of the request "
 
 	self options at: 'headers' put: aDictionary
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - rendering' }
 DojoAjax >> html: aRenderable [ 
 	"Defines a html rendering callback. The nodes will be replace with the contents returned by the request "
 
 	self render: aRenderable applyResponseWith: #innerHTML
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjax >> method [
 
 	self subclassResponsibility
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'options - response handling' }
 DojoAjax >> onError: anObject [
 	" The error parameter is another callback function that is only invoked when an error occurs "
 
 	self optionAt: 'error' put: anObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'options - response handling' }
 DojoAjax >> onHandle: anObject [
 	" Sometimes you want to do something regardless of whether a call completes or fails. Thats where handle comes it, it will be invoked by xhr regardless "
 
 	self optionAt: 'handle' put: anObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'options - response handling' }
 DojoAjax >> onLoad: anObject [
 	" The function dojo should invoke when the data is returned from the server. "
 
 	self optionAt: 'load' put: anObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'options - private' }
 DojoAjax >> optionAt: aKey put: aValue [
 	^ self options at: aKey put: aValue
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'options - private' }
 DojoAjax >> options [
 	^ options ifNil: [ options := GRSmallDictionary new ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoAjax >> owner [
 
 	^ owner
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoAjax >> owner: aOwner [ 
 
 	owner := aOwner.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #parameters }
 DojoAjax >> parameters [
 	"Answer the request parameters of the reciever."
 	
 	^ self content
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> preventCache: aBoolean [
 	" A boolean value that tells dojo to append a unique query parameter to each request "
 
 	self optionAt: 'preventCache' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - private' }
 DojoAjax >> processCallback [
 	callback isNil
 		ifFalse: [ callback value ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjax >> query [
 
 	^ query
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjax >> query: aQuery [ 
 
 	query := aQuery.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - rendering' }
 DojoAjax >> render: aRenderable applyResponseWith: aNodeListFunction [ 
 	"Defines a html rendering callback.
 	The nodes will be modified by applying the function to the contents returned by the request "
@@ -281,7 +281,7 @@ DojoAjax >> render: aRenderable applyResponseWith: aNodeListFunction [
 	self render: aRenderable errorScript: nil applyResponseWith: aNodeListFunction
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - rendering' }
 DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith: aNodeListFunction [ 
 	"Defines a html rendering callback.
 	The nodes will be modified by applying the function to the contents returned by the request.
@@ -300,21 +300,21 @@ DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith:
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #callbacks }
 DojoAjax >> respond: aBlock [
 	"Defines a response callback."
 
 	self callback: [ self requestContext respond: aBlock ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - scripts' }
 DojoAjax >> script: aBlock [
 	"Defines a script rendering callback "
 
 	self script: aBlock errorScript: nil
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'callbacks - scripts' }
 DojoAjax >> script: aBlock errorScript: errorScriptBlock [
 	"Defines a script rendering callback. "
 
@@ -332,26 +332,26 @@ DojoAjax >> script: aBlock errorScript: errorScriptBlock [
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> sync: aBoolean [
 	" A boolean value that says whether or not the xhr function should block until data is returned or return immediately and rely on callbacks for data handling"
 
 	self optionAt: 'sync' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> timeout: aNumber [
 	" Number of milliseconds to wait until timing out the request. Default is 0 which means infinite (no timeout). "
 
 	self optionAt: 'timeout' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> url [
 	^ self options at: 'url' ifAbsentPut: [ WAUrl new ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #options }
 DojoAjax >> url: aUrl [
 	"A string containing the URL to which the request is sent."
 	

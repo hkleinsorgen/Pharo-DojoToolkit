@@ -10,7 +10,7 @@ DojoAjaxGet class >> functionName [
 	^ 'xhrGet'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxGet >> method [
 
 	^ 'GET'

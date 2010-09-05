@@ -24,7 +24,7 @@ DojoObject class >> functionName [
 	^ self subclassResponsibility
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoObject >> addRequiredPackages [
 
 	self requiredPackages do: [ : packageName |
@@ -32,19 +32,19 @@ DojoObject >> addRequiredPackages [
 	].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoObject >> arguments [
 
 	^ nil
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoObject >> constructsObjects [
 
 	^ false
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #creation }
 DojoObject >> create: aDojoObjectClass [ 
 
 	| newObject |
@@ -54,7 +54,7 @@ DojoObject >> create: aDojoObjectClass [
 	^ newObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #convenience }
 DojoObject >> dojo [
 
 	^ ( Dojo context: self renderContext )
@@ -62,20 +62,20 @@ DojoObject >> dojo [
 		yourself
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoObject >> dojoConfiguration [
 	" the dojo configuration is a singleton "
 
 	^ self renderContext dojoConfiguration
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'initialize-release' }
 DojoObject >> initializeObject [
 
 	self addRequiredPackages
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #printing }
 DojoObject >> javascriptContentOn: aStream [ 
 
 	self ownerPathOn: aStream.
@@ -84,40 +84,40 @@ DojoObject >> javascriptContentOn: aStream [
 		ifTrue: [ JSStream encodeArguments: self arguments on: aStream ].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #creation }
 DojoObject >> new [
 	" creates a Javascript object with 'new SomeClass(...)' "
 
 	^ self create: DojoConstructor
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #creation }
 DojoObject >> new: aClass [	
 	" creates a Javascript object with 'new SomeClass(...)' "
 
 	^ self new create: aClass
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoObject >> override: functionName with: aFunction [ 
 	" to customize Dojo/Dijit, it is sometimes necessary to override functions "
 
 	( self access: functionName ) assign: aFunction asFunction.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoObject >> owner [
 
 	^ owner
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoObject >> owner: aOwner [ 
 
 	owner := aOwner.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #printing }
 DojoObject >> ownerPathOn: aStream [ 
 
 	self owner notNil 
@@ -127,42 +127,42 @@ DojoObject >> ownerPathOn: aStream [
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system-convencience' }
 DojoObject >> packageFx [
 	" Adds dojo.fx animation support "
 
 	^ 'dojo.fx'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system-convencience' }
 DojoObject >> packageNodeListFx [
 	" Adds dojo.fx animation support to dojo.query() "
 
 	^ 'dojo.NodeList-fx'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system-convencience' }
 DojoObject >> packageNodeListHtml [
 	"  Adds a chainable html method to dojo.query() / Nodelist instances for setting/replacing node content "
 
 	^ 'dojo.NodeList-html'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system-convencience' }
 DojoObject >> packageNodeListManipulate [
 	" Adds a chainable methods to dojo.query() / Nodelist instances for manipulating HTML and DOM nodes and their properties."
 
 	^ 'dojo.NodeList-manipulate'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system-convencience' }
 DojoObject >> packageNodeListTraverse [
 	" Adds a chainable methods to dojo.query() / Nodelist instances for traversing the DOM"
 
 	^ 'dojo.NodeList-traverse'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system' }
 DojoObject >> require: aString [
 	"Loads a Dojo module, by name."
 
@@ -175,7 +175,7 @@ DojoObject >> require: aString [
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'package system' }
 DojoObject >> requiredPackages [
 	" names of packages that are automatically added when creating an object of this kind "
 

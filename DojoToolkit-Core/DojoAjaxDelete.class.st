@@ -10,7 +10,7 @@ DojoAjaxDelete class >> functionName [
 	^ 'xhrDelete'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxDelete >> method [
 
 	^ 'DELETE'

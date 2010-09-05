@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoGoogleDevelopmentLibrary >> isUncompressed [
 
 	^ true

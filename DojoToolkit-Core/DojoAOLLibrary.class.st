@@ -4,19 +4,19 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAOLLibrary >> baseURI [
 
 	^ (WAUrl absolute: 'http://o.aolcdn.com/dojo') with: self version
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAOLLibrary >> isCrossDomainLibrary [
 
 	^ true
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoAOLLibrary >> isFileSelector: aSelector [
 
 	^ false

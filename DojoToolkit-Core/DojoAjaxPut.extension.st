@@ -5,9 +5,3 @@ DojoAjaxPut classSide >> functionName [
 
 	^ 'xhrPut'
 ]
-
-{ #category : '*DojoToolkit-Core' }
-DojoAjaxPut >> method [
-
-	^ 'PUT'
-]

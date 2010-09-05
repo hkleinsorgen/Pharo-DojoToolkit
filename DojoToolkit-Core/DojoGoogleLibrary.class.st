@@ -4,19 +4,19 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoGoogleLibrary >> baseURI [
 
 	^ (WAUrl absolute: 'http://ajax.googleapis.com/ajax/libs/dojo') with: self version
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoGoogleLibrary >> isCrossDomainLibrary [
 
 	^ true
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoGoogleLibrary >> isFileSelector: aSelector [
 
 	^ false

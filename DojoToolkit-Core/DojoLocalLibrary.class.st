@@ -8,14 +8,14 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoLocalLibrary >> baseURI [
 	 " base URI of the dojo library. if not specified, the files will be read from a local directory "
 
 	^ baseURI ifNil: [ WAFileHandler default url with: self class name ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoLocalLibrary >> baseURI: aBaseURI [ 
 
 	baseURI := aBaseURI notNil 
@@ -23,20 +23,20 @@ DojoLocalLibrary >> baseURI: aBaseURI [
 			ifFalse: [ nil ].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoLocalLibrary >> defaultDirectory [
 
 	^ 'dojo-release-1.5.0' asFilename
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoLocalLibrary >> directory [
 	 " (optional) base directory containing the dojo files. not used when baseURI is specified "
 
 	^ directory
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoLocalLibrary >> directory: aDirectory [ 
 
 	directory := aDirectory notNil 
@@ -44,7 +44,7 @@ DojoLocalLibrary >> directory: aDirectory [
 			ifFalse: [ nil ].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoLocalLibrary >> documentForFile: aFilename [ 
 
 	| stream |
@@ -52,7 +52,7 @@ DojoLocalLibrary >> documentForFile: aFilename [
 	^ [ stream upToEnd ] ensure: [ stream ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #handling }
 DojoLocalLibrary >> handle: aRequestContext [ 
 
 	| fileName |
@@ -72,13 +72,13 @@ DojoLocalLibrary >> handle: aRequestContext [
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoLocalLibrary >> isCrossDomainLibrary [
 
 	^ false
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoLocalLibrary >> isFileSelector: aSelector [
 
 	^ false

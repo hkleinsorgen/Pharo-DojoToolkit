@@ -10,7 +10,7 @@ DojoAjaxPut class >> functionName [
 	^ 'xhrPut'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxPut >> method [
 
 	^ 'PUT'

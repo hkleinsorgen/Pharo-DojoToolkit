@@ -13,77 +13,77 @@ DojoEvent class >> functionName [
 	^ ''
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> charCode [
 	" For keypress events, the character code of the key pressed"
 
 	^ self access: 'charCode'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> charOrCode [  
 	" a normalized version of charCode and keyCode, which can be used for direct comparison for alpha keys and special keys together. (added in 1.1) "
 
 	^ self access: 'charOrCode'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> currentTarget [
 	" the current target "
 
 	^ self access: 'currentTarget'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #initialization }
 DojoEvent >> initialize [
 
 	super initialize.
 	self alias: 'event'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> keyCode [ 
 	" for keypress events, handles special keys like ENTER and spacebar. "
 
 	^ self access: 'keyCode'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> layerX [ 
 	"the x coordinate, relative to the event.currentTarget "
 
 	^ self access: 'layerX'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> layerY [ 
 	"the y coordinate, relative to the event.currentTarget "
 
 	^ self access: 'layerY'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> pageX [ 
 	"the X coordinate, relative to the view port"
 
 	^ self access: 'pageX'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> pageY [ 
 	"the Y coordinate, relative to the view port"
 
 	^ self access: 'pageY'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> relatedTarget [
 	" For onmouseover and onmouseout, the object that the mouse pointer is moving to or out of "
 
 	^ self access: 'relatedTarget'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoEvent >> target [ 
 	" the element that generated the event "
 

@@ -13,228 +13,228 @@ DojoAnimation class >> functionName [
 	^ 'dojo.Animation'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> beforeBegin [
 	"  Synthetic event fired before a dojo.Animation begins playing (synchronous) "
 
 	self access: 'beforeBegin'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> beforeBegin: aJsObject [
 	"  Synthetic event fired before a dojo.Animation begins playing (synchronous) "
 
 	self propertyAt: 'beforeBegin' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> curve [
 	"  A two element array of start and end values, or a dojo._Line instance to be used in the Animation. "
 
 	self access: 'curve'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> curve: aJsObject [
 	"  A two element array of start and end values, or a dojo._Line instance to be used in the Animation. "
 
 	self propertyAt: 'curve' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> delay [
 	"  The time in milliseconds to wait before starting animation after it has been .play()'ed "
 
 	self access: 'delay'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> delay: aNumber [
 	"  The time in milliseconds to wait before starting animation after it has been .play()'ed "
 
 	self propertyAt: 'delay' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> duration [
 	"  The time in milliseonds the animation will take to run "
 
 	self access: 'duration'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> duration: aNumber [
 	"  The time in milliseonds the animation will take to run "
 
 	self propertyAt: 'duration' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'functions-generated' }
 DojoAnimation >> easing [
 	"  A Function to adjust the acceleration (or deceleration) of the progress across a dojo._Line "
 
 	self call: 'easing'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'functions-generated' }
 DojoAnimation >> gotoPercent: percent andPlay: andPlay [ 
 	"  Sets the progress of the animation. "
 
 	self call: 'gotoPercent' withArguments: (Array with: percent with: andPlay)
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onAnimate [
 	"  Synthetic event fired at each interval of a dojo.Animation "
 
 	self access: 'onAnimate'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onAnimate: aJsObject [
 	"  Synthetic event fired at each interval of a dojo.Animation "
 
 	self propertyAt: 'onAnimate' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onBegin [
 	"  Synthetic event fired as a dojo.Animation begins playing (useful?) "
 
 	self access: 'onBegin'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onBegin: aJsObject [
 	"  Synthetic event fired as a dojo.Animation begins playing (useful?) "
 
 	self propertyAt: 'onBegin' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onEnd [
 	"  Synthetic event fired after the final frame of a dojo.Animation "
 
 	self access: 'onEnd'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onEnd: aJsObject [
 	"  Synthetic event fired after the final frame of a dojo.Animation "
 
 	self propertyAt: 'onEnd' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onPause [
 	"  Synthetic event fired when a dojo.Animation is paused "
 
 	self access: 'onPause'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onPause: aJsObject [
 	"  Synthetic event fired when a dojo.Animation is paused "
 
 	self propertyAt: 'onPause' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onPlay [
 	"  Synthetic event fired any time a dojo.Animation is play()'ed "
 
 	self access: 'onPlay'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onPlay: aJsObject [
 	"  Synthetic event fired any time a dojo.Animation is play()'ed "
 
 	self propertyAt: 'onPlay' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onStop [
 	"  Synthetic event fires when a dojo.Animation is stopped "
 
 	self access: 'onStop'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> onStop: aJsObject [
 	"  Synthetic event fires when a dojo.Animation is stopped "
 
 	self propertyAt: 'onStop' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'functions-generated' }
 DojoAnimation >> pause [
 	"  Pauses a running animation. "
 
 	self call: 'pause'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #functions }
 DojoAnimation >> play [
 
 	self call: 'play'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'functions-generated' }
 DojoAnimation >> play: delay gotoStart: gotoStart [ 
 	"  Start the animation. "
 
 	self call: 'play' withArguments: (Array with: delay with: gotoStart)
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> rate [
 	"  the time in milliseconds to wait before advancing to next frame (used as a fps timer: 1000/rate = fps) "
 
 	self access: 'rate'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> rate: aNumber [
 	"  the time in milliseconds to wait before advancing to next frame (used as a fps timer: 1000/rate = fps) "
 
 	self propertyAt: 'rate' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> repeat [
 	"  The number of times to loop the animation "
 
 	self access: 'repeat'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoAnimation >> repeat: aNumber [
 	"  The number of times to loop the animation "
 
 	self propertyAt: 'repeat' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAnimation >> requiredPackages [
 
 	^ #()
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'functions-generated' }
 DojoAnimation >> status [
 	"  Returns a string token representation of the status of the animation, one of: 'paused', 'playing', 'stopped' "
 
 	self call: 'status'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #functions }
 DojoAnimation >> stop [
 
 	self call: 'stop'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'functions-generated' }
 DojoAnimation >> stop: gotoEnd [ 
 	"  Stops a running animation. "
 

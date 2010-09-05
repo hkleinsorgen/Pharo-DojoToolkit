@@ -10,36 +10,36 @@ DojoConfiguration class >> functionName [
 	^ ''
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> baseUrl [
 	
 	self access: 'baseUrl'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> baseUrl: aJsObject [
 	
 	self propertyAt: 'baseUrl' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #initialization }
 DojoConfiguration >> createNewObject [
 	" the configuration is defined by a special variable "
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> debugAtAllCosts [
 	
 	self access: 'debugAtAllCosts'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> debugAtAllCosts: aJsObject [
 	
 	self propertyAt: 'debugAtAllCosts' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #initialization }
 DojoConfiguration >> initialize [
 	" the configuration is defined by a special variable "
 
@@ -47,25 +47,25 @@ DojoConfiguration >> initialize [
 	self assignLocalTo: 'djConfig'.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> isDebug [
 	
 	self access: 'isDebug'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> isDebug: aJsObject [
 	
 	self propertyAt: 'isDebug' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #printing }
 DojoConfiguration >> javascriptContentOn: aStream [ 
 
 	self properties javascriptOn: aStream
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #properties }
 DojoConfiguration >> parseOnLoad: aBoolean [
 	"  run the parser when the page loads "
 
@@ -73,7 +73,7 @@ DojoConfiguration >> parseOnLoad: aBoolean [
 	self propertyAt: 'parseOnLoad' put: aBoolean
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> preloadImages [
 	"  An optional array of urls to preload immediately upon page load.
 	Uses dojox.image, and is unused if not present. "
@@ -81,7 +81,7 @@ DojoConfiguration >> preloadImages [
 	self access: 'preloadImages'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> preloadImages: anArray [
 	"  An optional array of urls to preload immediately upon page load.
 	Uses dojox.image, and is unused if not present. "
@@ -89,7 +89,7 @@ DojoConfiguration >> preloadImages: anArray [
 	self propertyAt: 'preloadImages' put: anArray
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> urchin [
 	"  Used by dojox.analytics.Urchin as the default UA-123456-7 account number used when being created.
 	Alternately, you can pass an acct:'' parameter to the constructor a la: new dojox.analytics.Urchin({ acct:'UA-123456-7' }); "
@@ -97,7 +97,7 @@ DojoConfiguration >> urchin [
 	self access: 'urchin'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'properties-generated' }
 DojoConfiguration >> urchin: aString [
 	"  Used by dojox.analytics.Urchin as the default UA-123456-7 account number used when being created.
 	Alternately, you can pass an acct:'' parameter to the constructor a la: new dojox.analytics.Urchin({ acct:'UA-123456-7' }); "

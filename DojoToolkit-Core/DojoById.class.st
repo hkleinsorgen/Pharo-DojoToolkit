@@ -13,26 +13,26 @@ DojoById class >> functionName [
 	^ 'byId'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #events }
 DojoById >> connectEvent: eventName context: contextObject method: functionOrName dontFix: dontFix [ 
 
 	^ self dojo connect: self event: eventName context: contextObject method: functionOrName dontFix: dontFix
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #events }
 DojoById >> connectEvent: eventName method: functionOrName [ 
 
 	^ self dojo connect: self event: eventName method: functionOrName
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoById >> id: aString [ 
 	"Select a DOM node by id "
 
 	^ self setArguments: (Array with: aString )
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #events }
 DojoById >> subscribe: topic method: method [ 
 	"  Provide widget-specific analog to dojo.subscribe, except with the implicit use of this widget as the target object "
 

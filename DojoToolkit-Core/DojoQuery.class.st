@@ -13,7 +13,7 @@ DojoQuery class >> functionName [
 	^ 'query'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> && anotherQuery [
 	" combine the two queries "
 
@@ -22,70 +22,70 @@ DojoQuery >> && anotherQuery [
 		ifFalse: [ DojoError signal: 'Cannot combine queries of different owners' ]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> any [
 	" any element "
 
 	^ self queryString: '*'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> attribute: attributeName [
 	" Elements with the given attribute "
 
 	^ self queryString: '[', attributeName greaseString, ']'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> attribute: attributeName value: attributeValue [
 	" Elements with the given attribute value "
 
 	^ self queryString: '[', attributeName greaseString, '="', attributeValue greaseString, '"]'
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> class: aString [
 	" Elements with the given class "
 
 	^ self queryString: '.', aString greaseString
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> element: typeString [
 	" any element of the type "
 
 	^ self queryString: typeString greaseString
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> element: elementName attribute: attributeName [
 	" Elements with the given attribute "
 
 	^ self element: elementName attribute: attributeName operator: nil value: nil
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> element: elementName attribute: attributeName beginsWith: attributeValue [
 	" Elements whose attribute value begins with the substring "
 
 	^ self element: elementName attribute: attributeName operator: '^=' value: attributeValue
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> element: elementName attribute: attributeName contains: attributeValue [
 	" Elements whose attribute value contains the substring "
 
 	^ self element: elementName attribute: attributeName operator: '*=' value: attributeValue
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> element: elementName attribute: attributeName endsWith: attributeValue [
 	" Elements whose attribute value ends with the substring "
 
 	^ self element: elementName attribute: attributeName operator: '$=' value: attributeValue
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoQuery >> element: elementName attribute: attributeName operator: operator value: attributeValue [ 
 
 	| stream |
@@ -104,21 +104,21 @@ DojoQuery >> element: elementName attribute: attributeName operator: operator va
 	self queryString: stream contents
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> element: elementName attribute: attributeName value: attributeValue [
 	" Elements with the given attribute value "
 
 	^ self element: elementName attribute: attributeName operator: '=' value: attributeValue
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> id: aString [ 
 	" an Element with ID "
 
 	^ self queryString: '#', aString greaseString
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #convenience }
 DojoQuery >> query: anObject [
 	"Convenience method to populate the query "
 	
@@ -127,7 +127,7 @@ DojoQuery >> query: anObject [
 	^ self queryString: anObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #query }
 DojoQuery >> queryString: aCssSelectorString [ 
 	" Returns a list of DOM nodes based on the CSS selector "
 

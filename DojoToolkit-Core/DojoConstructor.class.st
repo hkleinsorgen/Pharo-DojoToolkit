@@ -10,30 +10,30 @@ DojoConstructor class >> functionName [
 	self shouldNotImplement
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #events }
 DojoConstructor >> connectEvent: eventName context: contextObject method: functionOrName dontFix: dontFix [ 
 
 	self shouldNotImplement
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #events }
 DojoConstructor >> connectEvent: eventName method: functionOrName [ 
 
 	self shouldNotImplement
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoConstructor >> constructsObjects [
 
 	^ true
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #creation }
 DojoConstructor >> create: aDojoObjectClass [ 
 
 	^ ( super create: aDojoObjectClass ) createNewObject
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #printing }
 DojoConstructor >> javascriptContentOn: aStream [
 ]

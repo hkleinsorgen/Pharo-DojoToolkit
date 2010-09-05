@@ -60,19 +60,19 @@ DojoCallbackTranslator class >> specifications: anArray [
 		yourself
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> argumentFromSpecification: specification [ 
 
 	^ specification at: 3
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> arraySeparator [
 
 	^ $,
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #translation }
 DojoCallbackTranslator >> asCollection: aString renderContext: aRenderContext [ 
 	" create an sequencable collection (same order as the specifications) with translated objects from the string created by the javascript expression "
 
@@ -85,7 +85,7 @@ DojoCallbackTranslator >> asCollection: aString renderContext: aRenderContext [
 	^ translatedValues
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #translation }
 DojoCallbackTranslator >> asJavascript [
 	" Returns the Javascript expression that creates the string that is added to requests "
 
@@ -108,7 +108,7 @@ DojoCallbackTranslator >> asJavascript [
 	^ javascript
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #translation }
 DojoCallbackTranslator >> asSmalltalkObject: aString renderContext: aRenderContext [ 
 	" create a dictionary with translated objects from the string created by the javascript expression"
 
@@ -121,19 +121,19 @@ DojoCallbackTranslator >> asSmalltalkObject: aString renderContext: aRenderConte
 	^ translatedValues
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> dataSeparator [
 
 	^ $~
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> expressionFromSpecification: specification [ 
 
 	^ specification at: 4
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-javascript' }
 DojoCallbackTranslator >> javascriptBlocks [
 	" Blocks that write Javascript code for a single specification "
 
@@ -152,37 +152,37 @@ DojoCallbackTranslator >> javascriptBlocks [
 	^ javascriptBlocks
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> jsonConverter [
 
 	^ Json
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> nameFromSpecification: specification [ 
 
 	^ specification at: 1
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> pointSeparator [
 
 	^ $@
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> raiseArgumentsSizeMismatch: i [ 
 
 	DojoError signal: 'Expected ' , specifications size printString , ' arguments, got ' , i printString.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> raiseUnknownType: type [ 
 
 	^ DojoError signal: 'Unknown callback argument type: ' , type
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoCallbackTranslator >> specifications [
 	" Array of argument specifications.
 	Each specification is an Array: 
@@ -194,19 +194,19 @@ DojoCallbackTranslator >> specifications [
 	^ specifications
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoCallbackTranslator >> specifications: anArray [ 
 
 	specifications := anArray
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translateStringFrom: string [ 
 
 	^ string
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translateToSmalltalk: aString renderContext: aRenderContext addBlock: addBlock [ 
 	" add all translated objects from the string created by the javascript expression"
 
@@ -224,7 +224,7 @@ DojoCallbackTranslator >> translateToSmalltalk: aString renderContext: aRenderCo
 	] whileTrue.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translatedArrayFrom: string renderContext: renderContext  with: block [
 
 	| collection readStream |
@@ -236,19 +236,19 @@ DojoCallbackTranslator >> translatedArrayFrom: string renderContext: renderConte
 	^ collection
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translatedJsonNFrom: string [ 
 
 	^ self jsonConverter readFrom: string readStream
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translatedPassengerFrom: string renderContext: renderContext [ 
 
 	^ renderContext callbacks passengerAt: string
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translatedPointFrom: string [ 
 
 	| x y stream |
@@ -258,7 +258,7 @@ DojoCallbackTranslator >> translatedPointFrom: string [
 	^ x @ y
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-smalltalk' }
 DojoCallbackTranslator >> translationBlocks [
 	" Blocks that create Smalltalk objects from a string created by the Javascript expression "
 
@@ -278,13 +278,13 @@ DojoCallbackTranslator >> translationBlocks [
 	^ translationBlocks
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #private }
 DojoCallbackTranslator >> typeFromSpecification: specification [ 
 
 	^ specification at: 2
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-javascript' }
 DojoCallbackTranslator >> writeJavascriptForArgument: argument expression: expression on: stream [ 
 
 	self writeJavascriptForArgument: argument on: stream.
@@ -296,7 +296,7 @@ DojoCallbackTranslator >> writeJavascriptForArgument: argument expression: expre
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-javascript' }
 DojoCallbackTranslator >> writeJavascriptForArgument: argument on: stream [ 
 
 	argument notNil 
@@ -311,7 +311,7 @@ DojoCallbackTranslator >> writeJavascriptForArgument: argument on: stream [
 		].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-javascript' }
 DojoCallbackTranslator >> writeJavascriptForJSONArgument: argument expression: expression on: stream [ 
 
 	stream nextPutAll: 'JSON.stringify('.
@@ -325,7 +325,7 @@ DojoCallbackTranslator >> writeJavascriptForJSONArgument: argument expression: e
 	stream nextPutAll: ')'.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-javascript' }
 DojoCallbackTranslator >> writeJavascriptForPointArgument: argument expression: expression on: stream [ 
 
 	self writeJavascriptForArgument: argument expression: expression on: stream.
@@ -334,7 +334,7 @@ DojoCallbackTranslator >> writeJavascriptForPointArgument: argument expression: 
 	stream nextPutAll: 'Y'.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'translation-javascript' }
 DojoCallbackTranslator >> writeJavascriptForStringArgument: argument expression: expression on: stream [
 
 	stream nextPutAll: 'String('.

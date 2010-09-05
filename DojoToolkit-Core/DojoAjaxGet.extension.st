@@ -5,9 +5,3 @@ DojoAjaxGet classSide >> functionName [
 
 	^ 'xhrGet'
 ]
-
-{ #category : '*DojoToolkit-Core' }
-DojoAjaxGet >> method [
-
-	^ 'GET'
-]

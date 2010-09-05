@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #processing }
 AbstractDojoLibrary >> addDojoScriptsToDocument: aDocument [ 
 	" Dojo libraries must be added in a <body> script "
 
@@ -16,25 +16,25 @@ AbstractDojoLibrary >> addDojoScriptsToDocument: aDocument [
 	script encodeOn: aDocument.
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 AbstractDojoLibrary >> baseURI [
 
 	self subclassResponsibility
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 AbstractDojoLibrary >> isCrossDomainLibrary [
 
 	self subclassResponsibility
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 AbstractDojoLibrary >> isUncompressed [
 
 	^ false
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 AbstractDojoLibrary >> libraryName [
 
 	^ self isCrossDomainLibrary 
@@ -50,12 +50,12 @@ AbstractDojoLibrary >> libraryName [
 		]
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #processing }
 AbstractDojoLibrary >> updateRoot: anHtmlRoot [
 	" the library must be added in a <body> script "
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 AbstractDojoLibrary >> version [
 
 	^ '1.5'
