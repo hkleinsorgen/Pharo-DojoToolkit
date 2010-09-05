@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Themes'
 }
 
-{ #category : '*DojoToolkit-Themes' }
+{ #category : #private }
 DojoTheme >> dojoLibrary [
 	" fetch the theme from the same source as the library "
 
@@ -15,13 +15,13 @@ DojoTheme >> dojoLibrary [
 		ifFalse: [ nil ]
 ]
 
-{ #category : '*DojoToolkit-Themes' }
+{ #category : #accessing }
 DojoTheme >> themeName [
 
 	self subclassResponsibility
 ]
 
-{ #category : '*DojoToolkit-Themes' }
+{ #category : #accessing }
 DojoTheme >> updateRoot: anHtmlRoot [
 
 	| dojoLib |

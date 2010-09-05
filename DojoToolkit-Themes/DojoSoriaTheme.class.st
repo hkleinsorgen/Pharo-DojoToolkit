@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Themes'
 }
 
-{ #category : '*DojoToolkit-Themes' }
+{ #category : #accessing }
 DojoSoriaTheme >> themeName [
 
 	^ 'soria'
