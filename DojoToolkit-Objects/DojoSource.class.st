@@ -13,50 +13,50 @@ DojoSource class >> functionName [
 	^ 'dojo.dnd.Source'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> accept [
 	
 	self access: 'accept'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> accept: aJsObject [
 	
 	self propertyAt: 'accept' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> before [
 	
 	self access: 'before'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> before: aJsObject [
 	
 	self propertyAt: 'before' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoSource >> checkAcceptance: source nodes: nodes [ 
 	"  checks if the target can accept nodes from this source "
 
 	self call: 'checkAcceptance' withArguments: (Array with: source with: nodes)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> copyOnly [
 	
 	self access: 'copyOnly'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> copyOnly: aJsObject [
 	
 	self propertyAt: 'copyOnly' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoSource >> copyState: keyPressed self: myself [ 
 	"  Returns true if we need to copy items, false to move.
 	It is separated to be overwritten dynamically, if needed. "
@@ -64,267 +64,267 @@ DojoSource >> copyState: keyPressed self: myself [
 	self call: 'copyState' withArguments: (Array with: keyPressed with: myself )
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> delay [
 	
 	self access: 'delay'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> delay: aNumber [
 	
 	self propertyAt: 'delay' put: aNumber
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> generateText [
 	
 	self access: 'generateText'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> generateText: aJsObject [
 	
 	self propertyAt: 'generateText' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> horizontal [
 	
 	self access: 'horizontal'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> horizontal: aJsObject [
 	
 	self propertyAt: 'horizontal' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> isDragging [
 	
 	self access: 'isDragging'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> isDragging: aJsObject [
 	
 	self propertyAt: 'isDragging' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> isSource [
 	
 	self access: 'isSource'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> isSource: aJsObject [
 	
 	self propertyAt: 'isSource' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> mouseDown [
 	
 	self access: 'mouseDown'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> mouseDown: aJsObject [
 	
 	self propertyAt: 'mouseDown' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDndCancel: anObject [
 	"  topic event processor for /dnd/cancel, called to cancel the DnD operation "
 
 	self eventAt: 'onDndCancel' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDndDrop: anObject [
 	"  topic event processor for /dnd/drop, called to finish the DnD operation "
 
 	self eventAt: 'onDndDrop' put: (anObject asFunction: #(#source #nodes #copy #target))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDndSourceOver: source [
 	"  topic event processor for /dnd/source/over, called when detected a current source "
 
 	self eventAt: 'onDndSourceOver' put: (source asFunction: #(#source))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDndStart: anObject [
 	"  topic event processor for /dnd/start, called to initiate the DnD operation "
 
 	self eventAt: 'onDndStart' put: (anObject asFunction: #(#source #nodes #copy))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDraggingOut: anObject [
 	"  called during the active DnD operation, when items are dragged away from this target, and it is not disabled "
 
 	self eventAt: 'onDraggingOut' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDraggingOver: anObject [
 	"  called during the active DnD operation, when items are dragged over this target, and it is not disabled "
 
 	self eventAt: 'onDraggingOver' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDrop: anObject [
 	"  called only on the current target, when drop is performed "
 
 	self eventAt: 'onDrop' put: (anObject asFunction: #(#source #nodes #copy))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDropExternal: anObject [
 	"  called only on the current target, when drop is performed from an external source "
 
 	self eventAt: 'onDropExternal' put: (anObject asFunction: #(#source #nodes #copy))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onDropInternal: anObject [
 	"  called only on the current target, when drop is performed from the same target/source "
 
 	self eventAt: 'onDropInternal' put: (anObject asFunction: #(#nodes #copy))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onMouseDown: e [
 	"  event processor for onmousedown "
 
 	self eventAt: 'onMouseDown' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onMouseMove: e [
 	"  mouse event "
 
 	self eventAt: 'onMouseMove' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onMouseUp: e [
 	"  event processor for onmouseup "
 
 	self eventAt: 'onMouseUp' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onOutEvent: anObject [
 	"  this function is called once, when mouse is out of our container "
 
 	self eventAt: 'onOutEvent' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoSource >> onOverEvent: anObject [
 	"  this function is called once, when mouse is over our container "
 
 	self eventAt: 'onOverEvent' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> selfAccept [
 	
 	self access: 'selfAccept'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> selfAccept: aJsObject [
 	
 	self propertyAt: 'selfAccept' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> selfCopy [
 	
 	self access: 'selfCopy'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> selfCopy: aJsObject [
 	
 	self propertyAt: 'selfCopy' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> sourceState [
 	
 	self access: 'sourceState'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> sourceState: aString [
 	
 	self propertyAt: 'sourceState' put: aString
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> targetAnchor [
 	
 	self access: 'targetAnchor'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> targetAnchor: aJsObject [
 	
 	self propertyAt: 'targetAnchor' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> targetBox [
 	
 	self access: 'targetBox'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> targetBox: aJsObject [
 	
 	self propertyAt: 'targetBox' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> targetState [
 	
 	self access: 'targetState'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> targetState: aString [
 	
 	self propertyAt: 'targetState' put: aString
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> topics [
 	
 	self access: 'topics'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> topics: anArray [
 	
 	self propertyAt: 'topics' put: anArray
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> withHandles [
 	
 	self access: 'withHandles'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoSource >> withHandles: aJsObject [
 	
 	self propertyAt: 'withHandles' put: aJsObject

@@ -13,14 +13,14 @@ DojoWrite class >> functionName [
 	^ 'dojo.data.api.Write'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> deleteItem: item [ 
 	"  Deletes an item from the store. "
 
 	self call: 'deleteItem' withArguments: (Array with: item)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> isDirty: item [ 
 	"  Given an item, isDirty() returns true if the item has been modified since the last save().
 	If isDirty() is called with no *item* argument, then this function returns true if any item has been modified since the last save(). "
@@ -28,7 +28,7 @@ DojoWrite >> isDirty: item [
 	self call: 'isDirty' withArguments: (Array with: item)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> newItem: keywordArgs parentInfo: parentInfo [ 
 	"  Returns a newly created item.
 	Sets the attributes of the new item based on the *keywordArgs* provided.
@@ -39,14 +39,14 @@ DojoWrite >> newItem: keywordArgs parentInfo: parentInfo [
 	self call: 'newItem' withArguments: (Array with: keywordArgs with: parentInfo)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> revert [
 	"  Discards any unsaved changes "
 
 	self call: 'revert'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> save: keywordArgs [ 
 	"  Saves to the server all the changes that have been made locally.
 	The save operation may take some time and is generally performed in an asynchronous fashion.
@@ -55,7 +55,7 @@ DojoWrite >> save: keywordArgs [
 	self call: 'save' withArguments: (Array with: keywordArgs)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> setValue: item attribute: attribute value: value [ 
 	"  Sets the value of an attribute on an item.
 	Replaces any previous value or values. "
@@ -63,7 +63,7 @@ DojoWrite >> setValue: item attribute: attribute value: value [
 	self call: 'setValue' withArguments: (Array with: item with: attribute with: value)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> setValues: item attribute: attribute values: values [ 
 	"  Adds each value in the *values* array as a value of the given attribute on the given item.
 	Replaces any previous value or values.
@@ -72,7 +72,7 @@ DojoWrite >> setValues: item attribute: attribute values: values [
 	self call: 'setValues' withArguments: (Array with: item with: attribute with: values)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoWrite >> unsetAttribute: item attribute: attribute [ 
 	"  Deletes all the values of an attribute on an item. "
 

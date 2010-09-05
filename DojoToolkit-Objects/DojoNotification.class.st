@@ -13,7 +13,7 @@ DojoNotification class >> functionName [
 	^ 'dojo.data.api.Notification'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoNotification >> onDelete: deletedItem [
 	"  This function is called any time an item is deleted from the store.
 	It is called immediately after the store deleteItem processing has completed "
@@ -21,7 +21,7 @@ DojoNotification >> onDelete: deletedItem [
 	self eventAt: 'onDelete' put: (deletedItem asFunction: #(#deletedItem))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoNotification >> onNew: anObject [
 	"  This function is called any time a new item is created in the store.
 	It is called immediately after the store newItem processing has completed "
@@ -29,7 +29,7 @@ DojoNotification >> onNew: anObject [
 	self eventAt: 'onNew' put: (anObject asFunction: #(#newItem #parentInfo))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoNotification >> onSet: anObject [
 	"  This function is called any time an item is modified via setValue, setValues, unsetAttribute, etc.
 	Its purpose is to provide a hook point for those who wish to monitor actions on items in the store in a simple manner.

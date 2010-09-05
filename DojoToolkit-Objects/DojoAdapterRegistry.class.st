@@ -13,7 +13,7 @@ DojoAdapterRegistry class >> functionName [
 	^ 'dojo.AdapterRegistry'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoAdapterRegistry >> match [
 	"  Find an adapter for the given arguments.
 	If no suitable adapter is found, throws an exception.
@@ -22,38 +22,38 @@ DojoAdapterRegistry >> match [
 	self call: 'match'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoAdapterRegistry >> pairs [
 	
 	self access: 'pairs'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoAdapterRegistry >> pairs: anArray [
 	
 	self propertyAt: 'pairs' put: anArray
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoAdapterRegistry >> register: name check: check wrap: wrap directReturn: directReturn override: override [ 
 	"  register a check function to determine if the wrap function or object gets selected "
 
 	self call: 'register' withArguments: (OrderedCollection new add: name; add: check; add: wrap; add: directReturn; add: override; yourself)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoAdapterRegistry >> returnWrappers [
 	
 	self access: 'returnWrappers'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'properties-generated' }
 DojoAdapterRegistry >> returnWrappers: aJsObject [
 	
 	self propertyAt: 'returnWrappers' put: aJsObject
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoAdapterRegistry >> unregister: name [ 
 	"  Remove a named adapter from the registry "
 

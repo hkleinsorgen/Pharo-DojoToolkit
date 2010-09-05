@@ -13,35 +13,35 @@ DojoTarget class >> functionName [
 	^ 'dojo.dnd.Target'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoTarget >> onMouseDown: e [
 	"  event processor for onmousedown "
 
 	self eventAt: 'onMouseDown' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoTarget >> onMouseMove: e [
 	"  mouse event "
 
 	self eventAt: 'onMouseMove' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoTarget >> onMouseUp: e [
 	"  event processor for onmouseup "
 
 	self eventAt: 'onMouseUp' put: (e asFunction: #(#event))
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoTarget >> onOutEvent: anObject [
 	"  this function is called once, when mouse is out of our container "
 
 	self eventAt: 'onOutEvent' put: (anObject asFunction: #())
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'events-generated' }
 DojoTarget >> onOverEvent: anObject [
 	"  this function is called once, when mouse is over our container "
 

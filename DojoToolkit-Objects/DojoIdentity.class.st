@@ -13,7 +13,7 @@ DojoIdentity class >> functionName [
 	^ 'dojo.data.api.Identity'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoIdentity >> fetchItemByIdentity: keywordArgs [ 
 	"  Given the identity of an item, this method returns the item that has that identity through the onItem callback.
 	Conforming implementations should return null if there is no item with the given identity.
@@ -22,7 +22,7 @@ DojoIdentity >> fetchItemByIdentity: keywordArgs [
 	self call: 'fetchItemByIdentity' withArguments: (Array with: keywordArgs)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoIdentity >> getIdentity: item [ 
 	"  Returns a unique identifier for an item.
 	The return value will be either a string or something that has a toString() method (such as, for example, a dojox.uuid.Uuid object). "
@@ -30,7 +30,7 @@ DojoIdentity >> getIdentity: item [
 	self call: 'getIdentity' withArguments: (Array with: item)
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoIdentity >> getIdentityAttributes: item [ 
 	"  Returns an array of attribute names that are used to generate the identity.
 	For most stores, this is a single attribute, but for some complex stores such as RDB backed stores that use compound (multi-attribute) identifiers it can be more than one.

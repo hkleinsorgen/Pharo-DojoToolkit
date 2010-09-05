@@ -10,7 +10,7 @@ DojoSimpleFetch class >> functionName [
 	^ 'dojo.data.util.simpleFetch'
 ]
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'functions-generated' }
 DojoSimpleFetch >> fetch: request [ 
 	"  The simpleFetch mixin is designed to serve as a set of function(s) that can be mixed into other datastore implementations to accelerate their development.
 	The simpleFetch mixin should work well for any datastore that can respond to a _fetchItems() call by returning an array of all the found items that matched the query.
