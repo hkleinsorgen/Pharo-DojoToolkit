@@ -4,14 +4,14 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderDemoOn: html [ 
 
 	self renderTextAreaOn: html.
 	self renderPaletteOn: html.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderExplanationOn: html [ 
 
 	html paragraph: [
@@ -27,7 +27,7 @@ DijitDemoOverviewComponent >> renderExplanationOn: html [
 	].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderPaletteOn: html [ 
 
 	| colorValue |
@@ -49,7 +49,7 @@ DijitDemoOverviewComponent >> renderPaletteOn: html [
 	html paragraph id: 'palette'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderSourceSelectors [
 
 	^ #( 
@@ -57,7 +57,7 @@ DijitDemoOverviewComponent >> renderSourceSelectors [
 	)
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderTextAreaOn: html [ 
 
 	html heading level3; with: 'Example: Autoexpanding text area'.
@@ -70,7 +70,7 @@ DijitDemoOverviewComponent >> renderTextAreaOn: html [
 	self renderSourceOf: #renderTextAreaWithMarkupOn: on: html.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderTextAreaProgrammaticallyOn: html [ 
 
 	html paragraph: [
@@ -81,7 +81,7 @@ DijitDemoOverviewComponent >> renderTextAreaProgrammaticallyOn: html [
 	].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoOverviewComponent >> renderTextAreaWithMarkupOn: html [ 
 
 	html paragraph: [
@@ -91,19 +91,19 @@ DijitDemoOverviewComponent >> renderTextAreaWithMarkupOn: html [
 	].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoOverviewComponent >> sortKey [
 
 	^'1'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoOverviewComponent >> title [
 
 	^ 'Overview'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoOverviewComponent >> url [
 
 	^ 'http://dojotoolkit.org/reference-guide/dijit/form.html'

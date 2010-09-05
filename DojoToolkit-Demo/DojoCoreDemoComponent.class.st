@@ -10,13 +10,13 @@ DojoCoreDemoComponent class >> isAbstract [
 	^ self = DojoCoreDemoComponent
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoCoreDemoComponent >> category [
 
 	^ 'Dojo' -> 1
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoCoreDemoComponent >> renderTestAreaOn: html [ 
 
 	html div

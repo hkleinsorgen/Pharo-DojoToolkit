@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTextValidationComponent >> renderDemoOn: html [ 
 
 	html paragraph: [
@@ -20,7 +20,7 @@ DijitDemoTextValidationComponent >> renderDemoOn: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTextValidationComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html .
@@ -28,19 +28,19 @@ DijitDemoTextValidationComponent >> renderExplanationOn: html [
 		'The following input field only accepts characters, digits and whitespace, and must not be empty. Valid input is specified by a regular expression'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoTextValidationComponent >> title [
 
 	^ 'Text validation'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoTextValidationComponent >> url [
 
 	^ 'http://dojotoolkit.org/reference-guide/dijit/form/ValidationTextbox.htm'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoTextValidationComponent >> widgetClass [
 
 	^ DijitValidationTextBox

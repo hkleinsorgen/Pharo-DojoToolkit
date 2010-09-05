@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTreeComponent >> createModelFor: html [ 
 	" Creates a model that is connected to an item store.
 	Drag/drop notifications of the tree widget don't tell us about
@@ -38,7 +38,7 @@ DijitDemoTreeComponent >> createModelFor: html [
 	^ model
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #private }
 DijitDemoTreeComponent >> jsonTreeItemForClass: aClass idBlock: idBlock [ 
 
 	| treeItem tooltip |
@@ -58,7 +58,7 @@ DijitDemoTreeComponent >> jsonTreeItemForClass: aClass idBlock: idBlock [
 	^ treeItem
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #private }
 DijitDemoTreeComponent >> jsonTreeWithCallbacks: callbacks [ 
 
 	| items tree idBlock rootClass |
@@ -80,7 +80,7 @@ DijitDemoTreeComponent >> jsonTreeWithCallbacks: callbacks [
 	^ Json render: tree
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTreeComponent >> renderDemoOn: html [ 
 
 	| model |
@@ -91,7 +91,7 @@ DijitDemoTreeComponent >> renderDemoOn: html [
 	 self renderTreeOn: html model: model.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTreeComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html.
@@ -102,7 +102,7 @@ DijitDemoTreeComponent >> renderExplanationOn: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTreeComponent >> renderSourceSelectors [
 
 	^ #(
@@ -111,7 +111,7 @@ DijitDemoTreeComponent >> renderSourceSelectors [
 	)
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoTreeComponent >> renderTreeOn: html model: model [
 	" render a tree with customized icons "
 
@@ -136,7 +136,7 @@ DijitDemoTreeComponent >> renderTreeOn: html model: model [
 		script: tree.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #private }
 DijitDemoTreeComponent >> respondJsonTreeWithCallbacks: callbacks [ 
 
 	self requestContext respond: 
@@ -146,19 +146,19 @@ DijitDemoTreeComponent >> respondJsonTreeWithCallbacks: callbacks [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #private }
 DijitDemoTreeComponent >> rootID [
 
 	^ 'Root'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoTreeComponent >> title [
 
 	^ 'Tree'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #private }
 DijitDemoTreeComponent >> treeIconScript [
 
 	^ 'return (!item || this.model.mayHaveChildren(item)) ? 
@@ -166,19 +166,19 @@ DijitDemoTreeComponent >> treeIconScript [
 			 : "treeLeaf"'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #private }
 DijitDemoTreeComponent >> treeTooltipScript [
 
 	^ 'return item.tooltip'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoTreeComponent >> url [
 
 	^ 'http://www.dojotoolkit.org/reference-guide/dijit/Tree.html'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoTreeComponent >> widgetClass [
 
 	^ DijitTree

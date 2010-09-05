@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoOverviewComponent >> renderDemoOn: html [ 
 
 	html text: 'The '.
@@ -21,17 +21,17 @@ DojoDemoOverviewComponent >> renderDemoOn: html [
 	html text: ', povides commonly used widgets'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoOverviewComponent >> renderDemoSourceOn: html [
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoOverviewComponent >> sortKey [
 
 	^'1'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoOverviewComponent >> title [
 
 	^ 'Overview'

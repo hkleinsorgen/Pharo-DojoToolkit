@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAnimationComponent >> renderAnimateOn: html [ 
 
 	| animationProperties |
@@ -23,7 +23,7 @@ DojoDemoAnimationComponent >> renderAnimateOn: html [
 		with: 'Color/Size'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAnimationComponent >> renderAnimationTargetOn: html [ 
 
 	html paragraph: 
@@ -37,7 +37,7 @@ DojoDemoAnimationComponent >> renderAnimationTargetOn: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAnimationComponent >> renderDemoOn: html [ 
 
 	self renderFadeOn: html.
@@ -45,7 +45,7 @@ DojoDemoAnimationComponent >> renderDemoOn: html [
 	self renderAnimationTargetOn: html.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAnimationComponent >> renderFadeOn: html [ 
 
 	html dojoButton 
@@ -58,7 +58,7 @@ DojoDemoAnimationComponent >> renderFadeOn: html [
 		with: 'Fade in'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAnimationComponent >> renderSourceSelectors [
 
 	^ #(
@@ -67,7 +67,7 @@ DojoDemoAnimationComponent >> renderSourceSelectors [
 	)
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoAnimationComponent >> title [
 
 	^ 'Animation'

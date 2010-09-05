@@ -10,13 +10,13 @@ DijitDemoPartComponent class >> isAbstract [
 	^ self = DijitDemoPartComponent
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoPartComponent >> category [
 
 	^ 'Dijit (Dojo UI)' -> 2
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoPartComponent >> renderExplanationOn: html [ 
 
 	self widgetClass notNil 
@@ -34,14 +34,14 @@ DijitDemoPartComponent >> renderExplanationOn: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoPartComponent >> url [
 	" widget documentation URL "
 
 	^ nil
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoPartComponent >> widgetClass [
 
 	^ nil

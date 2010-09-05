@@ -7,14 +7,14 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #initialization }
 DojoDemoAjaxComponent >> initialize [
 
 	super initialize.
 	numberOfCallbacks := 0.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAjaxComponent >> renderAppendOn: html [ 
 
 	html submitButton 
@@ -24,7 +24,7 @@ DojoDemoAjaxComponent >> renderAppendOn: html [
 		text: 'Append HTML'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAjaxComponent >> renderCallbackOn: html [ 
 
 	html submitButton 
@@ -37,7 +37,7 @@ DojoDemoAjaxComponent >> renderCallbackOn: html [
 		text: 'Callback'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAjaxComponent >> renderDemoOn: html [ 
 
 	html div: 
@@ -50,7 +50,7 @@ DojoDemoAjaxComponent >> renderDemoOn: html [
 		with: 'Here be dragons'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAjaxComponent >> renderErrorOn: html [ 
 	" send the request to an URL without a request handler "
 
@@ -65,7 +65,7 @@ DojoDemoAjaxComponent >> renderErrorOn: html [
 		text: 'Error'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAjaxComponent >> renderReplaceOn: html [ 
 
 	html submitButton 
@@ -75,7 +75,7 @@ DojoDemoAjaxComponent >> renderReplaceOn: html [
 		text: 'Replace HTML'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoAjaxComponent >> renderSourceSelectors [
 
 	^ #(	
@@ -86,7 +86,7 @@ DojoDemoAjaxComponent >> renderSourceSelectors [
 	)
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoAjaxComponent >> title [
 
 	^ 'Ajax'

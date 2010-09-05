@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoDialogComponent >> renderDemoOn: html [ 
 
 	html dojoDialog
@@ -23,19 +23,19 @@ DijitDemoDialogComponent >> renderDemoOn: html [
 		with: 'Show dialog'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoDialogComponent >> title [
 
 	^ 'Dialog'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoDialogComponent >> url [
 
 	^ 'http://dojotoolkit.org/api/dijit/Dialog.html'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoDialogComponent >> widgetClass [
 
 	^ DijitDialog

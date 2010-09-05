@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoContainerComponent >> renderAccordionAboutOn: html [ 
 
 	html text: 'More information: '.
@@ -14,7 +14,7 @@ DijitDemoContainerComponent >> renderAccordionAboutOn: html [
 		with: 'Reference guide'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoContainerComponent >> renderAccordionOn: html [ 
 
 	html heading level3; with: 'Accordion'.
@@ -34,14 +34,14 @@ DijitDemoContainerComponent >> renderAccordionOn: html [
 	].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoContainerComponent >> renderDemoOn: html [ 
 
 	self renderTabOn: html.
 	self renderAccordionOn: html.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoContainerComponent >> renderSourceSelectors [
 
 	^#(
@@ -50,7 +50,7 @@ DijitDemoContainerComponent >> renderSourceSelectors [
 	)
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoContainerComponent >> renderTabAboutOn: html [ 
 
 	html text: 'More information: '.
@@ -60,7 +60,7 @@ DijitDemoContainerComponent >> renderTabAboutOn: html [
 		with: 'Reference guide'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoContainerComponent >> renderTabOn: html [ 
 
 	html heading level3;
@@ -83,7 +83,7 @@ DijitDemoContainerComponent >> renderTabOn: html [
 	].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoContainerComponent >> title [
 
 	^ 'Container'

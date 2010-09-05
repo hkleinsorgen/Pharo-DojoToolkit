@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoCalendarComponent >> renderDemoOn: html [ 
 
 	| calendar currentDate |
@@ -20,26 +20,26 @@ DijitDemoCalendarComponent >> renderDemoOn: html [
 		id: 'selectedDate'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoCalendarComponent >> test: html [ 
 
 	html div id: 'calendar';
 		script: 'buh'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoCalendarComponent >> title [
 
 	^ 'Calendar'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoCalendarComponent >> url [
 
 	^ 'http://www.dojotoolkit.org/reference-guide/dijit/Calendar.html'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoCalendarComponent >> widgetClass [
 
 	^ DijitCalendar

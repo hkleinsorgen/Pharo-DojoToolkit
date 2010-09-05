@@ -10,13 +10,13 @@ DojoDemoPartComponent class >> isAbstract [
 	^ self = DojoDemoPartComponent
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoPartComponent >> category [
 
 	self subclassResponsibility
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderContentOn: html [ 
 
 	self renderTitleOn: html.
@@ -25,11 +25,11 @@ DojoDemoPartComponent >> renderContentOn: html [
 	self renderDemoSourceOn: html
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderDemoOn: html [
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderDemoSourceOn: html [ 
 
 	self renderSourceSelectors notEmpty 
@@ -40,24 +40,24 @@ DojoDemoPartComponent >> renderDemoSourceOn: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderExplanationOn: html [
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderSourceOf: selector on: html [ 
 
 	html div class: 'code';
 		with: [ self renderUndecoratedSourceOf: selector on: html ].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderSourceSelectors [
 
 	^ #(#renderDemoOn:)
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderTitleOn: html [ 
 
 	( html heading )
@@ -66,7 +66,7 @@ DojoDemoPartComponent >> renderTitleOn: html [
 		with: self title.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoPartComponent >> renderUndecoratedSourceOf: selector on: html [ 
 
 	| source readStream formattedSource |
@@ -90,13 +90,13 @@ DojoDemoPartComponent >> renderUndecoratedSourceOf: selector on: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoPartComponent >> sortKey [
 
 	^ self title
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoPartComponent >> title [
 
 	self subclassResponsibility

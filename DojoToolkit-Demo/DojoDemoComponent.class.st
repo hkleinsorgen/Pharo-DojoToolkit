@@ -20,7 +20,7 @@ DojoDemoComponent class >> initialize [
 	^ app
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoComponent >> availableDemos [
 
 	| demos groupedDemos  |
@@ -40,7 +40,7 @@ DojoDemoComponent >> availableDemos [
 	^ availableDemos
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoComponent >> exampleScript [
 
 ^ '
@@ -64,14 +64,14 @@ DojoDemoComponent >> exampleScript [
 '
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #initialization }
 DojoDemoComponent >> initialize [
 
 	super initialize.
 	demoComponent := self availableDemos first value first.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoComponent >> renderContentOn: html [ 
 
 	( html div )
@@ -90,7 +90,7 @@ DojoDemoComponent >> renderContentOn: html [
 			].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoComponent >> renderNavigationOn: html [ 
 
 	| cssClass |
@@ -126,7 +126,7 @@ DojoDemoComponent >> renderNavigationOn: html [
 		].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoComponent >> renderThemeSelectorOn: html [ 
 
 	| themes |
@@ -144,7 +144,7 @@ DojoDemoComponent >> renderThemeSelectorOn: html [
 			].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoComponent >> theme [
 
 	theme isNil 
@@ -152,7 +152,7 @@ DojoDemoComponent >> theme [
 	^ theme
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #updating }
 DojoDemoComponent >> updateRoot: aHtmlRoot [
 
 	super updateRoot: aHtmlRoot.

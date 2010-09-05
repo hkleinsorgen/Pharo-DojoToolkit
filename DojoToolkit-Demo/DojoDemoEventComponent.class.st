@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoEventComponent >> renderDemoOn: html [ 
 
 	| customHandler |
@@ -35,7 +35,7 @@ DojoDemoEventComponent >> renderDemoOn: html [
 	html div: [ html paragraph with: [ html emphasis id: 'testArea'; with: ' ' ]]
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DojoDemoEventComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html.
@@ -49,7 +49,7 @@ DojoDemoEventComponent >> renderExplanationOn: html [
 	].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoDemoEventComponent >> title [
 
 	^ 'Events'

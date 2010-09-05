@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoSliderComponent >> renderDemoOn: html [ 
 
 	| slider sliderValue |
@@ -28,26 +28,26 @@ DijitDemoSliderComponent >> renderDemoOn: html [
 		with: [ html paragraph: sliderValue ].
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #rendering }
 DijitDemoSliderComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html .
 	html paragraph: 'Text value is updated via Ajax request when the slider fires an "onChange" event'.
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoSliderComponent >> title [
 
 	^ 'Slider'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoSliderComponent >> url [
 
 	^ 'http://www.dojotoolkit.org/reference-guide/dijit/form/Slider.html'
 ]
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DijitDemoSliderComponent >> widgetClass [
 
 	^ DijitHorizontalSlider
