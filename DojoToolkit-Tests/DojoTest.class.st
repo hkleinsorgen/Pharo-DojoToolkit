@@ -4,13 +4,13 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoTest >> function [
 
 	^ Dojo functionName
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoTest >> testAddOnLoad [
 
 	self 
@@ -22,7 +22,7 @@ DojoTest >> testAddOnLoad [
 		equals: self function , '.addOnLoad(function(){alert("OK")})'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoTest >> testById [
 
 	self 
@@ -34,7 +34,7 @@ DojoTest >> testById [
 		equals: self function , '.byId("id42")'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoTest >> testConfiguration [
 	" assert that a djConfig has been define "
 
@@ -48,14 +48,14 @@ DojoTest >> testConfiguration [
 		].
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoTest >> testEventMembers [
 
 	#( #charCode #charOrCode #keyCode #layerX #layerY #pageX #pageY #relatedTarget #target ) 
 		do: [: property | self assert: ( self dojo event perform: property ) equals: 'event.' , property ].
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoTest >> testOverride [
 
 	| body |
@@ -64,7 +64,7 @@ DojoTest >> testOverride [
 		equals: 'dijit.byId("tree").getIconClass=function(item,opened){', body, '}'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoTest >> testRequire [
 
 	self 

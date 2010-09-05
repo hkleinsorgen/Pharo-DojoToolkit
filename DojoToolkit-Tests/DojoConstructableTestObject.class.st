@@ -10,13 +10,13 @@ DojoConstructableTestObject class >> functionName [
 	^ 'dojox.testcases.TestObject'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #properties }
 DojoConstructableTestObject >> testString [
 	
 	^ self access: 'testString'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #properties }
 DojoConstructableTestObject >> testString: aString [
 	
 	self propertyAt: 'testString' put: aString

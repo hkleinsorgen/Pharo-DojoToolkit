@@ -4,13 +4,13 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoUITest >> function [
 
 	^ DojoUI functionName
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoUITest >> testById [
 
 	self 
@@ -18,7 +18,7 @@ DojoUITest >> testById [
 		equals: self function , '.byId("42")'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoUITest >> testOverride [
 
 	| tree |

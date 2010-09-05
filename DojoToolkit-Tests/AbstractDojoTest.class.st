@@ -12,19 +12,19 @@ AbstractDojoTest class >> isAbstract [
 	^ self = AbstractDojoTest
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 AbstractDojoTest >> dojo [
 
 	^ Dojo context: self renderContext
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 AbstractDojoTest >> dojoUI [
 
 	^ DojoUI context: self renderContext
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #private }
 AbstractDojoTest >> keyQuote [
 	" some implementations optimize the output by avoiding unnecessary quotation marks "
 
@@ -37,14 +37,14 @@ AbstractDojoTest >> keyQuote [
 	^ keyQuote
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #private }
 AbstractDojoTest >> keyQuote: key [
 	" some implementations optimize the output by avoiding unnecessary quotation marks "
 
 	^ self keyQuote , key, self keyQuote
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 AbstractDojoTest >> renderContext [
 
 	| renderContext |
@@ -53,7 +53,7 @@ AbstractDojoTest >> renderContext [
 	^ renderContext
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #private }
 AbstractDojoTest >> scriptsAdddedBy: aBlock do: scriptBlock [
 	" evaluate scriptBlock with all scripts added by the aBlock "
 

@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #private }
 DojoMarkupTest >> assert: aBlock gives: aString [ 
 
 	super 
@@ -16,7 +16,7 @@ DojoMarkupTest >> assert: aBlock gives: aString [
 		gives: aString.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoMarkupTest >> testConfiguration [
 
 	self 
@@ -32,7 +32,7 @@ DojoMarkupTest >> testConfiguration [
 		gives: '<div dojoType="dijit.form.HorizontalSlider" minimum="10" maximum="20"></div>'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoMarkupTest >> testDropDownButton [
 
 	self
@@ -40,7 +40,7 @@ DojoMarkupTest >> testDropDownButton [
 		gives: '<div dojoType="dijit.form.DropDownButton"></div>'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoMarkupTest >> testFunction [
 
 	self 
@@ -55,7 +55,7 @@ DojoMarkupTest >> testFunction [
 		gives: '<div dojoType="dijit.ColorPalette" onChange="alert(this)"></div>'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoMarkupTest >> testTextArea [
 
 	self

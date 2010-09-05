@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoNodeListTest >> testNewNodeList [
 
 	self 
@@ -12,7 +12,7 @@ DojoNodeListTest >> testNewNodeList [
 		equals: 'new dojo.NodeList(dojo.byId("foo"))'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoNodeListTest >> testQueryAt [
 
 	self 
@@ -20,7 +20,7 @@ DojoNodeListTest >> testQueryAt [
 		equals: Dojo functionName , '.query("h2").at(0)'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoNodeListTest >> testQueryFirst [
 
 	self 
@@ -28,7 +28,7 @@ DojoNodeListTest >> testQueryFirst [
 		equals: Dojo functionName , '.query("h2").first()'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoNodeListTest >> testQueryLast [
 
 	self 
@@ -36,7 +36,7 @@ DojoNodeListTest >> testQueryLast [
 		equals: Dojo functionName , '.query("h2").last()'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoNodeListTest >> testQueryLength [
 
 	self 

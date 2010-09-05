@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testAsCollection [
 
 	| translator values id point dataSep pointSep javascriptString |
@@ -24,7 +24,7 @@ DojoCallbackTranslationTest >> testAsCollection [
 	] on: DojoError do: [: ex | self assert: false description: ex description ].
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testAsDictionary [
 
 	| translator values id point dataSep pointSep javascriptString |
@@ -44,7 +44,7 @@ DojoCallbackTranslationTest >> testAsDictionary [
 	] on: DojoError do: [: ex | self assert: false description: ex description ].
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testCustomJavascript [
 
 	| translator |
@@ -53,7 +53,7 @@ DojoCallbackTranslationTest >> testCustomJavascript [
 		equals: 'encodeURI(String(event))'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testEmptyPassengerArraySmalltalk [
 
 	| translator values valueArray |
@@ -65,7 +65,7 @@ DojoCallbackTranslationTest >> testEmptyPassengerArraySmalltalk [
 	self assert: (valueArray isEmpty)
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testNonArgumentExpressionJavascript [
 
 	| translator |
@@ -74,7 +74,7 @@ DojoCallbackTranslationTest >> testNonArgumentExpressionJavascript [
 		equals: 'String(event.data)'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testPassengerArraySmalltalk [
 
 	| translator renderContext values passenger1 id1 passenger2 id2 valueArray |
@@ -89,7 +89,7 @@ DojoCallbackTranslationTest >> testPassengerArraySmalltalk [
 	self assert: (valueArray asArray = (Array with: passenger1 with: passenger2))
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testPassengerJavascript [
 
 	| translator |
@@ -98,7 +98,7 @@ DojoCallbackTranslationTest >> testPassengerJavascript [
 		equals: 'event.target.id'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testPassengerSmalltalk [
 
 	| translator renderContext passenger id values |
@@ -110,7 +110,7 @@ DojoCallbackTranslationTest >> testPassengerSmalltalk [
 	self assert: ( values at: #id ifAbsent: [ nil ]) == passenger.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testPointJavascript [
 
 	| translator |
@@ -119,7 +119,7 @@ DojoCallbackTranslationTest >> testPointJavascript [
 		equals: 'event.layerX+"', (String with: translator pointSeparator), '"+event.layerY'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testPointSmalltalk [
 
 	| translator values |
@@ -129,7 +129,7 @@ DojoCallbackTranslationTest >> testPointSmalltalk [
 	self assert: ( values at: #eventLayer ifAbsent: [ nil ]) = ( 1 @ 2 ).
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testStringJavascript [
 
 	| translator |
@@ -138,7 +138,7 @@ DojoCallbackTranslationTest >> testStringJavascript [
 		equals: 'String(event.target.id)'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testStringSmalltalk [
 
 	| translator values string |
@@ -148,7 +148,7 @@ DojoCallbackTranslationTest >> testStringSmalltalk [
 	self assert: ( values at: #message ifAbsent: [ nil ]) = string.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoCallbackTranslationTest >> testUnknownType [
 
 	| translator |
@@ -161,7 +161,7 @@ DojoCallbackTranslationTest >> testUnknownType [
 	] on: DojoError do: [: ex | ].
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #private }
 DojoCallbackTranslationTest >> translatorFor: specifications [ 
 
 	^ DojoCallbackTranslator specifications: specifications

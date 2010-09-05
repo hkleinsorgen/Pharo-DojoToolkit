@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoQueryTest >> assert: query equalsQuery: queryString [
 
 	self 
@@ -12,18 +12,18 @@ DojoQueryTest >> assert: query equalsQuery: queryString [
 		equals: Dojo functionName , '.query(', queryString, ')'
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoQueryTest >> query [
 
 	^ self dojo query
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoQueryTest >> query: anObject [
 	^ self query with: anObject
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoQueryTest >> testElementByAttribute [
 
 	self 
@@ -43,7 +43,7 @@ DojoQueryTest >> testElementByAttribute [
 		equalsQuery: '"a[href*=\"seaside\"]"'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoQueryTest >> testElementById [
 
 	self 
@@ -55,7 +55,7 @@ DojoQueryTest >> testElementById [
 		equalsQuery: '"#id42"'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 DojoQueryTest >> testElementByName [
 
 	self 

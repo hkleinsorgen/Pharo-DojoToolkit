@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoConstructableObjectTest >> testConstructorWithProperty [
 
 	self 
@@ -12,7 +12,7 @@ DojoConstructableObjectTest >> testConstructorWithProperty [
 		equals: 'new ', DojoConstructableTestObject functionName, '({', (self keyQuote: 'testString'), ':"foo"})'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoConstructableObjectTest >> testEmptyConstructor [
 
 	self 
@@ -20,7 +20,7 @@ DojoConstructableObjectTest >> testEmptyConstructor [
 		equals: 'new ', DojoConstructableTestObject functionName, '({})'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoConstructableObjectTest >> testRequire [
 	" assert that a 'require:'-statement has been added for the object "
 

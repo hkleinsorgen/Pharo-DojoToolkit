@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoEventTest >> testConnectById [
 
 	self 
@@ -16,7 +16,7 @@ DojoEventTest >> testConnectById [
 		equals: 'dojo.connect(dojo.byId("id42"),"tested","testFunction")'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoEventTest >> testConnectQuery [
 
 	self 
@@ -24,7 +24,7 @@ DojoEventTest >> testConnectQuery [
 		equals: 'dojo.query("#id42").connect("tested","testFunction")'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoEventTest >> testOnClick [
 
 	self 

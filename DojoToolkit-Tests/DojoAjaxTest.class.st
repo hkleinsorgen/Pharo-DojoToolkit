@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoAjaxTest >> testGetTimeout [
 
 	self 
@@ -12,7 +12,7 @@ DojoAjaxTest >> testGetTimeout [
 		equals: 'dojo.xhrGet({', (self keyQuote: 'timeout'), ':1000})'.
 ]
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #tests }
 DojoAjaxTest >> testLoad [
 
 	self 
