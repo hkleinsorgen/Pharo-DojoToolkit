@@ -417,19 +417,19 @@ DojoNodeQuery >> tree [
 { #category : #'*DojoToolkit-Widgets-generated' }
 DojoNodeQuery >> treeDndContainer [
 
-	^ self create: DijitDndContainer
+	^ self create: DijitTreeDndContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
 DojoNodeQuery >> treeDndSelector [
 
-	^ self create: DijitDndSelector
+	^ self create: DijitTreeDndSelector
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
 DojoNodeQuery >> treeDndSource [
 
-	^ self create: DijitDndSource
+	^ self create: DijitTreeDndSource
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
