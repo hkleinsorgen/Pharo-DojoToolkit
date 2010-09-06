@@ -208,9 +208,9 @@ ConfigurationOfDojoToolkit >> version110: spec [
 		spec timestamp: '06/09/2010 23:13'.
 		
 		spec 
-			package: 'DojoToolkit-Core'with: 'DojoToolkit-Core-hkl.3';
+			package: 'DojoToolkit-Core'with: 'DojoToolkit-Core-hkl.4';
 			package: 'DojoToolkit-Themes' with: 'DojoToolkit-Themes-hkl.2';
-			package: 'DojoToolkit-DragDrop' with: 'DojoToolkit-DragDrop-hkl.2';
+			package: 'DojoToolkit-DragDrop' with: 'DojoToolkit-DragDrop-hkl.3';
 			package: 'DojoToolkit-Data' with: 'DojoToolkit-Data-hkl.2';
 			package: 'DojoToolkit-UI' with: 'DojoToolkit-UI-hkl.3';
 			package: 'DojoToolkit-Objects' with: 'DojoToolkit-Objects-hkl.3';
