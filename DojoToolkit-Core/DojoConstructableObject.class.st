@@ -32,9 +32,9 @@ DojoConstructableObject >> eventAt: aKey put: aHandler [
 
 { #category : #private }
 DojoConstructableObject >> isNewObject [
-	" true if this object has been created with 'new' "
+	" true if this object is new, not a part of a statement " 
 
-	^ self owner notNil and: [ self owner constructsObjects ]
+	^ self owner isNil or: [ self owner constructsObjects ]
 ]
 
 { #category : #printing }

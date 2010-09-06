@@ -14,6 +14,9 @@ Class {
 	#classVars : [
 		'RegisteredTranslators'
 	],
+	#classInstVars : [
+		'jsonConverter'
+	],
 	#category : 'DojoToolkit-Core'
 }
 
@@ -29,6 +32,20 @@ DojoCallbackTranslator class >> argumentTranslator [
 DojoCallbackTranslator class >> classMethodsChanged [
 
 	RegisteredTranslators := nil
+]
+
+{ #category : '*DojoToolkit-Core' }
+DojoCallbackTranslator class >> jsonConverter [
+	" a class that supports unamrshaling JSON strings - must understand #readFrom: "
+
+	^ jsonConverter
+]
+
+{ #category : '*DojoToolkit-Core' }
+DojoCallbackTranslator class >> jsonConverter: aConverter [
+	" a class that supports unamrshaling JSON strings - must understand #readFrom: "
+
+	jsonConverter := aConverter
 ]
 
 { #category : '*DojoToolkit-Core' }
@@ -155,7 +172,10 @@ DojoCallbackTranslator >> javascriptBlocks [
 { #category : #private }
 DojoCallbackTranslator >> jsonConverter [
 
-	^ Json
+	| jsonConverter |
+	jsonConverter := self class jsonConverter.
+	jsonConverter isNil ifTrue: [ DojoError raiseSignal: 'No JSON converter configured' ].
+	^ jsonConverter
 ]
 
 { #category : #private }
@@ -237,7 +257,7 @@ DojoCallbackTranslator >> translatedArrayFrom: string renderContext: renderConte
 ]
 
 { #category : #'translation-smalltalk' }
-DojoCallbackTranslator >> translatedJsonNFrom: string [ 
+DojoCallbackTranslator >> translatedJsonFrom: string [ 
 
 	^ self jsonConverter readFrom: string readStream
 ]
@@ -270,7 +290,7 @@ DojoCallbackTranslator >> translationBlocks [
 				at: #string put: [: string : renderContext | self translateStringFrom: string ];
 				at: #point put: [: string : renderContext | self translatedPointFrom: string ];
 				at: #passenger put: [: string : renderContext | self translatedPassengerFrom: string renderContext: renderContext ];
-				at: #json put: [: string : renderContext | self translatedJsonNFrom: string  ].
+				at: #json put: [: string : renderContext | self translatedJsonFrom: string  ].
 			translationBlocks copy keysAndValuesDo: [ : key : block |
 				translationBlocks  at: (key, 'Array') asSymbol put: [ : string : renderContext | self translatedArrayFrom: string renderContext: renderContext  with: block ]
 			].

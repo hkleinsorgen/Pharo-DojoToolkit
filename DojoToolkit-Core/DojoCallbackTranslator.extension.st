@@ -15,6 +15,20 @@ DojoCallbackTranslator classSide >> classMethodsChanged [
 ]
 
 { #category : '*DojoToolkit-Core' }
+DojoCallbackTranslator classSide >> jsonConverter [
+	" a class that supports unamrshaling JSON strings - must understand #readFrom: "
+
+	^ jsonConverter
+]
+
+{ #category : '*DojoToolkit-Core' }
+DojoCallbackTranslator classSide >> jsonConverter: aConverter [
+	" a class that supports unamrshaling JSON strings - must understand #readFrom: "
+
+	jsonConverter := aConverter
+]
+
+{ #category : '*DojoToolkit-Core' }
 DojoCallbackTranslator classSide >> registeredTranslatorAt: aName ifAbsentPut: translatorBlock [
 	" returns a registered translator. "
 
