@@ -33,11 +33,47 @@ DojoMarkupTest >> testConfiguration [
 ]
 
 { #category : #tests }
+DojoMarkupTest >> testDragItem [
+
+	self
+		assert: [ :html | html listItem beDojoDragItem ]
+		gives: '<li class="dojoDndItem"></li>'.
+
+	self
+		assert: [ :html | html listItem beDojoDragItemOfType: 'milkshake' ]
+		gives: '<li class="dojoDndItem" dndType="milkshake"></li>'.
+]
+
+{ #category : #tests }
+DojoMarkupTest >> testDragSource [
+
+	self
+		assert: [ :html | html unorderedList beDojoDragSource ]
+		gives: '<ul dojoType="dojo.dnd.Source" class="container"></ul>'.
+
+	self
+		assert: [ :html | html unorderedList beDojoDragSourceForType: #('stuff' 'misc') ]
+		gives: '<ul dojoType="dojo.dnd.Source" class="container" accept="stuff,misc"></ul>'.
+]
+
+{ #category : #tests }
 DojoMarkupTest >> testDropDownButton [
 
 	self
 		assert: [ :html | html dojoDropDownButton ]
 		gives: '<div dojoType="dijit.form.DropDownButton"></div>'.
+]
+
+{ #category : #tests }
+DojoMarkupTest >> testDroptarget [
+
+	self
+		assert: [ :html | html orderedList beDojoDropTarget ]
+		gives: '<ol dojoType="dojo.dnd.Target" class="container"></ol>'.
+
+	self
+		assert: [ :html | html orderedList beDojoDropTargetForType: 'stuff' ]
+		gives: '<ol dojoType="dojo.dnd.Target" class="container" accept="stuff"></ol>'.
 ]
 
 { #category : #tests }
