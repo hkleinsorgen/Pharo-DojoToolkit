@@ -120,6 +120,43 @@ ConfigurationOfDojoToolkit >> baseline100: spec [
 
 ]
 
+{ #category : #baselines }
+ConfigurationOfDojoToolkit >> baseline110: spec [ 
+	<version: '1.1-baseline'>
+	
+	spec for: #common do: [
+		spec blessing: #baseline.
+		spec repository: 'http://www.squeaksource.com/DojoToolkit'.	
+		spec 
+			package: 'DojoToolkit-Core';
+			package: 'DojoToolkit-Themes' with: [ spec requires: 'DojoToolkit-Core'];
+			package: 'DojoToolkit-UI' with: [ spec requires: 'DojoToolkit-Core'];
+			package: 'DojoToolkit-DragDrop' with: [ spec requires: 'DojoToolkit-Core'];
+			package: 'DojoToolkit-Data' with: [ spec requires: 'DojoToolkit-Core'];
+			package: 'DojoToolkit-Objects' with: [ spec requires: 'DojoToolkit-Core'];
+			package: 'DojoToolkit-Widgets' with: [ spec requires: 'DojoToolkit-UI'];
+			package: 'DojoToolkit-Tests'  with: [ spec requires: 'DojoToolkit-Widgets'];
+			package: 'DojoToolkit-Demo'  with: [ spec requires: 
+				#('DojoToolkit-Widgets' 'DojoToolkit-DragDrop' 'DojoToolkit-Objects')].
+		spec
+			group: 'default' with: #('Core' 'Demo');
+			group: 'Core' with: #(
+				'DojoToolkit-Core'
+				'DojoToolkit-Themes'
+				'DojoToolkit-UI'
+				'DojoToolkit-DragDrop'
+				'DojoToolkit-Data'
+				'DojoToolkit-Objects'
+				'DojoToolkit-Widgets'
+				);
+			group: 'Demo' with: #(
+				'DojoToolkit-Demo' 
+			);
+			group: 'Tests' with: #('DojoToolkit-Tests'). 
+		]
+
+]
+
 { #category : #accessing }
 ConfigurationOfDojoToolkit >> project [
 
@@ -155,6 +192,31 @@ ConfigurationOfDojoToolkit >> version100: spec [
 				spec 
 					file: 'JSON-hjh.34';
 					repository: 'http://www.squeaksource.com/JSON' ].
+
+	].
+
+]
+
+{ #category : #baselines }
+ConfigurationOfDojoToolkit >> version110: spec [
+	<version: '1.1' imports: #('1.1-baseline' )>
+
+	spec for: #common do: [
+		spec blessing: #development.
+		spec description: 'ongoing development'.
+		spec author: 'hkl'.
+		spec timestamp: '06/09/2010 23:13'.
+		
+		spec 
+			package: 'DojoToolkit-Core'with: 'DojoToolkit-Core-hkl.3';
+			package: 'DojoToolkit-Themes' with: 'DojoToolkit-Themes-hkl.2';
+			package: 'DojoToolkit-DragDrop' with: 'DojoToolkit-DragDrop-hkl.2';
+			package: 'DojoToolkit-Data' with: 'DojoToolkit-Data-hkl.2';
+			package: 'DojoToolkit-UI' with: 'DojoToolkit-UI-hkl.3';
+			package: 'DojoToolkit-Objects' with: 'DojoToolkit-Objects-hkl.3';
+			package: 'DojoToolkit-Widgets' with: 'DojoToolkit-Widgets-hkl.3';
+			package: 'DojoToolkit-Tests' with: 'DojoToolkit-Tests-hkl.3';
+			package: 'DojoToolkit-Demo' with: 'DojoToolkit-Demo-hkl.3'
 
 	].
 
