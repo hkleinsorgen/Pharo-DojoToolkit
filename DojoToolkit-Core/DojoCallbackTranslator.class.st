@@ -174,7 +174,7 @@ DojoCallbackTranslator >> jsonConverter [
 
 	| jsonConverter |
 	jsonConverter := self class jsonConverter.
-	jsonConverter isNil ifTrue: [ DojoError raiseSignal: 'No JSON converter configured' ].
+	jsonConverter isNil ifTrue: [ DojoError signal: 'No JSON converter configured' ].
 	^ jsonConverter
 ]
 
