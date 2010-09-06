@@ -4,7 +4,7 @@ Extension { #name : #DojoDemoComponent }
 DojoDemoComponent classSide >> initialize [
 
 	| app |
-	app := self registerAsApplication: 'examples/Dojo'.
+	app := WAAdmin register: self asApplicationAt: 'examples/Dojo'.
 	app addLibrary: DojoDemoLibrary.
 	app addLibrary: DojoGoogleLibrary.
 	app preferenceAt: #scriptGeneratorClass put: DojoScriptGenerator.

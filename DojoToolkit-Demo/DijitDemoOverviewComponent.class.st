@@ -75,7 +75,6 @@ DijitDemoOverviewComponent >> renderTextAreaProgrammaticallyOn: html [
 
 	html paragraph: [
 		html div 
-			style: 'width: 400px';
 			script: html dojoUI new textarea;
 			with: 'Enter more text.'.
 	].
@@ -86,7 +85,6 @@ DijitDemoOverviewComponent >> renderTextAreaWithMarkupOn: html [
 
 	html paragraph: [
 		html dojoTextarea
-			style: 'width: 400px';
 			with: 'Enter more text.'
 	].
 ]

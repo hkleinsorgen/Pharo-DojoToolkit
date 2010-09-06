@@ -77,7 +77,7 @@ DijitDemoTreeComponent >> jsonTreeWithCallbacks: callbacks [
 	tree at: 'label' put: 'label'.
 	tree at: 'identifier' put: 'id'.
 	tree at: 'items' put: items.
-	^ Json render: tree
+	^ tree asJson
 ]
 
 { #category : #rendering }

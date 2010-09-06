@@ -57,7 +57,7 @@ DojoDemoAjaxComponent >> renderErrorOn: html [
 	html submitButton 
 		onClick: ( html dojo ajax 
 			script: [: s | s << (( s dojo query: #testArea ) 
-				innerHTML: 'No error?') ] 
+				innerHTML: 'No error, although one was expected') ] 
 			errorScript: [ : s : error | 
 				s << ((html dojo query: #testArea )
 					 innerHTML: error ) ];

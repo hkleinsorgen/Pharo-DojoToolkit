@@ -13,7 +13,7 @@ Class {
 DojoDemoComponent class >> initialize [
 
 	| app |
-	app := self registerAsApplication: 'examples/Dojo'.
+	app := WAAdmin register: self asApplicationAt: 'examples/Dojo'.
 	app addLibrary: DojoDemoLibrary.
 	app addLibrary: DojoGoogleLibrary.
 	app preferenceAt: #scriptGeneratorClass put: DojoScriptGenerator.
@@ -74,20 +74,22 @@ DojoDemoComponent >> initialize [
 { #category : #rendering }
 DojoDemoComponent >> renderContentOn: html [ 
 
-	( html div )
+	html div
 		class: 'canvas';
 		with: 
-			[	( html div )
-					class: 'navigation';
+			[	html div class: 'content';
 					with: 
-						[	self renderNavigationOn: html.
-							( html div ) class: 'theme';
-								with: [ self renderThemeSelectorOn: html ]
-						].
-				( html div )
-					class: 'demo';
-					with: [ demoComponent renderOn: html ]
-			].
+						[	html div
+								class: 'navigation';
+								with: 
+									[	self renderNavigationOn: html.
+										html div: [ self renderThemeSelectorOn: html ]
+									].
+							html div
+								class: 'demo';
+								with: [ demoComponent renderOn: html ]
+						]
+		].
 ]
 
 { #category : #rendering }
@@ -97,29 +99,20 @@ DojoDemoComponent >> renderNavigationOn: html [
 	cssClass := 'navigation'.
 	self availableDemos do: 
 		[: group |
-			html heading
-				class: cssClass;
+			html heading class: cssClass;
 				level2;
 				with: group key.
 			html unorderedList class: cssClass;
 				with: 
 					[	group value do: 
 							[: component |
-								html listItem
-									class: cssClass;
+								html listItem class: cssClass;
 									with: 
-										[	html anchor
-												class: cssClass;
+										[	html anchor class: ( component = demoComponent 
+															ifTrue: [ 'selection' ]
+															ifFalse: [ cssClass ]);
 												callback: [ demoComponent := component ];
-												with: 
-													[	component = demoComponent 
-															ifTrue: 
-															[	html span
-																	class: 'selection';
-																	with: component title
-															]
-															ifFalse: [ component title renderOn: html ]
-													]
+												with: [ component title renderOn: html ]
 										]
 							]
 					]
