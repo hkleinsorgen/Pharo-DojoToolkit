@@ -45,11 +45,14 @@ DojoAjax >> append: aRenderable [
 	self render: aRenderable applyResponseWith: #append
 ]
 
-{ #category : #private }
+{ #category : #'callbacks - private' }
 DojoAjax >> applyResponseWith: aNodeListFunction [ 
 	" call the node list function on the reponse "
 
-	^ (( self query call: aNodeListFunction with: ( JSStream on: 'response' )) return: ( JSStream on: 'response' )) asFunction: #( #response #io )
+	| load parse |
+	load := self query copy call: aNodeListFunction with: ( JSStream on: 'response' ).
+	parse := self query nodeId ifNotNil: [: nodeId | self dojo parse: nodeId ] ifNil: [ self dojo parse ].
+	^ ( load , parse return: ( JSStream on: 'response' )) asFunction: #( #response #io )
 ]
 
 { #category : #accessing }
@@ -111,6 +114,15 @@ DojoAjax >> content [
 	" the objects passed to the reciever (aka Seaside) "
 
 	^ self options at: 'content' ifAbsentPut: [ GRSmallDictionary new ]
+]
+
+{ #category : #private }
+DojoAjax >> createDocumentOn: aStream [ 
+
+	| document |
+	document := WAHtmlDocument on: aStream codec: self requestContext codec.
+	document scriptGenerator: DojoScriptGenerator new.
+	^ document
 ]
 
 { #category : #'callbacks - private' }
@@ -288,6 +300,7 @@ DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith:
 	If an error occurs, the error script will be evaluated (with 'error' and 'io' as arguments) "
 
 	self require: self packageNodeListManipulate.
+	self require: self packageParser.
 	self handleAsText.
 	self onLoad: ( self applyResponseWith: aNodeListFunction ).
 	errorScriptBlock notNil 
@@ -298,6 +311,23 @@ DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith:
 				contentType: self application contentType.
 			self render: aRenderable on: response stream
 		].
+]
+
+{ #category : #utilities }
+DojoAjax >> render: aRenderable on: aStream [ 
+	"Render aRenderable on aStream."
+
+	| document |
+	document := self createDocumentOn: aStream.
+	self renderContext 
+		document: document
+		during: 
+		[	
+			( self rendererClass context: self renderContext )
+				render: aRenderable;
+				flush
+		].
+	document scriptGenerator closeOn: document.
 ]
 
 { #category : #callbacks }
@@ -330,6 +360,24 @@ DojoAjax >> script: aBlock errorScript: errorScriptBlock [
 				contentType: self application contentType.
 			self script: aBlock on: response stream.
 		].
+]
+
+{ #category : #utilities }
+DojoAjax >> script: aBlock on: aStream [ 
+	"Evaluate aBlock and pass in a script object that is subsequently written to aStream."
+
+	| script document |
+	document := self createDocumentOn: aStream.
+	self renderContext 
+		document: document
+		during: 
+		[	script := ( JSScript context: self renderContext )
+					rendererClass: self rendererClass;
+					yourself.
+			aBlock value: script.
+			script addAll: document loadScripts
+		].
+	script javascriptOn: aStream.
 ]
 
 { #category : #options }

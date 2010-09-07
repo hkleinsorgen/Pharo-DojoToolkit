@@ -7,6 +7,12 @@ WAScriptGenerator >> addDojoGlobalScript: aScript [
 ]
 
 { #category : #'*DojoToolkit-Core' }
+WAScriptGenerator >> addDojoRequiredPackage: aPackageName [
+
+	self raiseWrongDojoScriptGenerator.
+]
+
+{ #category : #'*DojoToolkit-Core' }
 WAScriptGenerator >> dojoConfigurationScript: aScript [
 
 	self raiseWrongDojoScriptGenerator.

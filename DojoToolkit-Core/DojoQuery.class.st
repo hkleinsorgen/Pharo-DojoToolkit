@@ -118,6 +118,16 @@ DojoQuery >> id: aString [
 	^ self queryString: '#', aString greaseString
 ]
 
+{ #category : #accessing }
+DojoQuery >> nodeId [
+
+	| query |
+	query := self arguments first.
+	^ (query notEmpty and: [ query first = $# ])
+		ifTrue: [ query copyFrom: 2 to: query size ]
+		ifFalse: [ nil ]
+]
+
 { #category : #convenience }
 DojoQuery >> query: anObject [
 	"Convenience method to populate the query "

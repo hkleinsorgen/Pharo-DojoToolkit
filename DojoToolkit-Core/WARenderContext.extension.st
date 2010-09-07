@@ -13,9 +13,3 @@ WARenderContext >> dojoConfiguration [
 			config
 		]
 ]
-
-{ #category : '*DojoToolkit-Core' }
-WARenderContext >> dojoRequiredPackages [
-
-	^ self properties at: #dojoRequiredPackages ifAbsentPut: [ OrderedCollection  new ]
-]

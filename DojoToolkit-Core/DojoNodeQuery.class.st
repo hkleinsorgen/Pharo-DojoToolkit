@@ -69,6 +69,13 @@ DojoNodeQuery >> connectEvent: eventName method: functionOrName [
 	self subclassResponsibility
 ]
 
+{ #category : #accessing }
+DojoNodeQuery >> nodeId [
+	" id of 'the' node, or nil if not applicable "
+
+	^ nil
+]
+
 { #category : #private }
 DojoNodeQuery >> setArguments: anArray [
 	" Arguments passed to the query function "

@@ -162,17 +162,18 @@ DojoObject >> packageNodeListTraverse [
 	^ 'dojo.NodeList-traverse'
 ]
 
+{ #category : #'package system-convencience' }
+DojoObject >> packageParser [
+	" Markup parser "
+
+	^ 'dojo.parser'
+]
+
 { #category : #'package system' }
 DojoObject >> require: aString [
 	"Loads a Dojo module, by name."
 
-	| dojoRequiredPackages |
-	dojoRequiredPackages := self renderContext dojoRequiredPackages.
-	(dojoRequiredPackages includes: aString)
-		ifFalse: [ 
-			dojoRequiredPackages add: aString.
-			self renderContext document addDojoGlobalScript: (self dojo call: 'require' with: aString)
-		].
+	self renderContext document addDojoRequiredPackage: aString
 ]
 
 { #category : #'package system' }

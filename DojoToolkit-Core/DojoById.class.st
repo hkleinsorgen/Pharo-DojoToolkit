@@ -32,6 +32,12 @@ DojoById >> id: aString [
 	^ self setArguments: (Array with: aString )
 ]
 
+{ #category : #accessing }
+DojoById >> nodeId [
+
+	^ self arguments first
+]
+
 { #category : #events }
 DojoById >> subscribe: topic method: method [ 
 	"  Provide widget-specific analog to dojo.subscribe, except with the implicit use of this widget as the target object "

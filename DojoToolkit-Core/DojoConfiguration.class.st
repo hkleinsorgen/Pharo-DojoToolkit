@@ -69,7 +69,7 @@ DojoConfiguration >> javascriptContentOn: aStream [
 DojoConfiguration >> parseOnLoad: aBoolean [
 	"  run the parser when the page loads "
 
-	self require: 'dojo.parser'.
+	self require: self packageParser.
 	self propertyAt: 'parseOnLoad' put: aBoolean
 ]
 

@@ -6,7 +6,8 @@ Class {
 	#superclass : #WAScriptGenerator,
 	#instVars : [
 		'globalScripts',
-		'configurationScript'
+		'configurationScript',
+		'requiredPackages'
 	],
 	#category : 'DojoToolkit-Core'
 }
@@ -15,6 +16,16 @@ Class {
 DojoScriptGenerator >> addDojoGlobalScript: anObject [
 
 	self globalScripts add: anObject
+]
+
+{ #category : #accessing }
+DojoScriptGenerator >> addDojoRequiredPackage: aPackageName [ 
+
+	( self requiredPackages includes: aPackageName ) 
+		ifFalse: 
+		[	self requiredPackages add: aPackageName.
+			self addDojoGlobalScript: (( JSStream on: Dojo functionName ) call: 'require' with: aPackageName )
+		].
 ]
 
 { #category : #actions }
@@ -30,6 +41,19 @@ DojoScriptGenerator >> close: aHtmlRoot on: aDocument [
 			aDocument nextPutAll: Dojo functionName , '.addOnLoad(function(){'.
 			self writeLoadScriptsOn: aDocument.
 			aDocument nextPutAll: '});'
+		]
+		on: aDocument.
+]
+
+{ #category : #actions }
+DojoScriptGenerator >> closeOn: aDocument [ 
+
+	( self loadScripts isEmpty and: [ self globalScripts isEmpty ]) 
+		ifTrue: [ ^ self ].
+	self 
+		writeScriptTag: 
+		[	self writeGlobalScriptsOn: aDocument.
+			self writeLoadScriptsOn: aDocument
 		]
 		on: aDocument.
 ]
@@ -53,6 +77,13 @@ DojoScriptGenerator >> event: aString do: anObject on: aBrush [
 	self addLoadScript: (( Dojo new byId: aBrush ensureId ) connectEvent:  'on', aString method: (anObject asFunction: #(event)) ).
 ]
 
+{ #category : #private }
+DojoScriptGenerator >> flushScripts [
+
+	globalScripts := globalScripts species new.
+	loadScripts := loadScripts species new.
+]
+
 { #category : #accessing }
 DojoScriptGenerator >> globalScripts [
 	" global scripts that are evaluated before addOnLoad() "
@@ -62,8 +93,16 @@ DojoScriptGenerator >> globalScripts [
 
 { #category : #initialization }
 DojoScriptGenerator >> initialize [
+
 	super initialize.
-	globalScripts := OrderedCollection new
+	globalScripts := OrderedCollection new.
+	requiredPackages := Set new.
+]
+
+{ #category : #accessing }
+DojoScriptGenerator >> requiredPackages [
+
+	^ requiredPackages
 ]
 
 { #category : #private }

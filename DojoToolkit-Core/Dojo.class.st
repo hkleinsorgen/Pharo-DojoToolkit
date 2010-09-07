@@ -753,6 +753,20 @@ Dojo >> objectToQuery: map [
 	self call: 'objectToQuery' withArguments: (Array with: map)
 ]
 
+{ #category : #parser }
+Dojo >> parse [
+	" parse the page "
+
+	^ (self access: 'parser') call: 'parse'
+]
+
+{ #category : #parser }
+Dojo >> parse: aNode [
+	" parse the page "
+
+	^ (self access: 'parser') call: 'parse' withArguments: (Array with: aNode)
+]
+
 { #category : #'functions-generated' }
 Dojo >> partial: method [ 
 	"  Calling dojo.partial is the functional equivalent of calling: dojo.hitch(null, funcName, ...); "
