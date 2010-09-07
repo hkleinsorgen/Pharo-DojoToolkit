@@ -9,9 +9,11 @@ DojoMarkupTest >> assert: aBlock gives: aString [
 
 	super 
 		assert: 
-		[: html |
-			html document scriptGenerator: DojoScriptGenerator new.
-			aBlock value: html
+		[: html | | generator |
+			generator := DojoScriptGenerator new.
+			html document scriptGenerator: generator.
+			aBlock value: html.
+			generator flushScripts
 		]
 		gives: aString.
 ]
