@@ -113,6 +113,12 @@ DijitWidget >> connect: obj event: event method: method [
 	self call: 'connect' withArguments: (Array with: obj with: event with: method)
 ]
 
+{ #category : #functions }
+DijitWidget >> connectEvent: event method: method [ 
+
+	self connect: nil event: event method: method
+]
+
 { #category : #'properties-generated' }
 DijitWidget >> containerNode [
 	"  Designates where children of the source DOM node will be placed.
