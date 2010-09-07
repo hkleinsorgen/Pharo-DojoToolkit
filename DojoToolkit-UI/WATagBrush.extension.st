@@ -1,6 +1,15 @@
 Extension { #name : #WATagBrush }
 
 { #category : #'*DojoToolkit-UI' }
+WATagBrush >> dojoAttachEvent: event method: method [
+
+	| functionName |
+	functionName := 'dj_', event, '_', canvas nextId.
+	canvas document addDojoGlobalScript: (method asFunction dojoAsFunctionNamed: functionName).
+	self attributeAt: 'dojoAttachEvent' put: event, ':', functionName
+]
+
+{ #category : #'*DojoToolkit-UI' }
 WATagBrush >> dojoConfiguration: configurationBlock [ 
 	" Add configuration attributes from a configured Dojo object.
 	Avoids having to define accessors for all properties at tag level  "

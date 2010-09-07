@@ -18,9 +18,15 @@ DijitWidgetQuery >> connectEvent: eventName method: functionOrName [
 
 { #category : #query }
 DijitWidgetQuery >> id: aString [ 
-	"Select a DOM node by id "
+	" set the node id "
 
 	^ self setArguments: (Array with: aString )
+]
+
+{ #category : #accessing }
+DijitWidgetQuery >> nodeId [
+
+	^ self arguments first
 ]
 
 { #category : #subscribtions }
