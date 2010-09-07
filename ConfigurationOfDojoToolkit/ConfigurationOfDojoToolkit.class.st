@@ -205,19 +205,7 @@ ConfigurationOfDojoToolkit >> version110: spec [
 		spec blessing: #development.
 		spec description: 'ongoing development'.
 		spec author: 'hkl'.
-		spec timestamp: '06/09/2010 23:13'.
-		
-		spec 
-			package: 'DojoToolkit-Core'with: 'DojoToolkit-Core-hkl.4';
-			package: 'DojoToolkit-Themes' with: 'DojoToolkit-Themes-hkl.2';
-			package: 'DojoToolkit-DragDrop' with: 'DojoToolkit-DragDrop-hkl.3';
-			package: 'DojoToolkit-Data' with: 'DojoToolkit-Data-hkl.2';
-			package: 'DojoToolkit-UI' with: 'DojoToolkit-UI-hkl.3';
-			package: 'DojoToolkit-Objects' with: 'DojoToolkit-Objects-hkl.3';
-			package: 'DojoToolkit-Widgets' with: 'DojoToolkit-Widgets-hkl.3';
-			package: 'DojoToolkit-Tests' with: 'DojoToolkit-Tests-hkl.3';
-			package: 'DojoToolkit-Demo' with: 'DojoToolkit-Demo-hkl.3'
-
+		spec timestamp: '07/09/2010 23:01'.
 	].
 
 ]
