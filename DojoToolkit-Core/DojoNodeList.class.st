@@ -238,6 +238,15 @@ DojoNodeList >> first [
 	self call: 'first'
 ]
 
+{ #category : #functions }
+DojoNodeList >> forEach: callback [ 
+	"  see dojo.forEach().
+	The primary difference is that the acted-on array is implicitly this NodeList.
+	If you want the option to break out of the forEach loop, use every() or some() instead. "
+
+	self call: 'forEach' withArguments: (Array with: callback )
+]
+
 { #category : #'functions-generated' }
 DojoNodeList >> forEach: callback thisObj: thisObj [ 
 	"  see dojo.forEach().
@@ -253,6 +262,14 @@ DojoNodeList >> highlight: args [
 	Returns an instance of dojo.Animation "
 
 	self call: 'highlight' withArguments: (Array with: args)
+]
+
+{ #category : #functions }
+DojoNodeList >> html: content parameters: parameters [
+	"  Like innerHTML, but with additional tweaking options "
+
+	self require: self packageNodeListHtml.
+	self call: 'html' withArguments: (Array with: content with: parameters)
 ]
 
 { #category : #'functions-generated' }

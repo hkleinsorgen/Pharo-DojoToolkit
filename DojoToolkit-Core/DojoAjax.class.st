@@ -16,6 +16,12 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
+{ #category : '*DojoToolkit-Core' }
+DojoAjax class >> evalScriptType [
+
+	^ 'text/script-eval'
+]
+
 { #category : #parameters }
 DojoAjax >> addParameter: anObject [
 	"Add the request parameter anObject, a single value or an association."
@@ -46,13 +52,21 @@ DojoAjax >> append: aRenderable [
 ]
 
 { #category : #'callbacks - private' }
-DojoAjax >> applyResponseWith: aNodeListFunction [ 
-	" call the node list function on the reponse "
+DojoAjax >> applyHTMLResponseWith: aNodeListFunction [ 
+	" call the node list function on the reponse to modify the DOM.
 
-	| load parse |
-	load := self query copy call: aNodeListFunction with: ( JSStream on: 'response' ).
-	parse := self query nodeId ifNotNil: [: nodeId | self dojo parse: nodeId ] ifNil: [ self dojo parse ].
-	^ ( load , parse return: ( JSStream on: 'response' )) asFunction: #( #response #io )
+	Unlike jQuery's .load function, this won't evaluate scripts on all browsers.
+	As a workaround, DojoAjaxScriptGenerator adds scripts with a special type, 
+	which are evaluated after modifying the DOM.
+	
+	Another solution would have been to use dojox.layout.ContentPane, 
+	but this seems to be less flexible "
+
+	| applyScript loadScript |
+	applyScript := self query copy call: aNodeListFunction with: ( JSStream on: 'response' ).
+	loadScript := ( self dojo query element: 'script' attribute: 'type' value: self class evalScriptType ) 
+			forEach: (( JSStream on: 'dojo.eval(node.firstChild.nodeValue);node.attributes[0].nodeValue = "text/script"' ) asFunction: #( #node #index #nodeList )).
+	^ ( applyScript , loadScript return: ( JSStream on: 'response' )) asFunction: #( #response #io )
 ]
 
 { #category : #accessing }
@@ -114,15 +128,6 @@ DojoAjax >> content [
 	" the objects passed to the reciever (aka Seaside) "
 
 	^ self options at: 'content' ifAbsentPut: [ GRSmallDictionary new ]
-]
-
-{ #category : #private }
-DojoAjax >> createDocumentOn: aStream [ 
-
-	| document |
-	document := WAHtmlDocument on: aStream codec: self requestContext codec.
-	document scriptGenerator: DojoScriptGenerator new.
-	^ document
 ]
 
 { #category : #'callbacks - private' }
@@ -260,6 +265,22 @@ DojoAjax >> parameters [
 	^ self content
 ]
 
+{ #category : #'callbacks - private' }
+DojoAjax >> parseScript [
+	" script to parse loaded content "
+
+	| nodeId |
+	^ (self query notNil and: [ (nodeId := self query nodeId) notNil ])
+			ifTrue:[
+				" parse the replaced parts "
+				self dojo parse: nodeId
+			]
+			ifFalse: 
+			[	" parse the entire page  "
+				self dojo parse
+			].
+]
+
 { #category : #options }
 DojoAjax >> preventCache: aBoolean [
 	" A boolean value that tells dojo to append a unique query parameter to each request "
@@ -293,7 +314,7 @@ DojoAjax >> render: aRenderable applyResponseWith: aNodeListFunction [
 	self render: aRenderable errorScript: nil applyResponseWith: aNodeListFunction
 ]
 
-{ #category : #'callbacks - rendering' }
+{ #category : #accessing }
 DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith: aNodeListFunction [ 
 	"Defines a html rendering callback.
 	The nodes will be modified by applying the function to the contents returned by the request.
@@ -302,7 +323,7 @@ DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith:
 	self require: self packageNodeListManipulate.
 	self require: self packageParser.
 	self handleAsText.
-	self onLoad: ( self applyResponseWith: aNodeListFunction ).
+	self onLoad: ( self applyHTMLResponseWith: aNodeListFunction ).
 	errorScriptBlock notNil 
 		ifTrue: [ self errorScript: errorScriptBlock ].
 	self respond: 
@@ -317,12 +338,14 @@ DojoAjax >> render: aRenderable errorScript: errorScriptBlock applyResponseWith:
 DojoAjax >> render: aRenderable on: aStream [ 
 	"Render aRenderable on aStream."
 
-	| document |
-	document := self createDocumentOn: aStream.
+	| document scriptGenerator |
+	document := WAHtmlDocument on: aStream codec: self requestContext codec.
+	scriptGenerator := DojoAjaxScriptGenerator new.
+	document scriptGenerator: scriptGenerator.
 	self renderContext 
 		document: document
 		during: 
-		[	
+		[	document loadScripts add: self parseScript.
 			( self rendererClass context: self renderContext )
 				render: aRenderable;
 				flush
@@ -367,7 +390,8 @@ DojoAjax >> script: aBlock on: aStream [
 	"Evaluate aBlock and pass in a script object that is subsequently written to aStream."
 
 	| script document |
-	document := self createDocumentOn: aStream.
+	document := WAHtmlDocument on: aStream codec: self requestContext codec.
+	document scriptGenerator: DojoScriptGenerator new.
 	self renderContext 
 		document: document
 		during: 

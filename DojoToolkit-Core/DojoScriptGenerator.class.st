@@ -33,29 +33,7 @@ DojoScriptGenerator >> close: aHtmlRoot on: aDocument [
 
 	self writeConfigurationScriptOn: aDocument.
 	self writeLibraryScriptsOn: aDocument.
-	( self loadScripts isEmpty and: [ self globalScripts isEmpty ]) 
-		ifTrue: [ ^ self ].
-	self 
-		writeScriptTag: 
-		[	self writeGlobalScriptsOn: aDocument.
-			aDocument nextPutAll: Dojo functionName , '.addOnLoad(function(){'.
-			self writeLoadScriptsOn: aDocument.
-			aDocument nextPutAll: '});'
-		]
-		on: aDocument.
-]
-
-{ #category : #actions }
-DojoScriptGenerator >> closeOn: aDocument [ 
-
-	( self loadScripts isEmpty and: [ self globalScripts isEmpty ]) 
-		ifTrue: [ ^ self ].
-	self 
-		writeScriptTag: 
-		[	self writeGlobalScriptsOn: aDocument.
-			self writeLoadScriptsOn: aDocument
-		]
-		on: aDocument.
+	self writeGlobalAndLoadScriptsOn: aDocument.
 ]
 
 { #category : #accessing }
@@ -110,6 +88,25 @@ DojoScriptGenerator >> writeConfigurationScriptOn: aDocument [
 
 	( self configurationScript notNil and: [ configurationScript properties isEmpty not ]) 
 		ifTrue: [ self writeScriptTag: [ aDocument nextPutAll: self configurationScript greaseString ] on: aDocument ].
+]
+
+{ #category : #private }
+DojoScriptGenerator >> writeGlobalAndLoadScriptsOn: aDocument [ 
+
+	( self loadScripts notEmpty or: [ self globalScripts notEmpty ]) 
+		ifTrue: 
+		[	self 
+				writeScriptTag: 
+				[	self writeGlobalScriptsOn: aDocument.
+					self loadScripts notEmpty 
+						ifTrue: 
+						[	aDocument nextPutAll: Dojo functionName , '.addOnLoad(function(){'.
+							self writeLoadScriptsOn: aDocument.
+							aDocument nextPutAll: '});'
+						]
+				]
+				on: aDocument
+		].
 ]
 
 { #category : #private }
