@@ -20,13 +20,6 @@ DijitDemoCalendarComponent >> renderDemoOn: html [
 		id: 'selectedDate'
 ]
 
-{ #category : #rendering }
-DijitDemoCalendarComponent >> test: html [ 
-
-	html div id: 'calendar';
-		script: 'buh'.
-]
-
 { #category : #accessing }
 DijitDemoCalendarComponent >> title [
 

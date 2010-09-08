@@ -11,12 +11,10 @@ DojoDemoDragAndDropComponent >> renderDemoOn: html [
 		with: [
 			html heading level3; with: 'Drop cool things here'.
 			html orderedList 
-				class: 'dndContainer';
 				beDojoDragSourceForType: #('tool' 'language')
 	].
 	html heading level3; with: 'Programming languages'.
 	html orderedList 
-		class: 'dndContainer';
 		beDojoDragSourceForType: 'language';
 		with: [
 			#( 'Smalltalk' 'JavaScript' 'Java' ) do: [ : language|
@@ -27,7 +25,6 @@ DojoDemoDragAndDropComponent >> renderDemoOn: html [
 		].
 	html heading level3; with: 'Tools'.
 	html orderedList 
-		class: 'dndContainer';
 		beDojoDragSourceForType: 'tool';
 		with: [
 			#( 'Swiss army knife' 'Duct tape' 'Paper clip') do: [ : language|

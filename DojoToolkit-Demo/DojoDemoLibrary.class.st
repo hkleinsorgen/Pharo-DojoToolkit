@@ -34,7 +34,7 @@ li.dojoDndItemAnchor {
 	border-color: #DDDDDD;
 }
 
-ol.dndContainer {
+ol.container {
 	min-height: 40px;
 	border-style: solid;
 	border-width: 1px;
