@@ -1,10 +1,13 @@
+"
+Ajax POST request
+"
 Class {
 	#name : #DojoAjaxPost,
-	#superclass : #DojoAjax,
+	#superclass : #DojoAjaxRequest,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxPost class >> functionName [
 
 	^ 'xhrPost'

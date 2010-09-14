@@ -1,10 +1,13 @@
+"
+Helper object that is involved in creating  Javascript object
+"
 Class {
 	#name : #DojoConstructor,
-	#superclass : #DojoNodeQuery,
+	#superclass : #DojoAbstractQuery,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoConstructor class >> functionName [
 
 	self shouldNotImplement

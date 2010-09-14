@@ -1,10 +1,13 @@
+"
+Ajax GET request
+"
 Class {
 	#name : #DojoAjaxGet,
-	#superclass : #DojoAjax,
+	#superclass : #DojoAjaxRequest,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxGet class >> functionName [
 
 	^ 'xhrGet'

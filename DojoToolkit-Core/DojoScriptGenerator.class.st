@@ -13,6 +13,18 @@ Class {
 }
 
 { #category : #accessing }
+DojoScriptGenerator class >> evalScriptOnLoadType [
+
+	^ 'text/script-eval-onload'
+]
+
+{ #category : #accessing }
+DojoScriptGenerator class >> evalScriptType [
+
+	^ 'text/script-eval'
+]
+
+{ #category : #accessing }
 DojoScriptGenerator >> addDojoGlobalScript: anObject [
 
 	self globalScripts add: anObject
@@ -34,6 +46,16 @@ DojoScriptGenerator >> close: aHtmlRoot on: aDocument [
 	self writeConfigurationScriptOn: aDocument.
 	self writeLibraryScriptsOn: aDocument.
 	self writeGlobalAndLoadScriptsOn: aDocument.
+]
+
+{ #category : #actions }
+DojoScriptGenerator >> closeOn: aDocument [ 
+	" this is an ugly hack. see DojoAjax>> applyHTMLResponseWith: "
+
+	self globalScripts notEmpty 
+		ifTrue: [ self writeScriptTag: [ self writeGlobalScriptsOn: aDocument ] type: self class evalScriptType on: aDocument ].
+	self loadScripts notEmpty 
+		ifTrue: [ self writeScriptTag: [ self writeLoadScriptsOn: aDocument ] type: self class evalScriptOnLoadType on: aDocument ].
 ]
 
 { #category : #accessing }
@@ -120,4 +142,24 @@ DojoScriptGenerator >> writeLibraryScriptsOn: aDocument [
 	" Dojo libraries must be added in a <body> script "
 
 	self application libraries do: [: lib | lib default addDojoScriptsToDocument: aDocument ].
+]
+
+{ #category : #private }
+DojoScriptGenerator >> writeLoadScriptsOn: aDocument [
+
+	| scripts |
+	scripts := self loadScripts.
+	scripts copy do: [ : each | each dojoAddDeferredLoadScriptsTo: scripts ].
+	scripts do: [ :each | aDocument nextPutAll: each greaseString; nextPut: $; ]
+]
+
+{ #category : #private }
+DojoScriptGenerator >> writeScriptTag: aBlock type: scriptType on: aDocument [
+
+	| attributes |
+	attributes := WAHtmlAttributes new.
+	attributes at: 'type' put: scriptType.
+	aDocument openTag: 'script' attributes: attributes.
+	aBlock value.
+	aDocument closeTag: 'script'
 ]

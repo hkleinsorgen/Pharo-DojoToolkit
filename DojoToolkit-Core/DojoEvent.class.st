@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoEvent class >> functionName [
 
 	^ ''
@@ -31,7 +31,7 @@ DojoEvent >> charOrCode [
 DojoEvent >> currentTarget [
 	" the current target "
 
-	^ self access: 'currentTarget'
+	^ ( self access: 'currentTarget' ) create: DojoDomNode
 ]
 
 { #category : #initialization }
@@ -76,11 +76,32 @@ DojoEvent >> pageY [
 	^ self access: 'pageY'
 ]
 
+{ #category : #functions }
+DojoEvent >> preventDefault [
+	" revent an event's default behavior (e.g., a link from loading a new page) "
+
+	self call: 'preventDefault'
+]
+
 { #category : #properties }
 DojoEvent >> relatedTarget [
 	" For onmouseover and onmouseout, the object that the mouse pointer is moving to or out of "
 
 	^ self access: 'relatedTarget'
+]
+
+{ #category : #functions }
+DojoEvent >> stopEvent [ 
+	" The same as calling event.preventDefault() and event.stopPropagation() on some passed event "
+
+	^ self dojo stopEvent: self
+]
+
+{ #category : #functions }
+DojoEvent >> stopPropagation [ 
+	" prevent an event from triggering a parent node's event "
+
+	self call: 'stopPropagation'
 ]
 
 { #category : #properties }

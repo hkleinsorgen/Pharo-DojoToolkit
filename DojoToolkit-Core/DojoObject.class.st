@@ -10,7 +10,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'instance creation' }
 DojoObject class >> context: aRenderContext owner: anObject [ 
 
 	^ ( self context: aRenderContext )
@@ -18,7 +18,7 @@ DojoObject class >> context: aRenderContext owner: anObject [
 		yourself
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoObject class >> functionName [
 
 	^ self subclassResponsibility
@@ -79,9 +79,13 @@ DojoObject >> initializeObject [
 DojoObject >> javascriptContentOn: aStream [ 
 
 	self ownerPathOn: aStream.
-	aStream nextPutAll: self class functionName.
-	self arguments notNil 
-		ifTrue: [ JSStream encodeArguments: self arguments on: aStream ].
+	self class functionName ifNotNil: 
+		[: functionName |
+			self owner notNil 
+				ifTrue: [ aStream nextPut: $. ].
+			aStream nextPutAll: functionName.
+			self arguments ifNotNil: [: args | JSStream encodeArguments: args on: aStream ]
+		].
 ]
 
 { #category : #creation }
@@ -121,10 +125,7 @@ DojoObject >> owner: aOwner [
 DojoObject >> ownerPathOn: aStream [ 
 
 	self owner notNil 
-		ifTrue: 
-		[	aStream javascript: self owner;
-				nextPut: $.
-		].
+		ifTrue: [ aStream javascript: self owner ].
 ]
 
 { #category : #'package system-convencience' }

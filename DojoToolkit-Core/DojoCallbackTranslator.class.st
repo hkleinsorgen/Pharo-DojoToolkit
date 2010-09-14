@@ -9,7 +9,7 @@ Class {
 		'specifications',
 		'javascriptBlocks',
 		'translationBlocks',
-		'javascript'
+		'javascriptObject'
 	],
 	#classVars : [
 		'RegisteredTranslators'
@@ -20,42 +20,41 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #translators }
 DojoCallbackTranslator class >> argumentTranslator [
 	"  returns the first argument as string (#argument) "
 	<registered>
 
-	^ self registeredTranslatorAt: #argumentTranslator ifAbsentPut: [ DojoCallbackTranslator specifications: #( #( #value #string 0 nil ))].
+	^ self translatorNamed: #argumentTranslator ifAbsentPut: [ DojoCallbackTranslator specifications: #( #( #value #string 0 nil ))].
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #compiling }
 DojoCallbackTranslator class >> classMethodsChanged [
+
+	self flush
+]
+
+{ #category : #'registry - private' }
+DojoCallbackTranslator class >> flush [
 
 	RegisteredTranslators := nil
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #JSON }
 DojoCallbackTranslator class >> jsonConverter [
 	" a class that supports unamrshaling JSON strings - must understand #readFrom: "
 
 	^ jsonConverter
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #JSON }
 DojoCallbackTranslator class >> jsonConverter: aConverter [
 	" a class that supports unamrshaling JSON strings - must understand #readFrom: "
 
 	jsonConverter := aConverter
 ]
 
-{ #category : '*DojoToolkit-Core' }
-DojoCallbackTranslator class >> registeredTranslatorAt: aName ifAbsentPut: translatorBlock [
-	" returns a registered translator. "
-
-	^ self registeredTranslators at: aName ifAbsentPut: translatorBlock
-]
-
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'registry - private' }
 DojoCallbackTranslator class >> registeredTranslators [
 	" Dictionary of associations name -> translator "
 	
@@ -63,18 +62,25 @@ DojoCallbackTranslator class >> registeredTranslators [
 	^ RegisteredTranslators
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'registry - private' }
 DojoCallbackTranslator class >> registryPragmas [
 	<pragmas: #class>
 
 	^ #(registered)
 ]
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'instance creation' }
 DojoCallbackTranslator class >> specifications: anArray [ 
 
 	^ ( self new ) specifications: anArray;
 		yourself
+]
+
+{ #category : #'registry - private' }
+DojoCallbackTranslator class >> translatorNamed: aName ifAbsentPut: translatorBlock [
+	" returns a registered translator singleton "
+
+	^ self registeredTranslators at: aName ifAbsentPut: translatorBlock
 ]
 
 { #category : #private }
@@ -100,29 +106,6 @@ DojoCallbackTranslator >> asCollection: aString renderContext: aRenderContext [
 		renderContext: aRenderContext
 		addBlock: [: i : value | translatedValues at: i put: value ].
 	^ translatedValues
-]
-
-{ #category : #translation }
-DojoCallbackTranslator >> asJavascript [
-	" Returns the Javascript expression that creates the string that is added to requests "
-
-	| stream |
-	javascript isNil 
-		ifTrue: 
-		[	self specifications isEmpty 
-				ifTrue: [ DojoError signal: 'Callback translator has no specifications' ].
-			stream := JSStream new.
-			self specifications 
-				do: 
-				[: specification | | block type |
-					type := self typeFromSpecification: specification.
-					block := self javascriptBlocks at: type ifAbsent: [ self raiseUnknownType: type ].
-					block value: stream value: ( self argumentFromSpecification: specification ) value: ( self expressionFromSpecification: specification )
-				]
-				separatedBy: [ stream nextPutAll: '+"'; nextPut: self dataSeparator; nextPutAll: '"+' ].
-			javascript := stream contents
-		].
-	^ javascript
 ]
 
 { #category : #translation }
@@ -158,6 +141,7 @@ DojoCallbackTranslator >> javascriptBlocks [
 		javascriptBlocks := Dictionary new.
 		javascriptBlocks
 			at: #custom put: [ : stream : argument : expression | self writeJavascriptForArgument: argument expression: expression on: stream  ];
+			at: #boolean put: [ : stream : argument : expression | self writeJavascriptForArgument: argument expression: expression on: stream  ];
 			at: #string put: [ : stream : argument : expression | self writeJavascriptForStringArgument: argument expression: expression on: stream  ];
 			at: #point put: [ : stream : argument : expression | self writeJavascriptForPointArgument: argument expression: expression on: stream  ];
 			at: #passenger put: [ : stream : argument : expression | self writeJavascriptForArgument: argument expression: expression on: stream  ];
@@ -167,6 +151,35 @@ DojoCallbackTranslator >> javascriptBlocks [
 			].
 	].
 	^ javascriptBlocks
+]
+
+{ #category : #translation }
+DojoCallbackTranslator >> javascriptObject [
+	" Returns the Javascript expression that creates the string that is added to requests "
+
+	| stream |
+	javascriptObject isNil 
+		ifTrue: 
+		[	self specifications isEmpty 
+				ifTrue: [ DojoError signal: 'Callback translator has no specifications' ].
+			stream := JSStream new.
+			self specifications 
+				do: 
+				[: specification | | block type |
+					type := self typeFromSpecification: specification.
+					block := self javascriptBlocks at: type ifAbsent: [ self raiseUnknownType: type ].
+					block value: stream value: ( self argumentFromSpecification: specification ) value: ( self expressionFromSpecification: specification )
+				]
+				separatedBy: [ stream nextPutAll: '+"'; nextPut: self dataSeparator; nextPutAll: '"+' ].
+			javascriptObject := stream 
+		].
+	^ javascriptObject
+]
+
+{ #category : #translation }
+DojoCallbackTranslator >> javascriptOn: aStream [
+
+	self javascriptObject javascriptOn: aStream
 ]
 
 { #category : #private }
@@ -218,6 +231,12 @@ DojoCallbackTranslator >> specifications [
 DojoCallbackTranslator >> specifications: anArray [ 
 
 	specifications := anArray
+]
+
+{ #category : #'translation-smalltalk' }
+DojoCallbackTranslator >> translateBooleanFrom: string [ 
+
+	^ string = 'true'
 ]
 
 { #category : #'translation-smalltalk' }
@@ -287,6 +306,7 @@ DojoCallbackTranslator >> translationBlocks [
 		[	translationBlocks := Dictionary new.
 			translationBlocks 
 				at: #custom put: [: string : renderContext | string ];
+				at: #boolean put: [: string : renderContext | self translateBooleanFrom: string ];
 				at: #string put: [: string : renderContext | self translateStringFrom: string ];
 				at: #point put: [: string : renderContext | self translatedPointFrom: string ];
 				at: #passenger put: [: string : renderContext | self translatedPassengerFrom: string renderContext: renderContext ];

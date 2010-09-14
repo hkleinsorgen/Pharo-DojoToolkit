@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #'accessing-generated' }
 DojoAnimation class >> functionName [
 
 	^ 'dojo.Animation'

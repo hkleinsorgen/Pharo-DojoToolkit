@@ -1,3 +1,7 @@
+"
+Dojo library that returns the files from a local URI or directory
+
+"
 Class {
 	#name : #DojoLocalLibrary,
 	#superclass : #AbstractDojoLibrary,
@@ -45,25 +49,28 @@ DojoLocalLibrary >> directory: aDirectory [
 ]
 
 { #category : #accessing }
-DojoLocalLibrary >> documentForFile: aFilename [ 
+DojoLocalLibrary >> documentForFile: aFilename mimeType: mimeType [ 
 
 	| stream |
-	stream := aFilename readStream binary.
+	stream := mimeType isBinary 
+			ifTrue: [ aFilename readStream binary ]
+			ifFalse: [ (aFilename withEncoding: 'utf-8') readStream ].
 	^ [ stream upToEnd ] ensure: [ stream ]
 ]
 
 { #category : #handling }
 DojoLocalLibrary >> handle: aRequestContext [ 
 
-	| fileName |
+	| fileName mimeType |
 	fileName := self directory ifNil: [ self defaultDirectory ].
 	[ aRequestContext consumer atEnd ] whileFalse: [ fileName := fileName / aRequestContext consumer next ].
 	(fileName exists  and: [ fileName isDirectory not ])
 		ifTrue: 
-		[	aRequestContext respond: 
+		[	mimeType :=  self mimetypeForFile: fileName tail.
+			aRequestContext respond: 
 				[: response |
 					response cacheFor: self cacheDuration;
-						document: ( self documentForFile: fileName ) mimeType: ( self mimetypeForFile: fileName tail )
+						document: ( self documentForFile: fileName mimeType: mimeType ) mimeType: (mimeType)
 				]
 		]
 		ifFalse: 

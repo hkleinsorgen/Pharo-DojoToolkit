@@ -24,6 +24,7 @@ AbstractDojoLibrary >> baseURI [
 
 { #category : #accessing }
 AbstractDojoLibrary >> isCrossDomainLibrary [
+	" true if the library is loaded from a different domain "
 
 	self subclassResponsibility
 ]
@@ -50,9 +51,18 @@ AbstractDojoLibrary >> libraryName [
 		]
 ]
 
+{ #category : #accessing }
+AbstractDojoLibrary >> selectorsToInclude [
+	" the Dojo libraries must be loaded in a <body> script "
+
+	^#()
+]
+
 { #category : #processing }
 AbstractDojoLibrary >> updateRoot: anHtmlRoot [
-	" the library must be added in a <body> script "
+	" the Dojo libraries must be loaded in a <body> script, so we just add the helper library scripts "
+
+	DojoHelperLibrary default updateRoot: anHtmlRoot.
 ]
 
 { #category : #accessing }

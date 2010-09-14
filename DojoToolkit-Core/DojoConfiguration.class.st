@@ -1,10 +1,15 @@
+"
+Dojo configuration object
+
+
+"
 Class {
 	#name : #DojoConfiguration,
 	#superclass : #DojoConstructableObject,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoConfiguration class >> functionName [
 
 	^ ''

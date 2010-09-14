@@ -1,10 +1,13 @@
+"
+Ajax PUT request
+"
 Class {
 	#name : #DojoAjaxPut,
-	#superclass : #DojoAjax,
+	#superclass : #DojoAjaxRequest,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxPut class >> functionName [
 
 	^ 'xhrPut'

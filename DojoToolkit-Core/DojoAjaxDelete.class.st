@@ -1,10 +1,13 @@
+"
+Ajax DELETE request
+"
 Class {
 	#name : #DojoAjaxDelete,
-	#superclass : #DojoAjax,
+	#superclass : #DojoAjaxRequest,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoAjaxDelete class >> functionName [
 
 	^ 'xhrDelete'

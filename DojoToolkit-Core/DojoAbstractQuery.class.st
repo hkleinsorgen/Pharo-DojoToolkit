@@ -1,5 +1,5 @@
 "
-Represents a function call that returns a single node or a node list
+Represents a function call that returns a node, node list or widget
 
 Subclasses must implement the following messages:
 	events
@@ -12,7 +12,7 @@ Instance Variables:
 
 "
 Class {
-	#name : #DojoNodeQuery,
+	#name : #DojoAbstractQuery,
 	#superclass : #DojoObject,
 	#instVars : [
 		'arguments'
@@ -21,7 +21,7 @@ Class {
 }
 
 { #category : #ajax }
-DojoNodeQuery >> ajax [
+DojoAbstractQuery >> ajax [
 	" convenvience code. you should use a specific request type (get/post) if possible.
 	creates an Ajax request that can replace the node(s) with data loaded via XHR "
 
@@ -29,55 +29,63 @@ DojoNodeQuery >> ajax [
 ]
 
 { #category : #ajax }
-DojoNodeQuery >> ajaxGet [
+DojoAbstractQuery >> ajaxGet [
 	" creates an Ajax request that can replace the node(s) with data loaded via XHR "
 
 	^ self dojo ajaxGet query: self; yourself
 ]
 
 { #category : #ajax }
-DojoNodeQuery >> ajaxPost [
+DojoAbstractQuery >> ajaxPost [
 	" creates an Ajax request that can replace the node(s) with data loaded via XHR "
 
 	^ self dojo ajaxPost query: self; yourself
 ]
 
 { #category : #'*DojoToolkit-Core-generated' }
-DojoNodeQuery >> animation [
+DojoAbstractQuery >> animation [
 
 	^ self create: DojoAnimation
 ]
 
 { #category : #accessing }
-DojoNodeQuery >> arguments [
+DojoAbstractQuery >> arguments [
 	" Arguments passed to the query function "
 
 	^ arguments
 ]
 
+{ #category : #accessing }
+DojoAbstractQuery >> asNodeListQuery [
+	" convert this query into nodelist query.
+	Always returns a copy!  "
+
+	^ self nodeId ifNotNil: [: id | self dojo query id: id ] ifNil: [ DojoError signal: 'Cannot create nodelist query from ' , self printString ]
+]
+
 { #category : #events }
-DojoNodeQuery >> connectEvent: eventName context: contextObject method: functionOrName dontFix: dontFix [ 
+DojoAbstractQuery >> connectEvent: eventName context: contextObject method: functionOrName dontFix: dontFix [ 
 	"  connect the event to the node(s) returned by this query. "
 
 	self subclassResponsibility
 ]
 
 { #category : #events }
-DojoNodeQuery >> connectEvent: eventName method: functionOrName [ 
+DojoAbstractQuery >> connectEvent: eventName method: functionOrName [ 
 	"  connect the event to the node(s) returned by this query. "
 
 	self subclassResponsibility
 ]
 
 { #category : #accessing }
-DojoNodeQuery >> nodeId [
+DojoAbstractQuery >> nodeId [
 	" id of 'the' node, or nil if not applicable "
 
 	^ nil
 ]
 
 { #category : #private }
-DojoNodeQuery >> setArguments: anArray [
+DojoAbstractQuery >> setArguments: anArray [
 	" Arguments passed to the query function "
 
 	arguments := anArray

@@ -1,7 +1,7 @@
-Extension { #name : #DojoNodeQuery }
+Extension { #name : #DojoAbstractQuery }
 
 { #category : #'*DojoToolkit-Core-generated' }
-DojoNodeQuery >> animation [
+DojoAbstractQuery >> animation [
 
 	^ self create: DojoAnimation
 ]

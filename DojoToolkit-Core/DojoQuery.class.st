@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoQuery class >> functionName [
 
 	^ 'query'

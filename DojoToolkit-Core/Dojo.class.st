@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 Dojo class >> functionName [
 
 	^ 'dojo'
@@ -63,9 +63,15 @@ Dojo >> addOnWindowUnload: obj functionName: functionName [
 
 { #category : #ajax }
 Dojo >> ajax [
-	" convenvience code. you should use a specific request type (get/post) if possible "
+	" create an Ajax request with configurable HTTP method "
 
-	^ self ajaxGet
+	^ self create: DojoConfigurableAjax
+]
+
+{ #category : #ajax }
+Dojo >> ajaxDelete [
+	
+	^ self create: DojoAjaxDelete
 ]
 
 { #category : #ajax }
@@ -78,6 +84,12 @@ Dojo >> ajaxGet [
 Dojo >> ajaxPost [
 	
 	^ self create: DojoAjaxPost
+]
+
+{ #category : #ajax }
+Dojo >> ajaxPut [
+	
+	^ self create: DojoAjaxPut
 ]
 
 { #category : #animation }
@@ -321,7 +333,7 @@ Dojo >> eval: scriptFragment [
 	self call: 'eval' withArguments: (Array with: scriptFragment)
 ]
 
-{ #category : #convenience }
+{ #category : #events }
 Dojo >> event [
 	" useful in event callbacks "
 
@@ -757,6 +769,7 @@ Dojo >> objectToQuery: map [
 Dojo >> parse [
 	" parse the page "
 
+	self require: self packageParser.
 	^ (self access: 'parser') call: 'parse'
 ]
 
@@ -764,6 +777,7 @@ Dojo >> parse [
 Dojo >> parse: aNode [
 	" parse the page "
 
+	self require: self packageParser.
 	^ (self access: 'parser') call: 'parse' withArguments: (Array with: aNode)
 ]
 

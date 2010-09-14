@@ -3,11 +3,11 @@ dojo.NodeList instances provide many utilities that reflect core Dojo APIs for A
 "
 Class {
 	#name : #DojoNodeList,
-	#superclass : #DojoNodeQuery,
+	#superclass : #DojoAbstractQuery,
 	#category : 'DojoToolkit-Core'
 }
 
-{ #category : '*DojoToolkit-Core' }
+{ #category : #accessing }
 DojoNodeList class >> functionName [
 
 	^ 'NodeList'
@@ -82,6 +82,12 @@ DojoNodeList >> appendTo: query [
 	Only the DOM nodes are cloned, not any attached event handlers "
 
 	self call: 'appendTo' withArguments: (Array with: query)
+]
+
+{ #category : #accessing }
+DojoNodeList >> asNodeListQuery [
+
+	^ self copy
 ]
 
 { #category : #'functions-generated' }
