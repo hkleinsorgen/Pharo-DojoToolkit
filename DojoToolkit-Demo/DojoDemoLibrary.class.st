@@ -40,6 +40,7 @@ ol.container {
 	border-width: 1px;
 	border-color: #EEEEEE;
 	padding: 3px;
+}
 '
 ]
 
@@ -92,6 +93,10 @@ div.demo {
 	margin: 5px;
 }
 
+div.layoutContainer {
+	width: 70%;
+	height: 200px;
+}
 
 '
 ]
@@ -109,6 +114,10 @@ body {
 em {
 	font-style: normal;
 	color: #1BA6DF;
+}
+
+span.selector {
+	font-weight: bold;
 }
 
 a {
@@ -146,6 +155,13 @@ h3 {
 
 div.code {
 	background-color: #F8F8F8;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+div.embeddedCode {
+	background-color: #F8F8F8;
 	padding: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -182,7 +198,6 @@ h2.navigation {
 
 ul.navigation {
 	list-style-type: none;
-	magin: 0px;
 	padding: 0px;
 }
 

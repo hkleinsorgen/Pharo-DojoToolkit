@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #accessing }
 DojoCoreDemoComponent class >> isAbstract [
 
 	^ self = DojoCoreDemoComponent

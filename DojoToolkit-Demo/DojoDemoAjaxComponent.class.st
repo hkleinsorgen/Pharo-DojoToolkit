@@ -17,24 +17,24 @@ DojoDemoAjaxComponent >> initialize [
 { #category : #rendering }
 DojoDemoAjaxComponent >> renderAppendOn: html [ 
 
-	html submitButton 
+	html dojoButton 
 		onClick: (( html dojo query: #testArea ) ajax 
 			append: [: canvas | 
 				canvas emphasis: DateAndTime now printString ]);
-		text: 'Append HTML'.
+		with: 'Append HTML'.
 ]
 
 { #category : #rendering }
 DojoDemoAjaxComponent >> renderCallbackOn: html [ 
 
-	html submitButton 
+	html dojoButton 
 		onClick: ( html dojo ajax script: 
 			[: s |
 				numberOfCallbacks := numberOfCallbacks + 1.
 				s << (( s dojo query: #testArea ) innerHTML: 
 					'Callbacks so far: ' , numberOfCallbacks printString )
 			]);
-		text: 'Callback'
+		with: 'Callback'
 ]
 
 { #category : #rendering }
@@ -54,7 +54,7 @@ DojoDemoAjaxComponent >> renderDemoOn: html [
 DojoDemoAjaxComponent >> renderErrorOn: html [ 
 	" send the request to an URL without a request handler "
 
-	html submitButton 
+	html dojoButton 
 		onClick: ( html dojo ajax 
 			script: [: s | s << (( s dojo query: #testArea ) 
 				innerHTML: 'No error, although one was expected') ] 
@@ -62,21 +62,21 @@ DojoDemoAjaxComponent >> renderErrorOn: html [
 				s << ((html dojo query: #testArea )
 					 innerHTML: error ) ];
 			url: '/this/path/does/not/exist' );
-		text: 'Error'.
+		with: 'Error'.
 ]
 
 { #category : #rendering }
 DojoDemoAjaxComponent >> renderReplaceOn: html [ 
 
-	html submitButton 
+	html dojoButton 
 		onClick: (( html dojo query: #testArea ) ajax 
 			html: [: canvas | 
 				canvas emphasis: DateAndTime now printString ]);
-		text: 'Replace HTML'.
+		with: 'Replace HTML'.
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> renderSourceSelectors [
+DojoDemoAjaxComponent >> sourceSelectors [
 
 	^ #(	
 		renderReplaceOn:

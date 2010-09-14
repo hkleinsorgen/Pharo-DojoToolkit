@@ -7,7 +7,9 @@ Class {
 { #category : #rendering }
 DijitDemoOverviewComponent >> renderDemoOn: html [ 
 
+	self title: 'Example: Autoexpanding text area' on: html.
 	self renderTextAreaOn: html.
+	self title: 'Markup widget with callback' on: html.
 	self renderPaletteOn: html.
 ]
 
@@ -16,7 +18,7 @@ DijitDemoOverviewComponent >> renderExplanationOn: html [
 
 	html paragraph: [
 		html text: 'Widgets can be either created programmatically, or by declarative markup using additional HTML attributes: '.
-		html div class: 'code';
+		html div class: 'embeddedCode';
 			with: [ html code: [ html text: '<input '; emphasis: 'dojoType="dijit.form.TextBox"'; text: ' name="nm" value="hello world">' ]].
 		html text: 'These nodes are parsed by the '.
 		html anchor
@@ -31,36 +33,25 @@ DijitDemoOverviewComponent >> renderExplanationOn: html [
 DijitDemoOverviewComponent >> renderPaletteOn: html [ 
 
 	| colorValue |
-	html heading level3; 
-		with: 'Markup widget with callback'.
 	colorValue := 'black'.
-	html paragraph: [
-		html dojoColorPalette dojoConfiguration: [ : paletteWidget | 
-			paletteWidget 
-				palette: '3x4';
-				onChange: (( html dojo query: #palette )
-				      ajaxPost 
-				        callbackWithArgument: [: value | colorValue := value ];
-				        html: [: canvas | canvas span 
-						style: 'color: ', colorValue; 
-						with: 'Colorful']).
+	html paragraph: 
+		[	html dojoColorPalette dojoConfiguration: 
+				[: paletteWidget |
+					paletteWidget palette: '3x4';
+						onChange: (( html dojo query: #palette ) ajaxPost callbackWithArgument: [: value | colorValue := value ];
+									html: 
+										[: canvas |
+											canvas span style: 'color: ' , colorValue;
+												with: 'Colorful'
+										])
+				]
 		].
-	].
 	html paragraph id: 'palette'.
-]
-
-{ #category : #rendering }
-DijitDemoOverviewComponent >> renderSourceSelectors [
-
-	^ #( 
-		renderPaletteOn:
-	)
 ]
 
 { #category : #rendering }
 DijitDemoOverviewComponent >> renderTextAreaOn: html [ 
 
-	html heading level3; with: 'Example: Autoexpanding text area'.
 	self renderTextAreaProgrammaticallyOn: html.
 	html heading level4;
 		with: 'Programmatically'.
@@ -93,6 +84,14 @@ DijitDemoOverviewComponent >> renderTextAreaWithMarkupOn: html [
 DijitDemoOverviewComponent >> sortKey [
 
 	^'1'
+]
+
+{ #category : #rendering }
+DijitDemoOverviewComponent >> sourceSelectors [
+
+	^ #( 
+		renderPaletteOn:
+	)
 ]
 
 { #category : #accessing }

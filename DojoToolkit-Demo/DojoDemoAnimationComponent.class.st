@@ -59,7 +59,7 @@ DojoDemoAnimationComponent >> renderFadeOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAnimationComponent >> renderSourceSelectors [
+DojoDemoAnimationComponent >> sourceSelectors [
 
 	^ #(
 		renderFadeOn:

@@ -1,27 +1,25 @@
 Class {
-	#name : #DijitDemoTextValidationComponent,
+	#name : #DijitDemoInputValidationComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoTextValidationComponent >> renderDemoOn: html [ 
+DijitDemoInputValidationComponent >> renderDemoOn: html [ 
 
-	html paragraph: [
-		html dojoValidationTextBox
-			dojoConfiguration: [ : textBox |
-				textBox 
+	html dojoValidationTextBox dojoConfiguration: 
+			[: textBox |
+				textBox
 					regExp: '(\w|\s)+';
 					invalidMessage: 'Please enter only characters, digits and whitespace';
 					required: true;
-					selectOnClick: true.
+					selectOnClick: true
 			];
-			value: 'Enter something'.
-		].
+		value: 'Enter something'.
 ]
 
 { #category : #rendering }
-DijitDemoTextValidationComponent >> renderExplanationOn: html [ 
+DijitDemoInputValidationComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html .
 	html paragraph: 
@@ -29,19 +27,19 @@ DijitDemoTextValidationComponent >> renderExplanationOn: html [
 ]
 
 { #category : #accessing }
-DijitDemoTextValidationComponent >> title [
+DijitDemoInputValidationComponent >> title [
 
-	^ 'Text validation'
+	^ 'Validation'
 ]
 
 { #category : #accessing }
-DijitDemoTextValidationComponent >> url [
+DijitDemoInputValidationComponent >> url [
 
 	^ 'http://dojotoolkit.org/reference-guide/dijit/form/ValidationTextbox.htm'
 ]
 
 { #category : #accessing }
-DijitDemoTextValidationComponent >> widgetClass [
+DijitDemoInputValidationComponent >> widgetClass [
 
 	^ DijitValidationTextBox
 ]

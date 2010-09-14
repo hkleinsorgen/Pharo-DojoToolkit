@@ -5,34 +5,30 @@ Class {
 }
 
 { #category : #rendering }
-DojoDemoDragAndDropComponent >> renderDemoOn: html [
+DojoDemoDragAndDropComponent >> renderDemoOn: html [ 
 
-	html div 
-		with: [
-			html heading level3; with: 'Drop cool things here'.
-			html orderedList 
-				beDojoDragSourceForType: #('tool' 'language')
-	].
-	html heading level3; with: 'Programming languages'.
-	html orderedList 
-		beDojoDragSourceForType: 'language';
-		with: [
-			#( 'Smalltalk' 'JavaScript' 'Java' ) do: [ : language|
-				html listItem 
-					beDojoDragItemOfType: 'language';
-					with: language.
-			].
+	html div with: 
+		[	self title: 'Drop cool things here' on: html.
+			html orderedList beDojoDragSourceAccepting: #( 'tool' 'language' )
 		].
-	html heading level3; with: 'Tools'.
-	html orderedList 
-		beDojoDragSourceForType: 'tool';
-		with: [
-			#( 'Swiss army knife' 'Duct tape' 'Paper clip') do: [ : language|
-				html listItem 
-					beDojoDragItemOfType: 'tool';
-					with: language.
+	self title: 'Programming languages' on: html.
+	html orderedList beDojoDragSourceAccepting: 'language';
+		with: 
+			[	#( 'Smalltalk' 'JavaScript' 'Java' ) do: 
+					[: language |
+						html listItem beDojoDragItemOfType: 'language';
+							with: language
+					]
 			].
-		].
+	self title: 'Tools' on: html.
+	html orderedList beDojoDragSourceAccepting: 'tool';
+		with: 
+			[	#( 'Swiss army knife' 'Duct tape' 'Paper clip' ) do: 
+					[: language |
+						html listItem beDojoDragItemOfType: 'tool';
+							with: language
+					]
+			].
 ]
 
 { #category : #rendering }

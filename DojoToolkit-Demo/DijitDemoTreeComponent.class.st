@@ -38,7 +38,7 @@ DijitDemoTreeComponent >> createModelFor: html [
 	^ model
 ]
 
-{ #category : #private }
+{ #category : #data }
 DijitDemoTreeComponent >> jsonTreeItemForClass: aClass idBlock: idBlock [ 
 
 	| treeItem tooltip |
@@ -58,7 +58,7 @@ DijitDemoTreeComponent >> jsonTreeItemForClass: aClass idBlock: idBlock [
 	^ treeItem
 ]
 
-{ #category : #private }
+{ #category : #data }
 DijitDemoTreeComponent >> jsonTreeWithCallbacks: callbacks [ 
 
 	| items tree idBlock rootClass |
@@ -103,15 +103,6 @@ DijitDemoTreeComponent >> renderExplanationOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoTreeComponent >> renderSourceSelectors [
-
-	^ #(
-		createModelFor:
-		renderTreeOn:model: 
-	)
-]
-
-{ #category : #rendering }
 DijitDemoTreeComponent >> renderTreeOn: html model: model [
 	" render a tree with customized icons "
 
@@ -121,6 +112,7 @@ DijitDemoTreeComponent >> renderTreeOn: html model: model [
 	tree 
 		model: model;
 		enableDragAndDrop;
+		disableDragAndDropCopy;
 		betweenThreshold: 5;
 		overrideGetTooltip: (self treeTooltipScript asFunction: #(item));
 		overrideGetIconClass: (self treeIconScript asFunction: #(item opened));
@@ -131,12 +123,10 @@ DijitDemoTreeComponent >> renderTreeOn: html model: model [
 				translator: DojoCallbackTranslator treeNodeTranslator;
 				html: [ : canvas | canvas paragraph: [ 
 					html text: 'Clicked on '; emphasis: lastEvent ]]).
-	html div
-		id: 'tree';
-		script: tree.
+	html div script: tree.
 ]
 
-{ #category : #private }
+{ #category : #data }
 DijitDemoTreeComponent >> respondJsonTreeWithCallbacks: callbacks [ 
 
 	self requestContext respond: 
@@ -152,6 +142,15 @@ DijitDemoTreeComponent >> rootID [
 	^ 'Root'
 ]
 
+{ #category : #rendering }
+DijitDemoTreeComponent >> sourceSelectors [
+
+	^ #(
+		createModelFor:
+		renderTreeOn:model: 
+	)
+]
+
 { #category : #accessing }
 DijitDemoTreeComponent >> title [
 
@@ -161,9 +160,7 @@ DijitDemoTreeComponent >> title [
 { #category : #private }
 DijitDemoTreeComponent >> treeIconScript [
 
-	^ 'return (!item || this.model.mayHaveChildren(item)) ? 
-		(opened ? "treeOpened" : "treeClosed")
-			 : "treeLeaf"'
+	^ 'return (!item || this.model.mayHaveChildren(item)) ? (opened ? "treeOpened" : "treeClosed") : "treeLeaf"'
 ]
 
 { #category : #private }

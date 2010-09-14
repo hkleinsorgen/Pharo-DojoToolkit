@@ -11,6 +11,8 @@ DijitDemoDialogComponent >> renderDemoOn: html [
 		id: 'dialog';
 		title: 'Dojo';
 		style: 'width: 200px';
+		dojoConfiguration: [ : dialog |
+			dialog draggable: true ];
 		with: 
 			[	html text: 'Hello'.
 				html paragraph: [ 

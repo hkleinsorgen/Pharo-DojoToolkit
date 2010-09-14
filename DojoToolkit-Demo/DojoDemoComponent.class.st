@@ -9,7 +9,7 @@ Class {
 	#category : 'DojoToolkit-Demo'
 }
 
-{ #category : '*DojoToolkit-Demo' }
+{ #category : #'class initialization' }
 DojoDemoComponent class >> initialize [
 
 	| app |

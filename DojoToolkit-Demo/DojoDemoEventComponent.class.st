@@ -7,31 +7,25 @@ Class {
 { #category : #rendering }
 DojoDemoEventComponent >> renderDemoOn: html [ 
 
-	| customHandler |
-	html div: 
-		[	
-			html submitButton 
-				id: 'eventById';
-				text: 'Connected by id'.
-			html submitButton 
-				class: 'eventByQuery';
-				text: 'Connected by query (1)'.
-			html submitButton 
-				class: 'eventByQuery';
-				text: 'Connected by query (2)'.
-		].
+	html paragraph: [ 
+		html dojoButton 
+			id: 'eventById';
+			with: 'Connected by id'.
+		html dojoButton 
+			class: 'eventByQuery';
+			with: 'Connected by query (1)'.
+		html dojoButton 
+			class: 'eventByQuery';
+			with: 'Connected by query (2)'.
+	].
 
-	" custom event handler "
-	customHandler := ((html dojo query: #testArea) 
-		innerHTML: (html dojo event currentTarget access: 'value'))
-		asFunction: #(#event).
 	html document 
 		addLoadScript: ( ( html dojo byId: #eventById ) 
 			connectEvent: 'onclick' 
-			method: customHandler);
+			method: (self showMessageOn: html ));
 		addLoadScript: ( ( html dojo query: '.eventByQuery' )
 			connectEvent: 'onclick' 
-			method: customHandler).
+			method: (self showMessageOn: html )).
 	html div: [ html paragraph with: [ html emphasis id: 'testArea'; with: ' ' ]]
 ]
 
@@ -47,6 +41,13 @@ DojoDemoEventComponent >> renderExplanationOn: html [
 			with: 'Dojo queries'.
 		html text: ' to an  event handler'
 	].
+]
+
+{ #category : #rendering }
+DojoDemoEventComponent >> showMessageOn: html [ 
+	" show the label of the pressed button "
+
+	^ (( html dojo query: #testArea ) innerHTML: html dojo event currentTarget enclosingWidget button label ) asFunction: #( #event )
 ]
 
 { #category : #accessing }
