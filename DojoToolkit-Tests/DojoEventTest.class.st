@@ -25,9 +25,41 @@ DojoEventTest >> testConnectQuery [
 ]
 
 { #category : #tests }
+DojoEventTest >> testEventTarget [
+
+	self 
+		assert: (self dojo event currentTarget enclosingWidget button label)
+		equals: 'dijit.getEnclosingWidget(event.currentTarget).label'.
+]
+
+{ #category : #tests }
 DojoEventTest >> testOnClick [
 
 	self 
 		assert: ((self dojo query: #id42) onClick: ('alert(e.text)' asFunction: #(e)))
 		equals: 'dojo.query("#id42").onclick(function(e){alert(e.text)})'.
+]
+
+{ #category : #tests }
+DojoEventTest >> testPreventDefault [
+
+	self 
+		assert: (self dojo event preventDefault)
+		equals: 'event.preventDefault()'.
+]
+
+{ #category : #tests }
+DojoEventTest >> testStopEvent [ 
+
+	self 
+		assert: (self dojo event stopEvent)
+		equals: 'dojo.stopEvent(event)'.
+]
+
+{ #category : #tests }
+DojoEventTest >> testStopPropagation [
+
+	self 
+		assert: (self dojo event stopPropagation)
+		equals: 'event.stopPropagation()'.
 ]

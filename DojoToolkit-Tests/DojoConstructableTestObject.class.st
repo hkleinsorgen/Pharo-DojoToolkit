@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #accessing }
 DojoConstructableTestObject class >> functionName [
 
 	^ 'dojox.testcases.TestObject'

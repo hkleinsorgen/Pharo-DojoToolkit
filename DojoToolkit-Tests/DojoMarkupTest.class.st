@@ -54,7 +54,7 @@ DojoMarkupTest >> testDragSource [
 		gives: '<ul dojoType="dojo.dnd.Source" class="container"></ul>'.
 
 	self
-		assert: [ :html | html unorderedList beDojoDragSourceForType: #('stuff' 'misc') ]
+		assert: [ :html | html unorderedList beDojoDragSourceAccepting: #('stuff' 'misc') ]
 		gives: '<ul dojoType="dojo.dnd.Source" class="container" accept="stuff,misc"></ul>'.
 ]
 

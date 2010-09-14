@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Tests'
 }
 
-{ #category : '*DojoToolkit-Tests' }
+{ #category : #testing }
 AbstractDojoTest class >> isAbstract [
 	^ self = AbstractDojoTest
 ]

@@ -23,7 +23,7 @@ DojoQueryTest >> query: anObject [
 	^ self query with: anObject
 ]
 
-{ #category : #testing }
+{ #category : #tests }
 DojoQueryTest >> testElementByAttribute [
 
 	self 
@@ -43,7 +43,7 @@ DojoQueryTest >> testElementByAttribute [
 		equalsQuery: '"a[href*=\"seaside\"]"'.
 ]
 
-{ #category : #testing }
+{ #category : #tests }
 DojoQueryTest >> testElementById [
 
 	self 
@@ -55,7 +55,7 @@ DojoQueryTest >> testElementById [
 		equalsQuery: '"#id42"'.
 ]
 
-{ #category : #testing }
+{ #category : #tests }
 DojoQueryTest >> testElementByName [
 
 	self 
