@@ -1,7 +1,7 @@
-Extension { #name : #DojoNodeQuery }
+Extension { #name : #DojoAbstractQuery }
 
 { #category : #'*DojoToolkit-Objects-generated' }
-DojoNodeQuery >> adapterRegistry [
+DojoAbstractQuery >> adapterRegistry [
 
 	^ self create: DojoAdapterRegistry
 ]

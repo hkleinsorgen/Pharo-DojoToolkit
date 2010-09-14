@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Objects'
 }
 
-{ #category : '*DojoToolkit-Objects' }
+{ #category : #'accessing-generated' }
 DojoAdapterRegistry class >> functionName [
 
 	^ 'dojo.AdapterRegistry'
