@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitButton class >> functionName [
 
 	^ 'dijit.form.Button'

@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitDateTimeTextBox class >> functionName [
 
 	^ 'dijit.form.DateTimeTextBox'

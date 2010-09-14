@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitLayoutWidget class >> functionName [
 
 	^ 'dijit.layout.LayoutWidget'

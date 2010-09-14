@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitDialog class >> functionName [
 
 	^ 'dijit.Dialog'

@@ -46,7 +46,7 @@ WARenderCanvas >> dojoBorderContainer: aBlock [
 WARenderCanvas >> dojoButton [
 	" Dojo widget: dijit.form.Button "
 
-	^ self div dojoType: DijitButton
+	^ self button dojoType: DijitButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
@@ -298,7 +298,7 @@ WARenderCanvas >> dojoFilteringSelect: aBlock [
 WARenderCanvas >> dojoForm [
 	" Dojo widget: dijit.form.Form "
 
-	^ self div dojoType: DijitForm
+	^ (self brush: DojoWidgetFormTag new) dojoType: DijitForm
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
@@ -320,34 +320,6 @@ WARenderCanvas >> dojoFormSelectWidget: aBlock [
 	" Dojo widget: dijit.form.FormSelectWidget "
 
 	self dojoFormSelectWidget with: aBlock
-]
-
-{ #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFormValueWidget [
-	" Dojo widget: dijit.form.FormValueWidget "
-
-	^ self div dojoType: DijitFormValueWidget
-]
-
-{ #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFormValueWidget: aBlock [
-	" Dojo widget: dijit.form.FormValueWidget "
-
-	self dojoFormValueWidget with: aBlock
-]
-
-{ #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFormWidget [
-	" Dojo widget: dijit.form.FormWidget "
-
-	^ self div dojoType: DijitFormWidget
-]
-
-{ #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFormWidget: aBlock [
-	" Dojo widget: dijit.form.FormWidget "
-
-	self dojoFormWidget with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
@@ -754,6 +726,22 @@ WARenderCanvas >> dojoStackController: aBlock [
 	" Dojo widget: dijit.layout.StackController "
 
 	self dojoStackController with: aBlock
+]
+
+{ #category : #'*DojoToolkit-Widgets-generated' }
+WARenderCanvas >> dojoSubmitButton [
+	" Dojo widget: dijit.form.Button "
+	" does not use WASubmitButtonTag, because Dojo uses the contents of the <button> tag as label "
+
+	^ self button type: 'submit';
+		dojoType: DijitButton
+]
+
+{ #category : #'*DojoToolkit-Widgets-generated' }
+WARenderCanvas >> dojoSubmitButton: aBlock [
+	" Dojo widget: dijit.form.Button "
+
+	self dojoSubmitButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }

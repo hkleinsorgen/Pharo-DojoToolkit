@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitForestStoreModel class >> functionName [
 
 	^ 'dijit.tree.ForestStoreModel'

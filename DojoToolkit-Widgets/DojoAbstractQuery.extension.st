@@ -1,493 +1,487 @@
-Extension { #name : #DojoNodeQuery }
+Extension { #name : #DojoAbstractQuery }
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> accordionContainer [
+DojoAbstractQuery >> accordionContainer [
 
 	^ self create: DijitAccordionContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> accordionPane [
+DojoAbstractQuery >> accordionPane [
 
 	^ self create: DijitAccordionPane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> backgroundIframe [
+DojoAbstractQuery >> backgroundIframe [
 
 	^ self create: DijitBackgroundIframe
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> borderContainer [
+DojoAbstractQuery >> borderContainer [
 
 	^ self create: DijitBorderContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> button [
+DojoAbstractQuery >> button [
 
 	^ self create: DijitButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> calendar [
+DojoAbstractQuery >> calendar [
 
 	^ self create: DijitCalendar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> checkBox [
+DojoAbstractQuery >> checkBox [
 
 	^ self create: DijitCheckBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> checkedMenuItem [
+DojoAbstractQuery >> checkedMenuItem [
 
 	^ self create: DijitCheckedMenuItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> colorPalette [
+DojoAbstractQuery >> colorPalette [
 
 	^ self create: DijitColorPalette
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> comboBox [
+DojoAbstractQuery >> comboBox [
 
 	^ self create: DijitComboBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> comboButton [
+DojoAbstractQuery >> comboButton [
 
 	^ self create: DijitComboButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> contentPane [
+DojoAbstractQuery >> contentPane [
 
 	^ self create: DijitContentPane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> currencyTextBox [
+DojoAbstractQuery >> currencyTextBox [
 
 	^ self create: DijitCurrencyTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> dateTextBox [
+DojoAbstractQuery >> dateTextBox [
 
 	^ self create: DijitDateTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> dateTimeTextBox [
+DojoAbstractQuery >> dateTimeTextBox [
 
 	^ self create: DijitDateTimeTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> declaration [
+DojoAbstractQuery >> declaration [
 
 	^ self create: DijitDeclaration
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> dialog [
+DojoAbstractQuery >> dialog [
 
 	^ self create: DijitDialog
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> dialogUnderlay [
+DojoAbstractQuery >> dialogUnderlay [
 
 	^ self create: DijitDialogUnderlay
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> dropDownButton [
+DojoAbstractQuery >> dropDownButton [
 
 	^ self create: DijitDropDownButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> dye [
+DojoAbstractQuery >> dye [
 
 	^ self create: DijitDye
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> editor [
+DojoAbstractQuery >> editor [
 
 	^ self create: DijitEditor
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> editorRichText [
+DojoAbstractQuery >> editorRichText [
 
 	^ self create: DijitRichText
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> filteringSelect [
+DojoAbstractQuery >> filteringSelect [
 
 	^ self create: DijitFilteringSelect
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> form [
+DojoAbstractQuery >> form [
 
 	^ self create: DijitForm
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> formSelectWidget [
+DojoAbstractQuery >> formSelectWidget [
 
 	^ self create: DijitFormSelectWidget
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> formValueWidget [
-
-	^ self create: DijitFormValueWidget
-]
-
-{ #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> formWidget [
+DojoAbstractQuery >> formWidget [
 
 	^ self create: DijitFormWidget
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> horizontalRule [
+DojoAbstractQuery >> horizontalRule [
 
 	^ self create: DijitHorizontalRule
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> horizontalRuleLabels [
+DojoAbstractQuery >> horizontalRuleLabels [
 
 	^ self create: DijitHorizontalRuleLabels
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> horizontalSlider [
+DojoAbstractQuery >> horizontalSlider [
 
 	^ self create: DijitHorizontalSlider
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> inlineEditBox [
+DojoAbstractQuery >> inlineEditBox [
 
 	^ self create: DijitInlineEditBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> layoutContainer [
+DojoAbstractQuery >> layoutContainer [
 
 	^ self create: DijitLayoutContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> layoutWidget [
+DojoAbstractQuery >> layoutWidget [
 
 	^ self create: DijitLayoutWidget
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> linkPane [
+DojoAbstractQuery >> linkPane [
 
 	^ self create: DijitLinkPane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> mappedTextBox [
+DojoAbstractQuery >> mappedTextBox [
 
 	^ self create: DijitMappedTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> menu [
+DojoAbstractQuery >> menu [
 
 	^ self create: DijitMenu
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> menuBar [
+DojoAbstractQuery >> menuBar [
 
 	^ self create: DijitMenuBar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> menuBarItem [
+DojoAbstractQuery >> menuBarItem [
 
 	^ self create: DijitMenuBarItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> menuBase [
+DojoAbstractQuery >> menuBase [
 
 	^ self create: DijitMenuBase
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> menuItem [
+DojoAbstractQuery >> menuItem [
 
 	^ self create: DijitMenuItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> menuSeparator [
+DojoAbstractQuery >> menuSeparator [
 
 	^ self create: DijitMenuSeparator
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> multiSelect [
+DojoAbstractQuery >> multiSelect [
 
 	^ self create: DijitMultiSelect
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> numberSpinner [
+DojoAbstractQuery >> numberSpinner [
 
 	^ self create: DijitNumberSpinner
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> numberTextBox [
+DojoAbstractQuery >> numberTextBox [
 
 	^ self create: DijitNumberTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> popupMenuBarItem [
+DojoAbstractQuery >> popupMenuBarItem [
 
 	^ self create: DijitPopupMenuBarItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> popupMenuItem [
+DojoAbstractQuery >> popupMenuItem [
 
 	^ self create: DijitPopupMenuItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> progressBar [
+DojoAbstractQuery >> progressBar [
 
 	^ self create: DijitProgressBar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> radioButton [
+DojoAbstractQuery >> radioButton [
 
 	^ self create: DijitRadioButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> rangeBoundTextBox [
+DojoAbstractQuery >> rangeBoundTextBox [
 
 	^ self create: DijitRangeBoundTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> scrollingTabController [
+DojoAbstractQuery >> scrollingTabController [
 
 	^ self create: DijitScrollingTabController
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> select [
+DojoAbstractQuery >> select [
 
 	^ self create: DijitSelect
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> simpleTextarea [
+DojoAbstractQuery >> simpleTextarea [
 
 	^ self create: DijitSimpleTextarea
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> spinner [
+DojoAbstractQuery >> spinner [
 
 	^ self create: DijitSpinner
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> splitContainer [
+DojoAbstractQuery >> splitContainer [
 
 	^ self create: DijitSplitContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> stackContainer [
+DojoAbstractQuery >> stackContainer [
 
 	^ self create: DijitStackContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> stackController [
+DojoAbstractQuery >> stackController [
 
 	^ self create: DijitStackController
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> tabContainer [
+DojoAbstractQuery >> tabContainer [
 
 	^ self create: DijitTabContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> tabContainerBase [
+DojoAbstractQuery >> tabContainerBase [
 
 	^ self create: DijitTabContainerBase
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> tabController [
+DojoAbstractQuery >> tabController [
 
 	^ self create: DijitTabController
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> textBox [
+DojoAbstractQuery >> textBox [
 
 	^ self create: DijitTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> textarea [
+DojoAbstractQuery >> textarea [
 
 	^ self create: DijitTextarea
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> timeTextBox [
+DojoAbstractQuery >> timeTextBox [
 
 	^ self create: DijitTimeTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> titlePane [
+DojoAbstractQuery >> titlePane [
 
 	^ self create: DijitTitlePane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> toggleButton [
+DojoAbstractQuery >> toggleButton [
 
 	^ self create: DijitToggleButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> toolbar [
+DojoAbstractQuery >> toolbar [
 
 	^ self create: DijitToolbar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> toolbarSeparator [
+DojoAbstractQuery >> toolbarSeparator [
 
 	^ self create: DijitToolbarSeparator
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> tooltip [
+DojoAbstractQuery >> tooltip [
 
 	^ self create: DijitTooltip
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> tooltipDialog [
+DojoAbstractQuery >> tooltipDialog [
 
 	^ self create: DijitTooltipDialog
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> tree [
+DojoAbstractQuery >> tree [
 
 	^ self create: DijitTree
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> treeDndContainer [
+DojoAbstractQuery >> treeDndContainer [
 
 	^ self create: DijitTreeDndContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> treeDndSelector [
+DojoAbstractQuery >> treeDndSelector [
 
 	^ self create: DijitTreeDndSelector
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> treeDndSource [
+DojoAbstractQuery >> treeDndSource [
 
 	^ self create: DijitTreeDndSource
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> treeForestStoreModel [
+DojoAbstractQuery >> treeForestStoreModel [
 
 	^ self create: DijitForestStoreModel
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> treeModel [
+DojoAbstractQuery >> treeModel [
 
 	^ self create: DijitModel
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> treeStoreModel [
+DojoAbstractQuery >> treeStoreModel [
 
 	^ self create: DijitTreeStoreModel
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> typematicStop [
+DojoAbstractQuery >> typematicStop [
 
 	^ self create: DijitStop
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> validationTextBox [
+DojoAbstractQuery >> validationTextBox [
 
 	^ self create: DijitValidationTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> verticalRule [
+DojoAbstractQuery >> verticalRule [
 
 	^ self create: DijitVerticalRule
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> verticalRuleLabels [
+DojoAbstractQuery >> verticalRuleLabels [
 
 	^ self create: DijitVerticalRuleLabels
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> verticalSlider [
+DojoAbstractQuery >> verticalSlider [
 
 	^ self create: DijitVerticalSlider
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> widget [
+DojoAbstractQuery >> widget [
 
 	^ self create: DijitWidget
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-DojoNodeQuery >> widgetSet [
+DojoAbstractQuery >> widgetSet [
 
 	^ self create: DijitWidgetSet
 ]

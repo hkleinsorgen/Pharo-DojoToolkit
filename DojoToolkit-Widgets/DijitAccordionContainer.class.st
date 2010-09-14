@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitAccordionContainer class >> functionName [
 
 	^ 'dijit.layout.AccordionContainer'

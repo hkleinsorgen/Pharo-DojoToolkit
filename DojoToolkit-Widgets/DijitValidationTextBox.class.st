@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitValidationTextBox class >> functionName [
 
 	^ 'dijit.form.ValidationTextBox'

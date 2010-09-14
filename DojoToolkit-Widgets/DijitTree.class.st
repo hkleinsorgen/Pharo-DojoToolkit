@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitTree class >> functionName [
 
 	^ 'dijit.Tree'
@@ -104,6 +104,20 @@ DijitTree >> declaredClass: aJsObject [
 	self propertyAt: 'declaredClass' put: aJsObject
 ]
 
+{ #category : #convenience }
+DijitTree >> disableDragAndDropCopy [
+	" disable copying nodes with drag&drop "
+
+	| override |
+	override := 'return false' asFunction.
+	self isNewObject 
+		ifTrue: 
+		[	" cannot be added to constructor properties "
+			self addLoadScriptBlock: [ : id | (self dojoUI byId: id) tree overrideCopyState: override ].
+		]
+		ifFalse: [ self overrideCopyState: override ].
+]
+
 { #category : #'properties-generated' }
 DijitTree >> dndController [
 	"  Class name to use as as the dnd controller.
@@ -151,8 +165,8 @@ DijitTree >> dragThreshold: aNumber [
 { #category : #convenience }
 DijitTree >> enableDragAndDrop [
 
-	self require: 'dijit.tree.dndSource'.
-	self dndController: 'dijit.tree.dndSource'.
+	self require: DijitTreeDndSource functionName.
+	self dndController: DijitTreeDndSource functionName.
 ]
 
 { #category : #'functions-generated' }
@@ -379,6 +393,27 @@ DijitTree >> openOnDblClick: aBoolean [
 	self propertyAt: 'openOnDblClick' put: aBoolean
 ]
 
+{ #category : #'function overrides' }
+DijitTree >> overrideCheckAcceptance: aFunction [
+	"  Checks if the Tree itself can accept nodes from this source "
+
+	self override: 'checkAcceptance' with: (aFunction asFunction: #(#source nodes))
+]
+
+{ #category : #'function overrides' }
+DijitTree >> overrideCheckItemAcceptance: aFunction [
+	"  In the base case, this is called to check if target can become a child of source.
+	When betweenThreshold is set, position='before' or 'after' means that we are asking if the source node can be dropped before/after the target node "
+
+	self override: 'checkItemAcceptance' with: (aFunction asFunction: #(#target source position))
+]
+
+{ #category : #'function overrides' }
+DijitTree >> overrideCopyState: aFunction [
+
+	self dndController override: 'copyState' with: (aFunction asFunction: #(keyPressed))
+]
+
 { #category : #'function overrides-generated' }
 DijitTree >> overrideGetIconClass: aFunction [
 	"  Overridable function to return CSS class name to display icon "
@@ -442,6 +477,14 @@ DijitTree >> overrideGetTooltip: aFunction [
 	"  Overridable function to get the tooltip for a tree node (given the item) "
 
 	self override: 'getTooltip' with: (aFunction asFunction: #(#item))
+]
+
+{ #category : #'function overrides' }
+DijitTree >> overrideItemCreator: aFunction [
+	"  For each node in nodes[], which came from source, create a hash of name/value pairs to be passed to Tree.model.newItem().
+	Returns array of those hashes "
+
+	self override: 'itemCreator' with: (aFunction asFunction: #(#nodes target source))
 ]
 
 { #category : #'function overrides-generated' }

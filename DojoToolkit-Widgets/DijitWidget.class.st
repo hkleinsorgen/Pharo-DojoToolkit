@@ -5,15 +5,25 @@ Class {
 	#name : #DijitWidget,
 	#superclass : #DojoConstructableObject,
 	#instVars : [
-		'sourceNode'
+		'sourceNode',
+		'deferredScriptBlocks'
 	],
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitWidget class >> functionName [
 
 	^ 'dijit.Widget'
+]
+
+{ #category : #private }
+DijitWidget >> addLoadScriptBlock: aBlock [
+	" the deferred block will be executed when the object is attached to a brush.
+	the script will be added as load script to the document "
+
+	deferredScriptBlocks isNil ifTrue: [ deferredScriptBlocks := OrderedCollection new ].
+	deferredScriptBlocks add: aBlock
 ]
 
 { #category : #accessing }
@@ -218,6 +228,17 @@ DijitWidget >> dndType: aString [
 	self propertyAt: 'dndType' put: aString
 ]
 
+{ #category : #accessing }
+DijitWidget >> dojoAddDeferredLoadScriptsTo: scripts [ 
+
+	| document |
+	deferredScriptBlocks notNil 
+		ifTrue: 
+		[	document := self renderContext document.
+			deferredScriptBlocks do: [: block | document addLoadScript: ( block value: self sourceNode )]
+		].
+]
+
 { #category : #'properties-generated' }
 DijitWidget >> dojoAttachEvent [
 	
@@ -326,7 +347,7 @@ DijitWidget >> id [
 DijitWidget >> id: aString [
 	" compatibility/convencience code: WATagBrush>>#script: sends #id: to the widget "
 
-	self sourceNode: aString
+	self sourceNode: aString.
 ]
 
 { #category : #'functions-generated' }

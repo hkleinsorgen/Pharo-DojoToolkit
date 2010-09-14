@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Widgets'
 }
 
-{ #category : '*DojoToolkit-Widgets' }
+{ #category : #'accessing-generated' }
 DijitMenu class >> functionName [
 
 	^ 'dijit.Menu'
