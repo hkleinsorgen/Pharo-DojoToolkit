@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
-{ #category : '*DojoToolkit-Data' }
+{ #category : #'accessing-generated' }
 DojoSimpleFetch class >> functionName [
 
 	^ 'dojo.data.util.simpleFetch'

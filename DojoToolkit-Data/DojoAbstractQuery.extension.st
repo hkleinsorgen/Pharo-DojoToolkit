@@ -1,55 +1,55 @@
-Extension { #name : #DojoNodeQuery }
+Extension { #name : #DojoAbstractQuery }
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> dataIdentity [
+DojoAbstractQuery >> dataIdentity [
 
 	^ self create: DojoDataIdentity
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> dataNotification [
+DojoAbstractQuery >> dataNotification [
 
 	^ self create: DojoDataNotification
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> dataRead [
+DojoAbstractQuery >> dataRead [
 
 	^ self create: DojoDataRead
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> dataRequest [
+DojoAbstractQuery >> dataRequest [
 
 	^ self create: DojoDataRequest
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> dataUtilSimpleFetch [
+DojoAbstractQuery >> dataUtilSimpleFetch [
 
 	^ self create: DojoSimpleFetch
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> dataWrite [
+DojoAbstractQuery >> dataWrite [
 
 	^ self create: DojoDataWrite
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> itemFileReadStore [
+DojoAbstractQuery >> itemFileReadStore [
 
 	^ self create: DojoItemFileReadStore
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> itemFileWriteStore [
+DojoAbstractQuery >> itemFileWriteStore [
 
 	^ self create: DojoItemFileWriteStore
 ]
 
 { #category : '*DojoToolkit-Data' }
-DojoNodeQuery >> simpleFetch [
+DojoAbstractQuery >> simpleFetch [
 
 	^ self create: DojoSimpleFetch
 ]

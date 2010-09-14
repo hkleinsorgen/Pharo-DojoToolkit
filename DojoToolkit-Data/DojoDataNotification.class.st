@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
-{ #category : '*DojoToolkit-Data' }
+{ #category : #'accessing-generated' }
 DojoDataNotification class >> functionName [
 
 	^ 'dojo.data.api.Notification'

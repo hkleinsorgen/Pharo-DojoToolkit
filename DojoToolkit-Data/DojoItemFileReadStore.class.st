@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
-{ #category : '*DojoToolkit-Data' }
+{ #category : #'accessing-generated' }
 DojoItemFileReadStore class >> functionName [
 
 	^ 'dojo.data.ItemFileReadStore'

@@ -4,7 +4,7 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
-{ #category : '*DojoToolkit-Data' }
+{ #category : #'accessing-generated' }
 DojoItemFileWriteStore class >> functionName [
 
 	^ 'dojo.data.ItemFileWriteStore'

@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
-{ #category : '*DojoToolkit-Data' }
+{ #category : #'accessing-generated' }
 DojoDataRead class >> functionName [
 
 	^ 'dojo.data.api.Read'

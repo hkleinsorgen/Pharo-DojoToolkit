@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
-{ #category : '*DojoToolkit-Data' }
+{ #category : #'accessing-generated' }
 DojoDataWrite class >> functionName [
 
 	^ 'dojo.data.api.Write'
