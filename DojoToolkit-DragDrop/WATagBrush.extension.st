@@ -9,10 +9,14 @@ WATagBrush >> beDojoDragItem [
 
 { #category : #'*DojoToolkit-DragDrop' }
 WATagBrush >> beDojoDragItem: configurationBlock [
-	" defined this node as a draggable item "
+	" defined this node as a draggable item, and configure it with the block
+	(sending dojoConfiguration is not possible, because drag items do not have a dojoType)  "
 
+	| item |
 	self beDojoDragItem.
-	self dojoConfigurationFrom: DojoDndItem new
+	item := DojoDndItem new.
+	configurationBlock value: item.
+	self dojoConfigurationFrom: item.
 ]
 
 { #category : #'*DojoToolkit-DragDrop' }
@@ -21,6 +25,15 @@ WATagBrush >> beDojoDragItemOfType: type [
 
 	self beDojoDragItem.
 	self dojoDragItemType: type.
+]
+
+{ #category : #'*DojoToolkit-DragDrop' }
+WATagBrush >> beDojoDragItemOfType: type data: dataString [
+	" defined this node as a draggable item with the given type and data "
+
+	self beDojoDragItem.
+	self dojoDragItemType: type.
+	self dojoDragItemData: dataString.
 ]
 
 { #category : #'*DojoToolkit-DragDrop' }
@@ -40,7 +53,7 @@ WATagBrush >> beDojoDragSource: configurationBlock [
 ]
 
 { #category : #'*DojoToolkit-DragDrop' }
-WATagBrush >> beDojoDragSourceForType: aStringOrArray [
+WATagBrush >> beDojoDragSourceAccepting: aStringOrArray [
 	" defined this node as a source (and target) for drag/drop operations."
 
 	self beDojoDragSource.
@@ -72,6 +85,13 @@ WATagBrush >> beDojoDropTargetForType: aStringOrArray [
 ]
 
 { #category : #'*DojoToolkit-DragDrop' }
+WATagBrush >> dojoDragItemData: dataString [
+	" Logical representation of the object being dragged. "
+
+	self attributeAt: 'dndData' put: dataString
+]
+
+{ #category : #'*DojoToolkit-DragDrop' }
 WATagBrush >> dojoDragItemType: aString [
 	" defines the type of a draggable item. Useful to restrict drag&drop operations "
 
@@ -82,7 +102,7 @@ WATagBrush >> dojoDragItemType: aString [
 WATagBrush >> dojoDropAccept: aStringOrArray [ 
 	" defines the acceptable type(s) of a draggable item. Useful to restrict drag&drop operations "
 
-	aStringOrArray isCharacters 
+	aStringOrArray isString 
 		ifTrue: [ self attributes at: 'accept' append: aStringOrArray separator: ',' ]
 		ifFalse: [ aStringOrArray do: [: string | self attributes at: 'accept' append: string separator: ',' ]].
 ]

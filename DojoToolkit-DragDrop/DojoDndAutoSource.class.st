@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-DragDrop'
 }
 
-{ #category : '*DojoToolkit-DragDrop' }
+{ #category : #'accessing-generated' }
 DojoDndAutoSource class >> functionName [
 
 	^ 'dojo.dnd.AutoSource'

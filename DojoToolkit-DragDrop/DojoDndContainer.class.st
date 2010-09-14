@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-DragDrop'
 }
 
-{ #category : '*DojoToolkit-DragDrop' }
+{ #category : #'accessing-generated' }
 DojoDndContainer class >> functionName [
 
 	^ 'dojo.dnd.Container'

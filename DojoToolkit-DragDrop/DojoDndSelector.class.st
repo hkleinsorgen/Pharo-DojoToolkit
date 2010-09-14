@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-DragDrop'
 }
 
-{ #category : '*DojoToolkit-DragDrop' }
+{ #category : #'accessing-generated' }
 DojoDndSelector class >> functionName [
 
 	^ 'dojo.dnd.Selector'

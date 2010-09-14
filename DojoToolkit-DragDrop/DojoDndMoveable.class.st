@@ -4,13 +4,28 @@ an object, which makes a node moveable
 Class {
 	#name : #DojoDndMoveable,
 	#superclass : #DojoConstructableObject,
+	#instVars : [
+		'node'
+	],
 	#category : 'DojoToolkit-DragDrop'
 }
 
-{ #category : '*DojoToolkit-DragDrop' }
+{ #category : #'accessing-generated' }
 DojoDndMoveable class >> functionName [
 
 	^ 'dojo.dnd.Moveable'
+]
+
+{ #category : #accessing }
+DojoDndMoveable >> arguments [
+
+	^  node notNil 
+		ifTrue: 
+		[	self properties isEmpty 
+				ifTrue: [ Array with:  node ]
+				ifFalse: [ Array with:  node with: self properties ]
+		]
+		ifFalse: [ #( )]
 ]
 
 { #category : #'properties-generated' }
@@ -57,9 +72,9 @@ DojoDndMoveable >> handle: aJsObject [
 ]
 
 { #category : #'functions-generated' }
-DojoDndMoveable >> markupFactory: params node: node [ 
+DojoDndMoveable >> markupFactory: params node: aNode [ 
 	
-	self call: 'markupFactory' withArguments: (Array with: params with: node)
+	self call: 'markupFactory' withArguments: (Array with: params with: aNode)
 ]
 
 { #category : #'properties-generated' }
@@ -74,18 +89,11 @@ DojoDndMoveable >> mover: aJsObject [
 	self propertyAt: 'mover' put: aJsObject
 ]
 
-{ #category : #'properties-generated' }
-DojoDndMoveable >> node [
-	"  a node (or node's id) to be moved params: dojo.dnd.__MoveableArgs? optional parameters "
-
-	self access: 'node'
-]
-
-{ #category : #'properties-generated' }
+{ #category : #accessing }
 DojoDndMoveable >> node: aNode [
 	"  a node (or node's id) to be moved params: dojo.dnd.__MoveableArgs? optional parameters "
 
-	self propertyAt: 'node' put: aNode
+	node := aNode
 ]
 
 { #category : #'events-generated' }

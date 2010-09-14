@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-DragDrop'
 }
 
-{ #category : '*DojoToolkit-DragDrop' }
+{ #category : #'accessing-generated' }
 DojoDndTimedMoveable class >> functionName [
 
 	^ 'dojo.dnd.TimedMoveable'

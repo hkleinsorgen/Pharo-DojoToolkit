@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-DragDrop'
 }
 
-{ #category : '*DojoToolkit-DragDrop' }
+{ #category : #'accessing-generated' }
 DojoDndSource class >> functionName [
 
 	^ 'dojo.dnd.Source'
@@ -74,6 +74,18 @@ DojoDndSource >> delay [
 DojoDndSource >> delay: aNumber [
 	
 	self propertyAt: 'delay' put: aNumber
+]
+
+{ #category : #convenience }
+DojoDndSource >> disableDragAndDropCopy [
+	" disable copying nodes with drag&drop "
+
+	self isNewObject 
+		ifTrue: 
+		[	" cannot be added to constructor properties "
+			DojoError raiseSignal: 'disableDragAndDropCopy must be called after the source is created'
+		]
+		ifFalse: [ self overrideCopyState: 'return false' asFunction ].
 ]
 
 { #category : #'properties-generated' }
@@ -232,6 +244,12 @@ DojoDndSource >> onOverEvent: anObject [
 	"  this function is called once, when mouse is over our container "
 
 	self eventAt: 'onOverEvent' put: (anObject asFunction: #())
+]
+
+{ #category : #'function overrides' }
+DojoDndSource >> overrideCopyState: aFunction [
+
+	self  override: 'copyState' with: (aFunction asFunction: #(keyPressed myself))
 ]
 
 { #category : #'properties-generated' }

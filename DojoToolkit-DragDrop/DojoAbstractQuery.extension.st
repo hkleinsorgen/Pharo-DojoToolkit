@@ -1,67 +1,83 @@
-Extension { #name : #DojoNodeQuery }
+Extension { #name : #DojoAbstractQuery }
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndAutoSource [
+DojoAbstractQuery >> dndAutoSource [
 
 	^ self create: DojoDndAutoSource
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndAvatar [
+DojoAbstractQuery >> dndAvatar [
 
 	^ self create: DojoDndAvatar
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndContainer [
+DojoAbstractQuery >> dndContainer [
 
 	^ self create: DojoDndContainer
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndItem [
+DojoAbstractQuery >> dndItem [
 
 	^ self create: DojoDndItem
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndManager [
+DojoAbstractQuery >> dndManager [
 
 	^ self create: DojoDndManager
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndMoveable [
+DojoAbstractQuery >> dndMoveable [
 
 	^ self create: DojoDndMoveable
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndMover [
+DojoAbstractQuery >> dndMover [
 
 	^ self create: DojoDndMover
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndSelector [
+DojoAbstractQuery >> dndSelector [
 
 	^ self create: DojoDndSelector
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndSource [
+DojoAbstractQuery >> dndSource [
 
 	^ self create: DojoDndSource
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndTarget [
+DojoAbstractQuery >> dndTarget [
 
 	^ self create: DojoDndTarget
 ]
 
 { #category : '*DojoToolkit-DragDrop' }
-DojoNodeQuery >> dndTimedMoveable [
+DojoAbstractQuery >> dndTimedMoveable [
 
 	^ self create: DojoDndTimedMoveable
+]
+
+{ #category : '*DojoToolkit-DragDrop' }
+DojoAbstractQuery >> makeMoveable [
+	" make the node moveable "
+
+	^ self new dndMoveable node: self nodeId;
+		yourself
+]
+
+{ #category : '*DojoToolkit-DragDrop' }
+DojoAbstractQuery >> makeMoveableWithHandle: handleNode [ 
+	" the node is the handle for moving "
+
+	^ self makeMoveable handle: handleNode;
+		yourself
 ]
