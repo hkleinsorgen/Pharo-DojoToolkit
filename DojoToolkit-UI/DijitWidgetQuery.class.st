@@ -1,6 +1,9 @@
+"
+A query that returns a widget
+"
 Class {
 	#name : #DijitWidgetQuery,
-	#superclass : #DojoNodeQuery,
+	#superclass : #DojoAbstractQuery,
 	#category : 'DojoToolkit-UI'
 }
 

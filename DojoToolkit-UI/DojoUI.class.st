@@ -7,7 +7,7 @@ Class {
 	#category : 'DojoToolkit-UI'
 }
 
-{ #category : '*DojoToolkit-UI' }
+{ #category : #accessing }
 DojoUI class >> functionName [
 
 	^ 'dijit'
@@ -22,9 +22,9 @@ DojoUI >> byId: id [
 
 { #category : #DOM }
 DojoUI >> byNode: aNode [
-	"Returns the widget corresponding to the given DOMNode"
+	"Returns the widget corresponding to the given DOM node"
 	
-	^ ( self create: DijitByNode )
+	^ ( self create: DijitWidgetByNode )
 		node: aNode;
 		yourself
 ]
@@ -63,7 +63,7 @@ DojoUI >> dijitALL [
 DojoUI >> enclosingWidget [
 	" convenvience: returns the enclosing widget of the 'current' node (this) "
 
-	^ self enclosingWidget: (JSAlias named: 'this')
+	^ self enclosingWidget: (JSStream on: 'this')
 ]
 
 { #category : #DOM }
