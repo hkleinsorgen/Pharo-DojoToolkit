@@ -135,9 +135,9 @@ ConfigurationOfDojoToolkit >> baseline110: spec [
 			package: 'DojoToolkit-Data' with: [ spec requires: 'DojoToolkit-Core'];
 			package: 'DojoToolkit-Objects' with: [ spec requires: 'DojoToolkit-Core'];
 			package: 'DojoToolkit-Widgets' with: [ spec requires: 'DojoToolkit-UI'];
+			package: 'DojoToolkit-DojoX' with: [ spec requires: #('DojoToolkit-Widgets' 'DojoToolkit-Core') ];
 			package: 'DojoToolkit-Tests'  with: [ spec requires: 'DojoToolkit-Widgets'];
-			package: 'DojoToolkit-Demo'  with: [ spec requires: 
-				#('DojoToolkit-Widgets' 'DojoToolkit-DragDrop' 'DojoToolkit-Objects')].
+			package: 'DojoToolkit-Demo'  with: [ spec requires: #('DojoToolkit-Widgets' 'DojoToolkit-DragDrop' 'DojoToolkit-DojoX')].
 		spec
 			group: 'default' with: #('Core' 'Demo');
 			group: 'Core' with: #(
@@ -148,6 +148,7 @@ ConfigurationOfDojoToolkit >> baseline110: spec [
 				'DojoToolkit-Data'
 				'DojoToolkit-Objects'
 				'DojoToolkit-Widgets'
+				'DojoToolkit-DojoX'
 				);
 			group: 'Demo' with: #(
 				'DojoToolkit-Demo' 
@@ -205,7 +206,7 @@ ConfigurationOfDojoToolkit >> version110: spec [
 		spec blessing: #development.
 		spec description: 'ongoing development'.
 		spec author: 'hkl'.
-		spec timestamp: '07/09/2010 23:01'.
+		spec timestamp: '20/09/2010 23:01'.
 	].
 
 ]
