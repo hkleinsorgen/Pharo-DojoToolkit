@@ -1,6 +1,6 @@
 Class {
 	#name : #DojoSimpleFetch,
-	#superclass : #DojoConstructableObject,
+	#superclass : #DojoStore,
 	#category : 'DojoToolkit-Data'
 }
 

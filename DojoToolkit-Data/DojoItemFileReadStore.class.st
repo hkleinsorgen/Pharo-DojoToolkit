@@ -13,6 +13,13 @@ DojoItemFileReadStore class >> functionName [
 	^ 'dojo.data.ItemFileReadStore'
 ]
 
+{ #category : #autocomplete }
+DojoItemFileReadStore >> autocompleteData: autocompleteBlock searchAttribute: searchAttribute [ 
+	" the block  should return autocomplete strings"
+
+	self url: ( self renderContext urlForDojoAjaxCallback: [ self respondAutoCompleteStrings: autocompleteBlock value searchAttribute: searchAttribute ]).
+]
+
 { #category : #'properties-generated' }
 DojoItemFileReadStore >> clearOnClose [
 	
