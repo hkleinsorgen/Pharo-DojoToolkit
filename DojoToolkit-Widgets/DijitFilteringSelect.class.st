@@ -27,6 +27,17 @@ DijitFilteringSelect >> autoComplete: aBoolean [
 	self propertyAt: 'autoComplete' put: aBoolean
 ]
 
+{ #category : #convenience }
+DijitFilteringSelect >> autocompleteData: autocompleteBlock searchAttribute: searchAttribute [ 
+	" the block should return autocomplete strings. "
+
+	| store |
+	store := self dojo new itemFileReadStore.
+	store autocompleteData: autocompleteBlock searchAttribute: searchAttribute .
+	self searchAttr: searchAttribute .
+	self store: store.
+]
+
 { #category : #'properties-generated' }
 DijitFilteringSelect >> comboNode [
 	
