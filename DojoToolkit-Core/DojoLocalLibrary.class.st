@@ -37,14 +37,14 @@ DojoLocalLibrary >> defaultDirectory [
 DojoLocalLibrary >> directory [
 	 " (optional) base directory containing the dojo files. not used when baseURI is specified "
 
-	^ directory
+	^ directory ifNotNil: [ : d | d asFilename ]
 ]
 
 { #category : #accessing }
 DojoLocalLibrary >> directory: aDirectory [ 
 
 	directory := aDirectory notNil 
-			ifTrue: [ aDirectory asFilename ]
+			ifTrue: [ aDirectory asString ]
 			ifFalse: [ nil ].
 ]
 

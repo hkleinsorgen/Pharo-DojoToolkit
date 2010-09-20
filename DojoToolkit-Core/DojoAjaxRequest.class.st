@@ -152,7 +152,7 @@ DojoAjaxRequest >> failOk: aBoolean [
 	" By default, dojo.xhrGet outputs an error to the console when there is a transport error.
 	Setting failOk to true will prevent that behavior and will suppress the error message."
 
-	self optionAt: 'ailOk' put: aBoolean
+	self optionAt: 'failOk' put: aBoolean
 ]
 
 { #category : #options }
@@ -225,21 +225,21 @@ DojoAjaxRequest >> nodeListQuery [
 DojoAjaxRequest >> onError: anObject [
 	" The error parameter is another callback function that is only invoked when an error occurs "
 
-	self optionAt: 'error' put: anObject
+	self optionAt: 'error' put: anObject asFunction
 ]
 
 { #category : #'options - response handling' }
 DojoAjaxRequest >> onHandle: anObject [
 	" Sometimes you want to do something regardless of whether a call completes or fails. Thats where handle comes it, it will be invoked by xhr regardless "
 
-	self optionAt: 'handle' put: anObject
+	self optionAt: 'handle' put: anObject asFunction
 ]
 
 { #category : #'options - response handling' }
 DojoAjaxRequest >> onLoad: anObject [
 	" The function dojo should invoke when the data is returned from the server. "
 
-	self optionAt: 'load' put: anObject
+	self optionAt: 'load' put: anObject asFunction
 ]
 
 { #category : #'options - private' }

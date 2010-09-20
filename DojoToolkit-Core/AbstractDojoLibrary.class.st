@@ -22,6 +22,12 @@ AbstractDojoLibrary >> baseURI [
 	self subclassResponsibility
 ]
 
+{ #category : #private }
+AbstractDojoLibrary >> fileSelectors [
+
+	^ #()
+]
+
 { #category : #accessing }
 AbstractDojoLibrary >> isCrossDomainLibrary [
 	" true if the library is loaded from a different domain "
