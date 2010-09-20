@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoTooltipComponent,
+	#name : #DijitTooltipComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoTooltipComponent >> renderDemoOn: html [
+DijitTooltipComponent >> renderDemoOn: html [
 
 	self title: 'Tooltip dialog' on: html.
 	self renderTooltipDialogOn: html.
@@ -14,7 +14,7 @@ DijitDemoTooltipComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoTooltipComponent >> renderTooltipDialogOn: html [ 
+DijitTooltipComponent >> renderTooltipDialogOn: html [ 
 
 	html paragraph: 
 		[	html dojoDropDownButton: 
@@ -25,7 +25,7 @@ DijitDemoTooltipComponent >> renderTooltipDialogOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoTooltipComponent >> renderTooltipOn: html [ 
+DijitTooltipComponent >> renderTooltipOn: html [ 
 
 	| id |
 	html paragraph: 
@@ -45,7 +45,7 @@ DijitDemoTooltipComponent >> renderTooltipOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoTooltipComponent >> sourceSelectors [
+DijitTooltipComponent >> sourceSelectors [
 
 	^ #( 
 		#renderTooltipDialogOn:
@@ -54,19 +54,19 @@ DijitDemoTooltipComponent >> sourceSelectors [
 ]
 
 { #category : #accessing }
-DijitDemoTooltipComponent >> title [
+DijitTooltipComponent >> title [
 
 	^ 'Tooltip'
 ]
 
 { #category : #accessing }
-DijitDemoTooltipComponent >> url [
+DijitTooltipComponent >> url [
 
 	^ 'http://dojotoolkit.org/api/dijit/TooltipDialog.html'
 ]
 
 { #category : #accessing }
-DijitDemoTooltipComponent >> widgetClass [
+DijitTooltipComponent >> widgetClass [
 
 	^ DijitTooltipDialog
 ]

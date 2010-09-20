@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoOverviewComponent,
+	#name : #DijitOverviewComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> renderDemoOn: html [ 
+DijitOverviewComponent >> renderDemoOn: html [ 
 
 	self title: 'Example: Autoexpanding text area' on: html.
 	self renderTextAreaOn: html.
@@ -14,7 +14,7 @@ DijitDemoOverviewComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> renderExplanationOn: html [ 
+DijitOverviewComponent >> renderExplanationOn: html [ 
 
 	html paragraph: [
 		html text: 'Widgets can be either created programmatically, or by declarative markup using additional HTML attributes: '.
@@ -30,7 +30,7 @@ DijitDemoOverviewComponent >> renderExplanationOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> renderPaletteOn: html [ 
+DijitOverviewComponent >> renderPaletteOn: html [ 
 
 	| colorValue |
 	colorValue := 'black'.
@@ -50,7 +50,7 @@ DijitDemoOverviewComponent >> renderPaletteOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> renderTextAreaOn: html [ 
+DijitOverviewComponent >> renderTextAreaOn: html [ 
 
 	self renderTextAreaProgrammaticallyOn: html.
 	html heading level4;
@@ -62,7 +62,7 @@ DijitDemoOverviewComponent >> renderTextAreaOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> renderTextAreaProgrammaticallyOn: html [ 
+DijitOverviewComponent >> renderTextAreaProgrammaticallyOn: html [ 
 
 	html paragraph: [
 		html div 
@@ -72,7 +72,7 @@ DijitDemoOverviewComponent >> renderTextAreaProgrammaticallyOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> renderTextAreaWithMarkupOn: html [ 
+DijitOverviewComponent >> renderTextAreaWithMarkupOn: html [ 
 
 	html paragraph: [
 		html dojoTextarea
@@ -81,13 +81,13 @@ DijitDemoOverviewComponent >> renderTextAreaWithMarkupOn: html [
 ]
 
 { #category : #accessing }
-DijitDemoOverviewComponent >> sortKey [
+DijitOverviewComponent >> sortKey [
 
 	^'1'
 ]
 
 { #category : #rendering }
-DijitDemoOverviewComponent >> sourceSelectors [
+DijitOverviewComponent >> sourceSelectors [
 
 	^ #( 
 		renderPaletteOn:
@@ -95,13 +95,13 @@ DijitDemoOverviewComponent >> sourceSelectors [
 ]
 
 { #category : #accessing }
-DijitDemoOverviewComponent >> title [
+DijitOverviewComponent >> title [
 
 	^ 'Overview'
 ]
 
 { #category : #accessing }
-DijitDemoOverviewComponent >> url [
+DijitOverviewComponent >> url [
 
 	^ 'http://dojotoolkit.org/reference-guide/dijit/form.html'
 ]

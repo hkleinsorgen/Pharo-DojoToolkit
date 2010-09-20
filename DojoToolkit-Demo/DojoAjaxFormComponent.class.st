@@ -1,11 +1,11 @@
 Class {
-	#name : #DojoDemoFormComponent,
+	#name : #DojoAjaxFormComponent,
 	#superclass : #DojoCoreDemoComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DojoDemoFormComponent >> renderDemoOn: html [ 
+DojoAjaxFormComponent >> renderDemoOn: html [ 
 
 	| newName newCategory feedbackId form |
 	newName := ''.
@@ -44,14 +44,14 @@ DojoDemoFormComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoFormComponent >> renderExplanationOn: html [ 
+DojoAjaxFormComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html.
 	html paragraph: [ html text: 'The form is submitted with an Ajax POST request and does not refresh the entire page' ].
 ]
 
 { #category : #accessing }
-DojoDemoFormComponent >> title [
+DojoAjaxFormComponent >> title [
 
 	^ 'Forms'
 ]

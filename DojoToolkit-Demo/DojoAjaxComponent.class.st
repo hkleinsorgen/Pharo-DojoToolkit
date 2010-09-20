@@ -1,5 +1,5 @@
 Class {
-	#name : #DojoDemoAjaxComponent,
+	#name : #DojoAjaxComponent,
 	#superclass : #DojoCoreDemoComponent,
 	#instVars : [
 		'numberOfCallbacks'
@@ -8,14 +8,14 @@ Class {
 }
 
 { #category : #initialization }
-DojoDemoAjaxComponent >> initialize [
+DojoAjaxComponent >> initialize [
 
 	super initialize.
 	numberOfCallbacks := 0.
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> renderAppendOn: html [ 
+DojoAjaxComponent >> renderAppendOn: html [ 
 
 	html dojoButton 
 		onClick: (( html dojo query: #testArea ) ajax 
@@ -25,7 +25,7 @@ DojoDemoAjaxComponent >> renderAppendOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> renderCallbackOn: html [ 
+DojoAjaxComponent >> renderCallbackOn: html [ 
 
 	html dojoButton 
 		onClick: ( html dojo ajax script: 
@@ -38,7 +38,7 @@ DojoDemoAjaxComponent >> renderCallbackOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> renderDemoOn: html [ 
+DojoAjaxComponent >> renderDemoOn: html [ 
 
 	html div: 
 		[	self renderReplaceOn: html.
@@ -51,7 +51,7 @@ DojoDemoAjaxComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> renderErrorOn: html [ 
+DojoAjaxComponent >> renderErrorOn: html [ 
 	" send the request to an URL without a request handler "
 
 	html dojoButton 
@@ -66,7 +66,7 @@ DojoDemoAjaxComponent >> renderErrorOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> renderReplaceOn: html [ 
+DojoAjaxComponent >> renderReplaceOn: html [ 
 
 	html dojoButton 
 		onClick: (( html dojo query: #testArea ) ajax 
@@ -76,7 +76,7 @@ DojoDemoAjaxComponent >> renderReplaceOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAjaxComponent >> sourceSelectors [
+DojoAjaxComponent >> sourceSelectors [
 
 	^ #(	
 		renderReplaceOn:
@@ -87,7 +87,7 @@ DojoDemoAjaxComponent >> sourceSelectors [
 ]
 
 { #category : #accessing }
-DojoDemoAjaxComponent >> title [
+DojoAjaxComponent >> title [
 
 	^ 'Ajax'
 ]

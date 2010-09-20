@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoSliderComponent,
+	#name : #DijitSliderComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoSliderComponent >> renderDemoOn: html [ 
+DijitSliderComponent >> renderDemoOn: html [ 
 
 	| slider sliderValue |
 	slider := html dojoUI new horizontalSlider.
@@ -29,26 +29,26 @@ DijitDemoSliderComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoSliderComponent >> renderExplanationOn: html [ 
+DijitSliderComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html .
 	html paragraph: 'Text value is updated via Ajax request when the slider fires an "onChange" event'.
 ]
 
 { #category : #accessing }
-DijitDemoSliderComponent >> title [
+DijitSliderComponent >> title [
 
 	^ 'Slider'
 ]
 
 { #category : #accessing }
-DijitDemoSliderComponent >> url [
+DijitSliderComponent >> url [
 
 	^ 'http://www.dojotoolkit.org/reference-guide/dijit/form/Slider.html'
 ]
 
 { #category : #accessing }
-DijitDemoSliderComponent >> widgetClass [
+DijitSliderComponent >> widgetClass [
 
 	^ DijitHorizontalSlider
 ]

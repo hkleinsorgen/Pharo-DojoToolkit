@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoContainerComponent,
+	#name : #DijitContainerComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderAccordionAboutOn: html [ 
+DijitContainerComponent >> renderAccordionAboutOn: html [ 
 
 	html text: 'More information: '.
 	html anchor 
@@ -15,7 +15,7 @@ DijitDemoContainerComponent >> renderAccordionAboutOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderAccordionOn: html [ 
+DijitContainerComponent >> renderAccordionOn: html [ 
 
 	html paragraph: [
 		html dojoAccordionContainer 
@@ -37,7 +37,7 @@ DijitDemoContainerComponent >> renderAccordionOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderAddTabTo: id on: html [ 
+DijitContainerComponent >> renderAddTabTo: id on: html [ 
 	" add a new tab "
 
 	html paragraph: 
@@ -53,7 +53,7 @@ DijitDemoContainerComponent >> renderAddTabTo: id on: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderBorderAboutOn: html [ 
+DijitContainerComponent >> renderBorderAboutOn: html [ 
 
 	html text: 'More information: '.
 	html anchor 
@@ -63,7 +63,7 @@ DijitDemoContainerComponent >> renderBorderAboutOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderBorderContainerOn: html [ 
+DijitContainerComponent >> renderBorderContainerOn: html [ 
 
 	html paragraph: [
 		html dojoBorderContainer 
@@ -91,7 +91,7 @@ DijitDemoContainerComponent >> renderBorderContainerOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderDemoOn: html [ 
+DijitContainerComponent >> renderDemoOn: html [ 
 
 	self title: 'Tabs' on: html.
 	self renderTabOn: html.
@@ -102,7 +102,7 @@ DijitDemoContainerComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderTabAboutOn: html [ 
+DijitContainerComponent >> renderTabAboutOn: html [ 
 
 	html text: 'More information: '.
 	html anchor 
@@ -112,7 +112,7 @@ DijitDemoContainerComponent >> renderTabAboutOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> renderTabOn: html [ 
+DijitContainerComponent >> renderTabOn: html [ 
 
 	| id |
 	html paragraph: 
@@ -138,7 +138,7 @@ DijitDemoContainerComponent >> renderTabOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoContainerComponent >> sourceSelectors [
+DijitContainerComponent >> sourceSelectors [
 
 	^#(
 		renderTabOn:
@@ -148,7 +148,7 @@ DijitDemoContainerComponent >> sourceSelectors [
 ]
 
 { #category : #accessing }
-DijitDemoContainerComponent >> title [
+DijitContainerComponent >> title [
 
 	^ 'Container'
 ]

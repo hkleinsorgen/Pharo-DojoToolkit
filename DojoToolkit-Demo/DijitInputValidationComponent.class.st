@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoInputValidationComponent,
+	#name : #DijitInputValidationComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoInputValidationComponent >> renderDemoOn: html [ 
+DijitInputValidationComponent >> renderDemoOn: html [ 
 
 	html dojoValidationTextBox dojoConfiguration: 
 			[: textBox |
@@ -19,7 +19,7 @@ DijitDemoInputValidationComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoInputValidationComponent >> renderExplanationOn: html [ 
+DijitInputValidationComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html .
 	html paragraph: 
@@ -27,19 +27,19 @@ DijitDemoInputValidationComponent >> renderExplanationOn: html [
 ]
 
 { #category : #accessing }
-DijitDemoInputValidationComponent >> title [
+DijitInputValidationComponent >> title [
 
 	^ 'Validation'
 ]
 
 { #category : #accessing }
-DijitDemoInputValidationComponent >> url [
+DijitInputValidationComponent >> url [
 
-	^ 'http://dojotoolkit.org/reference-guide/dijit/form/ValidationTextbox.htm'
+	^ 'http://dojotoolkit.org/reference-guide/dijit/form/ValidationTextbox.html'
 ]
 
 { #category : #accessing }
-DijitDemoInputValidationComponent >> widgetClass [
+DijitInputValidationComponent >> widgetClass [
 
 	^ DijitValidationTextBox
 ]

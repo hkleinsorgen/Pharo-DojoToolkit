@@ -47,6 +47,8 @@ DojoDemoPartComponent >> renderExplanationOn: html [
 DojoDemoPartComponent >> renderSourceOf: selector on: html [ 
 
 	| selectorString source readStream formattedSource |
+	(self class includesSelector: selector)
+		ifFalse: [ ^ self ].
 	source := self class sourceCodeAt: selector.
 	source notNil 
 		ifTrue: 

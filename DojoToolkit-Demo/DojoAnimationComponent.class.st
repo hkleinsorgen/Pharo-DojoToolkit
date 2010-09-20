@@ -1,11 +1,11 @@
 Class {
-	#name : #DojoDemoAnimationComponent,
+	#name : #DojoAnimationComponent,
 	#superclass : #DojoCoreDemoComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DojoDemoAnimationComponent >> renderAnimateOn: html [ 
+DojoAnimationComponent >> renderAnimateOn: html [ 
 
 	| animationProperties |
 	animationProperties := Dictionary new.
@@ -24,7 +24,7 @@ DojoDemoAnimationComponent >> renderAnimateOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAnimationComponent >> renderAnimationTargetOn: html [ 
+DojoAnimationComponent >> renderAnimationTargetOn: html [ 
 
 	html paragraph: 
 		[	html div id: 'animated';
@@ -38,7 +38,7 @@ DojoDemoAnimationComponent >> renderAnimationTargetOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAnimationComponent >> renderDemoOn: html [ 
+DojoAnimationComponent >> renderDemoOn: html [ 
 
 	self renderFadeOn: html.
 	self renderAnimateOn: html.
@@ -46,7 +46,7 @@ DojoDemoAnimationComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAnimationComponent >> renderFadeOn: html [ 
+DojoAnimationComponent >> renderFadeOn: html [ 
 
 	html dojoButton 
 		onClick: ( (html dojo 
@@ -59,7 +59,7 @@ DojoDemoAnimationComponent >> renderFadeOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoAnimationComponent >> sourceSelectors [
+DojoAnimationComponent >> sourceSelectors [
 
 	^ #(
 		renderFadeOn:
@@ -68,7 +68,7 @@ DojoDemoAnimationComponent >> sourceSelectors [
 ]
 
 { #category : #accessing }
-DojoDemoAnimationComponent >> title [
+DojoAnimationComponent >> title [
 
 	^ 'Animation'
 ]

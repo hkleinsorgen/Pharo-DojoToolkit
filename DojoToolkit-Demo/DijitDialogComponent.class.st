@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoDialogComponent,
+	#name : #DijitDialogComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoDialogComponent >> renderDemoOn: html [ 
+DijitDialogComponent >> renderDemoOn: html [ 
 
 	html dojoDialog
 		id: 'dialog';
@@ -26,19 +26,19 @@ DijitDemoDialogComponent >> renderDemoOn: html [
 ]
 
 { #category : #accessing }
-DijitDemoDialogComponent >> title [
+DijitDialogComponent >> title [
 
 	^ 'Dialog'
 ]
 
 { #category : #accessing }
-DijitDemoDialogComponent >> url [
+DijitDialogComponent >> url [
 
 	^ 'http://dojotoolkit.org/api/dijit/Dialog.html'
 ]
 
 { #category : #accessing }
-DijitDemoDialogComponent >> widgetClass [
+DijitDialogComponent >> widgetClass [
 
 	^ DijitDialog
 ]

@@ -1,11 +1,11 @@
 Class {
-	#name : #DojoDemoDragAndDropComponent,
+	#name : #DojoDragAndDropComponent,
 	#superclass : #DojoCoreDemoComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DojoDemoDragAndDropComponent >> renderDemoOn: html [ 
+DojoDragAndDropComponent >> renderDemoOn: html [ 
 
 	html div with: 
 		[	self title: 'Drop cool things here' on: html.
@@ -32,14 +32,14 @@ DojoDemoDragAndDropComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoDragAndDropComponent >> renderExplanationOn: html [
+DojoDragAndDropComponent >> renderExplanationOn: html [
 
 	super renderExplanationOn: html.
 	html text: 'You can reorder items or move them to other containers. Container and item types restrict the possible drop operations.'.
 ]
 
 { #category : #accessing }
-DojoDemoDragAndDropComponent >> title [
+DojoDragAndDropComponent >> title [
 
 	^ 'Drag and drop'
 ]

@@ -1,11 +1,11 @@
 Class {
-	#name : #DojoDemoEventComponent,
+	#name : #DojoEventComponent,
 	#superclass : #DojoCoreDemoComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DojoDemoEventComponent >> renderDemoOn: html [ 
+DojoEventComponent >> renderDemoOn: html [ 
 
 	html paragraph: [ 
 		html dojoButton 
@@ -30,7 +30,7 @@ DojoDemoEventComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoEventComponent >> renderExplanationOn: html [ 
+DojoEventComponent >> renderExplanationOn: html [ 
 
 	super renderExplanationOn: html.
 	html paragraph: [ 
@@ -44,14 +44,14 @@ DojoDemoEventComponent >> renderExplanationOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoEventComponent >> showMessageOn: html [ 
+DojoEventComponent >> showMessageOn: html [ 
 	" show the label of the pressed button "
 
 	^ (( html dojo query: #testArea ) innerHTML: html dojo event currentTarget enclosingWidget button label ) asFunction: #( #event )
 ]
 
 { #category : #accessing }
-DojoDemoEventComponent >> title [
+DojoEventComponent >> title [
 
 	^ 'Events'
 ]

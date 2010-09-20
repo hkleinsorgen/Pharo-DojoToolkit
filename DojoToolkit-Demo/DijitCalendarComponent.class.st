@@ -1,11 +1,11 @@
 Class {
-	#name : #DijitDemoCalendarComponent,
+	#name : #DijitCalendarComponent,
 	#superclass : #DijitDemoPartComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DijitDemoCalendarComponent >> renderDateInputOn: html [ 
+DijitCalendarComponent >> renderDateInputOn: html [ 
 
 	html dojoDateTextBox
 		dojoConfiguration: [ : box |
@@ -15,7 +15,7 @@ DijitDemoCalendarComponent >> renderDateInputOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoCalendarComponent >> renderDemoOn: html [ 
+DijitCalendarComponent >> renderDemoOn: html [ 
 
 	self title: 'Standalone' on: html .
 	self renderStandaloneCalendarOn: html.
@@ -24,7 +24,7 @@ DijitDemoCalendarComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoCalendarComponent >> renderStandaloneCalendarOn: html [ 
+DijitCalendarComponent >> renderStandaloneCalendarOn: html [ 
 
 	| calendar currentDate |
 	calendar := html dojoUI new calendar.
@@ -40,7 +40,7 @@ DijitDemoCalendarComponent >> renderStandaloneCalendarOn: html [
 ]
 
 { #category : #rendering }
-DijitDemoCalendarComponent >> sourceSelectors [
+DijitCalendarComponent >> sourceSelectors [
 
 	^ #(
 		renderStandaloneCalendarOn: 
@@ -49,19 +49,19 @@ DijitDemoCalendarComponent >> sourceSelectors [
 ]
 
 { #category : #accessing }
-DijitDemoCalendarComponent >> title [
+DijitCalendarComponent >> title [
 
 	^ 'Calendar'
 ]
 
 { #category : #accessing }
-DijitDemoCalendarComponent >> url [
+DijitCalendarComponent >> url [
 
 	^ 'http://www.dojotoolkit.org/reference-guide/dijit/Calendar.html'
 ]
 
 { #category : #accessing }
-DijitDemoCalendarComponent >> widgetClass [
+DijitCalendarComponent >> widgetClass [
 
 	^ DijitCalendar
 ]

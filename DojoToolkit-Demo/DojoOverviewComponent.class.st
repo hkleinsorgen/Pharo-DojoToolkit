@@ -1,11 +1,11 @@
 Class {
-	#name : #DojoDemoOverviewComponent,
+	#name : #DojoOverviewComponent,
 	#superclass : #DojoCoreDemoComponent,
 	#category : 'DojoToolkit-Demo'
 }
 
 { #category : #rendering }
-DojoDemoOverviewComponent >> renderDemoOn: html [ 
+DojoOverviewComponent >> renderDemoOn: html [ 
 
 	html text: 'The '.
 	html anchor
@@ -22,17 +22,17 @@ DojoDemoOverviewComponent >> renderDemoOn: html [
 ]
 
 { #category : #rendering }
-DojoDemoOverviewComponent >> renderDemoSourceOn: html [
+DojoOverviewComponent >> renderDemoSourceOn: html [
 ]
 
 { #category : #accessing }
-DojoDemoOverviewComponent >> sortKey [
+DojoOverviewComponent >> sortKey [
 
 	^'1'
 ]
 
 { #category : #accessing }
-DojoDemoOverviewComponent >> title [
+DojoOverviewComponent >> title [
 
 	^ 'Overview'
 ]
