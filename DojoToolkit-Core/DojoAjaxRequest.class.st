@@ -118,7 +118,7 @@ DojoAjaxRequest >> callbackWithArguments: aBlock translator: aCallbackTranslator
 	"
 
 	self 
-		callback: [: dataValue | aBlock cullWithArguments: ( aCallbackTranslator asCollection: dataValue renderContext: self renderContext )]
+		callback: [: dataValue | aBlock valueWithPossibleArguments: ( aCallbackTranslator asCollection: dataValue renderContext: self renderContext )]
 		value: aCallbackTranslator javascriptObject.
 ]
 
