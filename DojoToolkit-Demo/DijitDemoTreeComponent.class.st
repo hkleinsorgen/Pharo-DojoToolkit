@@ -45,8 +45,8 @@ DijitDemoTreeComponent >> jsonTreeItemForClass: aClass idBlock: idBlock [
 	treeItem := Dictionary new.
 	treeItem at: 'id' put: ( idBlock value: aClass ).
 	treeItem at: 'label' put: aClass name asString.
-	tooltip := aClass comment.
-	tooltip isEmpty ifTrue: [ tooltip := aClass name, ' has not been commented yet'  ].
+	tooltip := aClass comment asString.
+	tooltip isEmpty ifTrue: [ tooltip := aClass name asString, ' has not been commented yet'  ].
 	treeItem at: 'tooltip' put: tooltip.
 	aClass subclasses notEmpty 
 		ifTrue: 
