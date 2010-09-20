@@ -56,6 +56,16 @@ DojoTest >> testEventMembers [
 ]
 
 { #category : #tests }
+DojoTest >> testFunctionName [
+
+	DojoConstructableObject allSubclasses do: [ : subclass |
+		[ subclass functionName ] on: SubclassResponsibilityError do: [ : ex |
+			self assert: false description: subclass name, ' does not implement #functionName'
+		]
+	].
+]
+
+{ #category : #tests }
 DojoTest >> testOverride [
 
 	| body |
