@@ -4,6 +4,12 @@ Class {
 	#category : 'DojoToolkit-Data'
 }
 
+{ #category : #accessing }
+DojoStore class >> functionName [
+
+	^ nil
+]
+
 { #category : #private }
 DojoStore >> autoCompleteDataForStrings: strings searchAttribute: searchAttribute [
 
