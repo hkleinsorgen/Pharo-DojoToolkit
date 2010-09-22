@@ -5,6 +5,12 @@ Class {
 }
 
 { #category : #accessing }
+DojoStore class >> defaultSearchAttributeName [
+
+	^ 'n'
+]
+
+{ #category : #accessing }
 DojoStore class >> functionName [
 
 	^ nil
