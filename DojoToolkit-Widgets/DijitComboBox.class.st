@@ -28,14 +28,27 @@ DijitComboBox >> autoComplete: aBoolean [
 ]
 
 { #category : #convenience }
+DijitComboBox >> autocompleteData: autocompleteBlock [ 
+
+	self autocompleteData: autocompleteBlock searchAttribute: DojoStore defaultSearchAttributeName
+]
+
+{ #category : #convenience }
 DijitComboBox >> autocompleteData: autocompleteBlock searchAttribute: searchAttribute [ 
-	" the block should return autocomplete items. "
+	" the block should return autocomplete items.
+	Note: the search attribute will be used as query field, so don't use 's' or 'k'  "
 
 	| store |
 	store := self dojo new itemFileReadStore.
 	store autocompleteData: autocompleteBlock searchAttribute: searchAttribute .
 	self searchAttr: searchAttribute .
 	self store: store.
+]
+
+{ #category : #callbacks }
+DijitComboBox >> callback: aBlock [ 
+
+	self name: ( self storeCallback: ( WAValueCallback on: aBlock )).
 ]
 
 { #category : #'properties-generated' }

@@ -28,6 +28,12 @@ DijitFilteringSelect >> autoComplete: aBoolean [
 ]
 
 { #category : #convenience }
+DijitFilteringSelect >> autocompleteData: autocompleteBlock [ 
+
+	self autocompleteData: autocompleteBlock searchAttribute: DojoStore defaultSearchAttributeName
+]
+
+{ #category : #convenience }
 DijitFilteringSelect >> autocompleteData: autocompleteBlock searchAttribute: searchAttribute [ 
 	" the block should return autocomplete strings. "
 
@@ -36,6 +42,12 @@ DijitFilteringSelect >> autocompleteData: autocompleteBlock searchAttribute: sea
 	store autocompleteData: autocompleteBlock searchAttribute: searchAttribute .
 	self searchAttr: searchAttribute .
 	self store: store.
+]
+
+{ #category : #callbacks }
+DijitFilteringSelect >> callback: aBlock [ 
+
+	self name: ( self storeCallback: ( WAValueCallback on: aBlock )).
 ]
 
 { #category : #'properties-generated' }

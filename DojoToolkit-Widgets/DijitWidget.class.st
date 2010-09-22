@@ -835,6 +835,11 @@ DijitWidget >> startup [
 	self call: 'startup'
 ]
 
+{ #category : #callbacks }
+DijitWidget >> storeCallback: aCallback [
+	^ self renderContext callbacks store: aCallback
+]
+
 { #category : #'properties-generated' }
 DijitWidget >> style [
 	"  HTML style attributes as cssText string or name/value hash "
