@@ -13,6 +13,12 @@ DojoDndTarget class >> functionName [
 	^ 'dojo.dnd.Target'
 ]
 
+{ #category : #accessing }
+DojoDndTarget class >> requiredPackages [
+
+	^ DojoDndSource requiredPackages
+]
+
 { #category : #'events-generated' }
 DojoDndTarget >> onMouseDown: e [
 	"  event processor for onmousedown "
