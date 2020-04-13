@@ -44,7 +44,7 @@ DijitTooltipComponent >> renderTooltipOn: html [
 		].
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DijitTooltipComponent >> sourceSelectors [
 
 	^ #( 

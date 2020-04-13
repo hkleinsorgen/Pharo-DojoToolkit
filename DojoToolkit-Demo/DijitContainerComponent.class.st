@@ -137,7 +137,7 @@ DijitContainerComponent >> renderTabOn: html [
 	self renderAddTabTo: id on: html.
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DijitContainerComponent >> sourceSelectors [
 
 	^#(

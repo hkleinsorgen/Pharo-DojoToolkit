@@ -17,7 +17,7 @@ DijitAutocompleteComponent >> autoCompleteStrings [
 DijitAutocompleteComponent >> autoCompleteStringsMatching: aPattern [
 
 	| classNames |
-	aPattern size <= 3
+	aPattern size <= 2
 		ifTrue: [ ^ #( )].
 	classNames := OrderedCollection new.
 	" brute-force-match instead of a propert tree/trie, to simplify the implementation "
@@ -48,54 +48,36 @@ DijitAutocompleteComponent >> renderDemoOn: html [
 	self title: 'Static' on: html.
 	html paragraph: [ html text: 'Enter the name of a subclass of WAComponent' ].
 	self renderStaticAutocompleteOn: html.
-	html paragraph: [ html text: 'The  autcomplete data is a static list. Only suitable for small lists' ].
+	html paragraph: [ html text: 'The  autcomplete data is a static list. Only suitable for small lists.' ].
 	self title: 'Dynamic' on: html.
 	html paragraph: [ html text: 'Enter the name of a class' ].
 	self renderDynamicAutocompleteOn: html.
-	html paragraph: [ html text: 'The autcomplete data is requested everytime the input changes. In this example, at least three characters must be entered' ].
+	html paragraph: [ html text: 'The autcomplete data is requested everytime the input changes. In this example, at least two characters must be entered. This example uses a combo box instead of a filtering select widget: The combo box allows to enter arbitrary data.' ].
 ]
 
 { #category : #rendering }
 DijitAutocompleteComponent >> renderDynamicAutocompleteOn: html [ 
 
-	| id filteringSelect |
-	id := html nextId.
-	filteringSelect := ( html dojoUI byId: id ) new filteringSelect.
-	filteringSelect
-		id: id;
-		name: 'Seaside class';
-		value: ''.
-	filteringSelect 
-		autocompleteQuery: [ : pattern | self autoCompleteStringsMatching: pattern ] 
-		searchAttribute: self searchAttributeName .
-	html textInput id: id;
-		script: filteringSelect.
+	html dojoComboBox
+		name: 'Class';
+		dojoConfiguration: [ : comboBox | 
+			comboBox autocompleteQuery: [: pattern | 
+				self autoCompleteStringsMatching: pattern
+			]
+		]
 ]
 
 { #category : #rendering }
 DijitAutocompleteComponent >> renderStaticAutocompleteOn: html [ 
 
-	| id filteringSelect |
-	id := html nextId.
-	filteringSelect := ( html dojoUI byId: id ) new filteringSelect.
-	filteringSelect
-		id: id;
-		name: 'Seaside class';
-		value: ''.
-	filteringSelect 
-		autocompleteData: [ self autoCompleteStrings ] 
-		searchAttribute: self searchAttributeName .
-	html textInput id: id;
-		script: filteringSelect.
+	html dojoFilteringSelect
+		name: 'Class';
+		dojoConfiguration: [ : filteringSelect | 
+			filteringSelect autocompleteData: [ self autoCompleteStrings ]
+		]
 ]
 
-{ #category : #data }
-DijitAutocompleteComponent >> searchAttributeName [
-
-	^ 'n'
-]
-
-{ #category : #rendering }
+{ #category : #accessing }
 DijitAutocompleteComponent >> sourceSelectors [
 
 	^#(renderStaticAutocompleteOn: renderDynamicAutocompleteOn: )

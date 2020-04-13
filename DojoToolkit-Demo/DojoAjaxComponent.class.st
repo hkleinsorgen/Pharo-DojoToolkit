@@ -75,7 +75,7 @@ DojoAjaxComponent >> renderReplaceOn: html [
 		with: 'Replace HTML'.
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DojoAjaxComponent >> sourceSelectors [
 
 	^ #(	

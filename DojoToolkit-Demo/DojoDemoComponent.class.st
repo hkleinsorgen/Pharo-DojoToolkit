@@ -87,7 +87,7 @@ DojoDemoComponent >> renderContentOn: html [
 									].
 							html div
 								class: 'demo';
-								with: [ demoComponent renderOn: html ]
+								with: [ html render: demoComponent ]
 						]
 		].
 ]
@@ -112,7 +112,7 @@ DojoDemoComponent >> renderNavigationOn: html [
 															ifTrue: [ 'selection' ]
 															ifFalse: [ cssClass ]);
 												callback: [ demoComponent := component ];
-												with: [ component title renderOn: html ]
+												with: [ html render: component title ]
 										]
 							]
 					]

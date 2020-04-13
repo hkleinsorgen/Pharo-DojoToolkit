@@ -86,7 +86,7 @@ DijitOverviewComponent >> sortKey [
 	^'1'
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DijitOverviewComponent >> sourceSelectors [
 
 	^ #( 

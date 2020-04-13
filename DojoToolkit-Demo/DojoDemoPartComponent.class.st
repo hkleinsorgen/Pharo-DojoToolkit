@@ -44,10 +44,26 @@ DojoDemoPartComponent >> renderExplanationOn: html [
 ]
 
 { #category : #rendering }
+DojoDemoPartComponent >> renderSourceBodyFrom: readStream on: html [ 
+
+	| formattedSource |
+	formattedSource := String new writeStream.
+	[ readStream atEnd ] whileFalse: 
+		[ | char |
+			char := readStream next.
+			char = Character tab 
+				ifTrue: [ formattedSource nextPutAll: '  ' ]
+				ifFalse: [ formattedSource nextPut: char ]
+		].
+	html div class: 'code';
+		with: [ html preformatted: [ html text: formattedSource contents ]]
+]
+
+{ #category : #rendering }
 DojoDemoPartComponent >> renderSourceOf: selector on: html [ 
 
-	| selectorString source readStream formattedSource |
-	(self class includesSelector: selector)
+	| selectorString source readStream |
+	( self class includesSelector: selector ) 
 		ifFalse: [ ^ self ].
 	source := self class sourceCodeAt: selector.
 	source notNil 
@@ -56,18 +72,7 @@ DojoDemoPartComponent >> renderSourceOf: selector on: html [
 			selectorString := self class name , '>>' , ( readStream upTo: Character cr ) , ( String with: Character cr ).
 			html paragraph: 
 				[	html dojoTitlePane dojoConfiguration: [: pane | pane title: selectorString ];
-						with: 
-							[	formattedSource := String new writeStream.
-								[ readStream atEnd ] whileFalse: 
-									[ | char |
-										char := readStream next.
-										char = Character tab 
-											ifTrue: [ formattedSource nextPutAll: '  ' ]
-											ifFalse: [ formattedSource nextPut: char ]
-									].
-								html div class: 'code';
-									with: [ html preformatted: [ html text: formattedSource contents ]]
-							]
+						with: [ self renderSourceBodyFrom: readStream on: html ]
 				]
 		].
 ]
@@ -87,7 +92,7 @@ DojoDemoPartComponent >> sortKey [
 	^ self title
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DojoDemoPartComponent >> sourceSelectors [
 
 	^ #(#renderDemoOn:)

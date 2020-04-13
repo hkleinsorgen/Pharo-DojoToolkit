@@ -9,16 +9,17 @@ DijitSliderComponent >> renderDemoOn: html [
 
 	| slider sliderValue |
 	slider := html dojoUI new horizontalSlider.
-	sliderValue := '-'.
+	sliderValue := 20.
+	sliderValue := sliderValue printString.
 	slider
-		value: 20;
+		value: sliderValue;
 		minimum: 0;
 		maximum: 100;
 		discreteValues: 51;
 		intermediateChanges: true;
 		onChange: (( html dojo query: #sliderValue )
 			ajaxPost 
-				callbackWithArgument: [: value | sliderValue := value ];
+				callbackWithArgument: [: newValue | sliderValue := newValue ];
 				html: [: canvas | canvas paragraph: sliderValue ]).
 	html div
 		id: 'slider';

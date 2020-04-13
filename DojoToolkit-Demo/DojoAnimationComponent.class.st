@@ -58,7 +58,7 @@ DojoAnimationComponent >> renderFadeOn: html [
 		with: 'Fade in'.
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DojoAnimationComponent >> sourceSelectors [
 
 	^ #(

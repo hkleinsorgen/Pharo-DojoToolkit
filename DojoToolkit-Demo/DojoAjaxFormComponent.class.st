@@ -7,12 +7,20 @@ Class {
 { #category : #rendering }
 DojoAjaxFormComponent >> renderDemoOn: html [ 
 
-	| newName newCategory feedbackId form |
+	| newName newCategory feedbackId |
 	newName := ''.
 	newCategory := ''.
 	feedbackId := html nextId.
-	form := html dojoAjaxForm .
-	form
+	html dojoAjaxForm 
+		submit: [ : ajax |
+			ajax 
+				query: ( html dojo byId: feedbackId );
+				html: [ : ajaxCanvas  | 
+					ajaxCanvas text: 'New class: '; 
+						emphasis: newName; 
+						text: ' category: '; 
+						emphasis: newCategory ]
+		];
 		with: 
 			[	html paragraph: 
 					[	html text: 'Name: '.
@@ -27,16 +35,7 @@ DojoAjaxFormComponent >> renderDemoOn: html [
 							value: 'Enter a category'
 					].
 				html paragraph: 
-					[	html dojoButton onClick: (
-							form submit: [ : ajax |
-								" show feedback "
-								ajax query: ( html dojo byId: feedbackId );
-								html: [ : ajaxCanvas  | 
-									ajaxCanvas text: 'New class: '; 
-										emphasis: newName; 
-										text: ' category: '; 
-										emphasis: newCategory ]]
-							) asFunction;
+					[	html dojoButton 
 							with: 'Submit'
 					]
 			].

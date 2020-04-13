@@ -131,7 +131,7 @@ DijitDemoTreeComponent >> respondJsonTreeWithCallbacks: callbacks [
 
 	self requestContext respond: 
 		[: response |
-			response cacheFor: ( Duration days: 0 hours: 0 minutes: 0 seconds: 1 );
+			response doNotCache;
 				document: ( self jsonTreeWithCallbacks: callbacks ) mimeType: WAMimeType textJavascript
 		].
 ]
@@ -142,7 +142,7 @@ DijitDemoTreeComponent >> rootID [
 	^ 'Root'
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DijitDemoTreeComponent >> sourceSelectors [
 
 	^ #(
@@ -166,7 +166,7 @@ DijitDemoTreeComponent >> treeIconScript [
 { #category : #private }
 DijitDemoTreeComponent >> treeTooltipScript [
 
-	^ 'return item.tooltip'
+	^ 'return item.tooltip[0]'
 ]
 
 { #category : #accessing }

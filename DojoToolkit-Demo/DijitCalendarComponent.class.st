@@ -39,7 +39,7 @@ DijitCalendarComponent >> renderStandaloneCalendarOn: html [
 		id: 'selectedDate'
 ]
 
-{ #category : #rendering }
+{ #category : #accessing }
 DijitCalendarComponent >> sourceSelectors [
 
 	^ #(
