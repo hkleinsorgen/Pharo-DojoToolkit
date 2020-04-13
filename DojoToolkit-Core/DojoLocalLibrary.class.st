@@ -60,7 +60,7 @@ DojoLocalLibrary >> documentForFile: aFilename mimeType: mimeType [
 	stream := mimeType isBinary 
 			ifTrue: [ aFilename readStream binary ]
 			ifFalse: [ (aFilename withEncoding: 'utf-8') readStream ].
-	^ [ stream upToEnd ] ensure: [ stream ]
+	^ [ stream upToEnd ] ensure: [ stream close ]
 ]
 
 { #category : #handling }
