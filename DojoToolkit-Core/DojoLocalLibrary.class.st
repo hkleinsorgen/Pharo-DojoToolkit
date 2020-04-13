@@ -27,6 +27,11 @@ DojoLocalLibrary >> baseURI: aBaseURI [
 			ifFalse: [ nil ].
 ]
 
+{ #category : #accessing }
+DojoLocalLibrary >> cacheDuration [
+	^Duration days: 14 hours: 0 minutes: 0 seconds: 0
+]
+
 { #category : #private }
 DojoLocalLibrary >> defaultDirectory [
 
@@ -37,7 +42,7 @@ DojoLocalLibrary >> defaultDirectory [
 DojoLocalLibrary >> directory [
 	 " (optional) base directory containing the dojo files. not used when baseURI is specified "
 
-	^ directory ifNotNil: [ : d | d asFilename ]
+	^ directory ifNotNil: [ : d | d asFilename ] ifNil: [ self defaultDirectory ]
 ]
 
 { #category : #accessing }
@@ -62,7 +67,7 @@ DojoLocalLibrary >> documentForFile: aFilename mimeType: mimeType [
 DojoLocalLibrary >> handle: aRequestContext [ 
 
 	| fileName mimeType |
-	fileName := self directory ifNil: [ self defaultDirectory ].
+	fileName := self directory.
 	[ aRequestContext consumer atEnd ] whileFalse: [ fileName := fileName / aRequestContext consumer next ].
 	(fileName exists  and: [ fileName isDirectory not ])
 		ifTrue: 

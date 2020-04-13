@@ -8,11 +8,18 @@ Class {
 }
 
 { #category : #attributes }
-DojoAjaxFormTag >> method: aString [ 
-	" uses Ajax, so do not store it in the attributes. Will use POST anyway "
+DojoAjaxFormTag >> action: aUrlOrString [
+	"  uses Ajax, so do not store it in the attributes "
 ]
 
-{ #category : #ajax }
+{ #category : #attributes }
+DojoAjaxFormTag >> method: aString [ 
+	" Will use POST anyway "
+
+	super method: 'post'
+]
+
+{ #category : #initialization }
 DojoAjaxFormTag >> setParent: aBrush canvas: aCanvas [ 
 
 	super setParent: aBrush canvas: aCanvas.
@@ -20,23 +27,19 @@ DojoAjaxFormTag >> setParent: aBrush canvas: aCanvas [
 	self ensureId.
 ]
 
-{ #category : #ajax }
-DojoAjaxFormTag >> submit [
-
-	^ self submit:  [ : ajax | ]
-]
-
-{ #category : #ajax }
+{ #category : #public }
 DojoAjaxFormTag >> submit: ajaxConfigurationBlock [ 
-	" Returns a script that submits this form with an Ajax request.
-	It can be used as an onClick handler
+	" Connect submit to an Ajax post request.
 
 	the ajaxConfigurationBlock  allows to configure the Ajax request. 
 	A common use case is to render some feedback "
 
-	| ajax ajaxScript |
+	| ajax ajaxScript formID script |
 	ajax := canvas dojo ajaxPost.
-	ajaxScript := ajax form: ( canvas dojo byId: self id ).
+	formID := self id.
+	formID isNil ifTrue: [ self error: 'Form has no id' ].
+	ajaxScript := ajax form: ( canvas dojo byId: formID).
 	ajaxConfigurationBlock value: ajax.
-	^ canvas dojo event stopEvent, ajaxScript
+	script := canvas dojo event stopEvent , ajaxScript.
+	canvas document addLoadScript: (canvas dojo connect: (canvas dojo byId: formID) event: 'onsubmit' method: (script asFunction: #(event)))
 ]

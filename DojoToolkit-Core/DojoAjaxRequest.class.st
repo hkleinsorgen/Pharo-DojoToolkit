@@ -11,7 +11,9 @@ Class {
 		'options',
 		'callback',
 		'callbackId',
-		'query'
+		'query',
+		'htmlResponder',
+		'objectsToRender'
 	],
 	#category : 'DojoToolkit-Core'
 }
@@ -46,7 +48,7 @@ DojoAjaxRequest >> append: aRenderable [
 ]
 
 { #category : #'callbacks - private' }
-DojoAjaxRequest >> applyHTMLResponseWith: aNodeListFunction [ 
+DojoAjaxRequest >> applyHtmlResponseWith: aNodeListFunction [ 
 	" Call the node list function on the reponse to modify the DOM.
 	Also parse the new nodes with the markup parser.
 
@@ -68,6 +70,14 @@ DojoAjaxRequest >> applyHTMLResponseWith: aNodeListFunction [
 	^ ( script return: ( JSStream on: 'response' )) asFunction: #( #response #io )
 ]
 
+{ #category : #'callbacks - private' }
+DojoAjaxRequest >> applyMultiNodeHtmlResponseWith: aNodeListFunction [ 
+	" Call the node list function on each HTML fragment of the JSON reponse to modify the DOM.
+	Also parse the new nodes with the markup parser. "
+
+	^ (JSStream on: 'applyMultiNodeHtmlResponse(response, "', aNodeListFunction, '")') asFunction: #( response functionName)
+]
+
 { #category : #accessing }
 DojoAjaxRequest >> arguments [
 
@@ -80,6 +90,17 @@ DojoAjaxRequest >> callback: aBlock [
 
 	self enableCallbacks.
 	callback := aBlock fixCallbackTemps
+]
+
+{ #category : #'callbacks - convenience' }
+DojoAjaxRequest >> callback: aBlock javascript: anObject [ 
+	" if the javascript object is a string, assume that it is a Javascript, not a literal string "
+
+	| jsObject |
+	jsObject := anObject isString 
+			ifTrue: [ JSStream on: anObject ]
+			ifFalse: [ anObject ].
+	self callback: aBlock value: jsObject.
 ]
 
 { #category : #callbacks }
@@ -208,6 +229,19 @@ DojoAjaxRequest >> html: aRenderable [
 	self render: aRenderable applyResponseWith: #innerHTML.
 ]
 
+{ #category : #'callbacks - multi node rendering' }
+DojoAjaxRequest >> html: aRenderable nodeId: nodeId [ 
+
+	objectsToRender notNil 
+		ifTrue: [ objectsToRender at: nodeId put: aRenderable ]
+		ifFalse: 
+		[	self renderNodesWith: 
+				[	Dictionary new at: nodeId put: aRenderable;
+						yourself
+				]
+		].
+]
+
 { #category : #accessing }
 DojoAjaxRequest >> method [
 
@@ -304,7 +338,7 @@ DojoAjaxRequest >> render: aRenderable applyResponseWith: aNodeListFunction [
 	self render: aRenderable errorScript: nil applyResponseWith: aNodeListFunction.
 ]
 
-{ #category : #accessing }
+{ #category : #'callbacks - rendering' }
 DojoAjaxRequest >> render: aRenderable errorScript: errorScriptBlock applyResponseWith: aNodeListFunction [ 
 	"Defines a html rendering callback.
 	The nodes will be modified by applying the function to the contents returned by the request.
@@ -313,7 +347,7 @@ DojoAjaxRequest >> render: aRenderable errorScript: errorScriptBlock applyRespon
 	self require: self packageNodeListManipulate.
 	self require: self packageParser.
 	self handleAsText.
-	self onLoad: ( self applyHTMLResponseWith: aNodeListFunction ).
+	self onLoad: ( self applyHtmlResponseWith: aNodeListFunction ).
 	errorScriptBlock notNil 
 		ifTrue: [ self errorScript: errorScriptBlock ].
 	self respond: 
@@ -343,11 +377,58 @@ DojoAjaxRequest >> render: aRenderable on: aStream [
 	document scriptGenerator closeOn: document.
 ]
 
+{ #category : #'callbacks - multi node rendering' }
+DojoAjaxRequest >> renderNodesWith: aRenderablesBlock [
+
+	self renderNodesWith: aRenderablesBlock applyResponseWith: #innerHTML
+]
+
+{ #category : #'callbacks - multi node rendering' }
+DojoAjaxRequest >> renderNodesWith: aRenderablesBlock applyResponseWith: aNodeListFunction [ 
+	"Defines a html rendering callback.
+	The nodes will be modified by applying the function to the contents returned by the request.
+
+	aNodeRenderingBlock must return a dictionary node ID -> renderable  "
+
+	objectsToRender := Dictionary new.
+	self require: self packageNodeListManipulate.
+	self require: self packageParser.
+	self handleAsJSON.
+	self respond: [: response | self respondMultiNodeRenderingWith: aRenderablesBlock response: response ].
+	self onLoad: ( self applyMultiNodeHtmlResponseWith: aNodeListFunction ).
+]
+
 { #category : #callbacks }
 DojoAjaxRequest >> respond: aBlock [
 	"Defines a response callback."
 
 	self callback: [ self requestContext respond: aBlock ]
+]
+
+{ #category : #'callbacks - private' }
+DojoAjaxRequest >> respondMultiNodeRenderingWith: aRenderablesBlock response: response [ 
+	" collect renderable objects and the corresponding DOM IDs  "
+
+	| htmlFragment  |
+	aRenderablesBlock value keysAndValuesDo: [ : id : renderable | objectsToRender at: id put: renderable ].
+	htmlFragment := nil.
+	response doNotCache;
+		contentType: ( WAMimeType textJavascript charset: self requestContext handler charSet ).
+	" write JSON array with id + html string "
+	response stream nextPutAll: '['.
+	objectsToRender keysAndValuesDo: 
+		[: id : renderable |
+			htmlFragment notNil 
+				ifTrue: 
+				[	response stream nextPutAll: ', '.
+					htmlFragment := nil
+				].
+			response stream nextPutAll: '{node: "'; nextPutAll: id; nextPutAll: '", html: '.
+			htmlFragment := String streamContents: [: stream | self render: renderable on: stream ].
+			response stream nextPutAll: htmlFragment asJson.
+			response stream nextPutAll: '}'
+		].
+	response stream nextPutAll: ']'.
 ]
 
 { #category : #'callbacks - scripts' }
@@ -392,6 +473,13 @@ DojoAjaxRequest >> script: aBlock on: aStream [
 			script addAll: document loadScripts
 		].
 	script javascriptOn: aStream.
+]
+
+{ #category : #callbacks }
+DojoAjaxRequest >> secondaryCallback: aBlock [ 
+	"Register aBlock as a secondary callback. "
+
+	self callback: aBlock value: '0'
 ]
 
 { #category : #options }

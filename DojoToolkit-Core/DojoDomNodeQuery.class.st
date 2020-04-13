@@ -31,10 +31,3 @@ DojoDomNodeQuery >> enclosingWidget [
 
 	^ self dojoUI enclosingWidget: self
 ]
-
-{ #category : #events }
-DojoDomNodeQuery >> subscribe: topic method: method [ 
-	"  Provide widget-specific analog to dojo.subscribe, except with the implicit use of this widget as the target object "
-
-	self call: 'subscribe' withArguments: (Array with: topic with: method asFunction)
-]

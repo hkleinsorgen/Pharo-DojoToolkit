@@ -26,7 +26,18 @@ function evalAjaxScripts(parseId) {
 		}
 		dojo.query("script[type=text/script-eval-onload]").forEach(evalAjaxScript);
 	});
-}'
+}
+
+function applyMultiNodeHtmlResponse(response, functionName) {
+	var map = eval(response);
+	for (i = 0; i<map.length; i++)
+	{	var id = map[i].node;
+		dojo.query("#" + id)[functionName](map[i].html);
+		evalAjaxScripts(id);
+	}
+	return response;
+}
+'
 ]
 
 { #category : #accessing }

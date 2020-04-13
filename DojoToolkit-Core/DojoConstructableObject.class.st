@@ -12,6 +12,12 @@ Class {
 }
 
 { #category : #accessing }
+DojoConstructableObject class >> requiredPackages [
+
+	^ Array with: self functionName
+]
+
+{ #category : #accessing }
 DojoConstructableObject >> arguments [
 
 	^ Array with: self properties
@@ -76,7 +82,7 @@ DojoConstructableObject >> propertyAt: aKey put: aValue [
 { #category : #accessing }
 DojoConstructableObject >> requiredPackages [
 
-	^ Array with: self class functionName
+	^ self class requiredPackages
 ]
 
 { #category : #private }
