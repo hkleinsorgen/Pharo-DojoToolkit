@@ -12,7 +12,6 @@ Class {
 		'callback',
 		'callbackId',
 		'query',
-		'htmlResponder',
 		'objectsToRender'
 	],
 	#category : 'DojoToolkit-Core'
@@ -86,10 +85,11 @@ DojoAjaxRequest >> arguments [
 
 { #category : #callbacks }
 DojoAjaxRequest >> callback: aBlock [
-	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. The primary callback must generate a response."
+	"Register aBlock as a primary callback of the receiver. It is only possible to have a single primary callback registered per instance. 
+	The primary callback must generate a response."
 
 	self enableCallbacks.
-	callback := aBlock fixCallbackTemps
+	callback := self wrappedCallbackBlock: aBlock
 ]
 
 { #category : #'callbacks - convenience' }
@@ -121,7 +121,7 @@ DojoAjaxRequest >> callback: aBlock value: anObject [
 
 	self enableCallbacks.
 	self addParameter: (self renderContext callbacks
-		store: (WAValueCallback on: aBlock)) 
+		store: (WAValueCallback on: (self wrappedCallbackBlock: aBlock))) 
 			-> anObject
 ]
 
@@ -231,15 +231,11 @@ DojoAjaxRequest >> html: aRenderable [
 
 { #category : #'callbacks - multi node rendering' }
 DojoAjaxRequest >> html: aRenderable nodeId: nodeId [ 
+	" register an object to render "
 
-	objectsToRender notNil 
-		ifTrue: [ objectsToRender at: nodeId put: aRenderable ]
-		ifFalse: 
-		[	self renderNodesWith: 
-				[	Dictionary new at: nodeId put: aRenderable;
-						yourself
-				]
-		].
+	self objectsToRender at: nodeId put: aRenderable.
+	callback isNil 
+		ifTrue: [ self renderRegisteredNodes ].
 ]
 
 { #category : #accessing }
@@ -253,6 +249,13 @@ DojoAjaxRequest >> nodeListQuery [
 	" convert DOM queries into nodelist queries "
 
 	^ self query ifNotNil: [ : q | q asNodeListQuery ]
+]
+
+{ #category : #private }
+DojoAjaxRequest >> objectsToRender [
+
+	objectsToRender isNil ifTrue: [ objectsToRender := GRSmallDictionary new ].
+	^ objectsToRender
 ]
 
 { #category : #'options - response handling' }
@@ -378,24 +381,21 @@ DojoAjaxRequest >> render: aRenderable on: aStream [
 ]
 
 { #category : #'callbacks - multi node rendering' }
-DojoAjaxRequest >> renderNodesWith: aRenderablesBlock [
+DojoAjaxRequest >> renderRegisteredNodes [
+	" prepare to render all registered objects and replace the nodes in the DOM with the new content "
 
-	self renderNodesWith: aRenderablesBlock applyResponseWith: #innerHTML
-]
-
-{ #category : #'callbacks - multi node rendering' }
-DojoAjaxRequest >> renderNodesWith: aRenderablesBlock applyResponseWith: aNodeListFunction [ 
-	"Defines a html rendering callback.
-	The nodes will be modified by applying the function to the contents returned by the request.
-
-	aNodeRenderingBlock must return a dictionary node ID -> renderable  "
-
-	objectsToRender := Dictionary new.
 	self require: self packageNodeListManipulate.
 	self require: self packageParser.
 	self handleAsJSON.
-	self respond: [: response | self respondMultiNodeRenderingWith: aRenderablesBlock response: response ].
-	self onLoad: ( self applyMultiNodeHtmlResponseWith: aNodeListFunction ).
+	self respond: [: response | self respondMultiNodeRendering: response ].
+	self onLoad: ( self applyMultiNodeHtmlResponseWith: #innerHTML ).
+]
+
+{ #category : #private }
+DojoAjaxRequest >> requestObjectsToRender [
+	" all objects to render, including those that where added by callbacks "
+
+	^ self requestContext properties at: #dojoObjectsToRender ifAbsentPut: [ self objectsToRender copy ]
 ]
 
 { #category : #callbacks }
@@ -406,17 +406,16 @@ DojoAjaxRequest >> respond: aBlock [
 ]
 
 { #category : #'callbacks - private' }
-DojoAjaxRequest >> respondMultiNodeRenderingWith: aRenderablesBlock response: response [ 
+DojoAjaxRequest >> respondMultiNodeRendering: response [ 
 	" collect renderable objects and the corresponding DOM IDs  "
 
-	| htmlFragment  |
-	aRenderablesBlock value keysAndValuesDo: [ : id : renderable | objectsToRender at: id put: renderable ].
+	| htmlFragment |
 	htmlFragment := nil.
 	response doNotCache;
 		contentType: ( WAMimeType textJavascript charset: self requestContext handler charSet ).
 	" write JSON array with id + html string "
 	response stream nextPutAll: '['.
-	objectsToRender keysAndValuesDo: 
+	self requestObjectsToRender keysAndValuesDo: 
 		[: id : renderable |
 			htmlFragment notNil 
 				ifTrue: 
@@ -506,4 +505,31 @@ DojoAjaxRequest >> url: aUrl [
 	"A string containing the URL to which the request is sent."
 	
 	self optionAt: 'url' put: aUrl
+]
+
+{ #category : #'callbacks - private' }
+DojoAjaxRequest >> wrappedCallbackBlock: aBlock [
+	" wrap block to handle render notifications"
+	
+	| fixedCallbackBlock |
+	fixedCallbackBlock := aBlock fixCallbackTemps .
+	^ aBlock numArgs = 1 ifTrue: [ 
+		 [ : arg |
+			[	
+				fixedCallbackBlock value: arg
+			] on: DojoRenderNotification do: [ : notification |
+				self requestObjectsToRender at: notification nodeId put: notification renderable .
+				notification resume
+			].
+		]
+	] ifFalse: [
+		 [ 
+			[	
+				fixedCallbackBlock value
+			] on: DojoRenderNotification do: [ : notification |
+				self requestObjectsToRender at: notification nodeId put: notification renderable .
+				notification resume
+			].
+		]
+	]
 ]
