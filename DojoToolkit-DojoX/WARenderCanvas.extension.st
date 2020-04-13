@@ -15,43 +15,43 @@ WARenderCanvas >> dojoxContentPane: aBlock [
 ]
 
 { #category : #'*DojoToolkit-DojoX-generated' }
-WARenderCanvas >> dragPane [
+WARenderCanvas >> dojoxDragPane [
 	" Dojo widget: dojox.layout.DragPane "
 
 	^ self div dojoType: DojoxDragPane
 ]
 
 { #category : #'*DojoToolkit-DojoX-generated' }
-WARenderCanvas >> dragPane: aBlock [
+WARenderCanvas >> dojoxDragPane: aBlock [
 	" Dojo widget: dojox.layout.DragPane "
 
-	self dragPane with: aBlock
+	self dojoxDragPane with: aBlock
 ]
 
 { #category : #'*DojoToolkit-DojoX-generated' }
-WARenderCanvas >> floatingPane [
+WARenderCanvas >> dojoxFloatingPane [
 	" Dojo widget: dojox.layout.FloatingPane "
 
 	^ self div dojoType: DojoxFloatingPane
 ]
 
 { #category : #'*DojoToolkit-DojoX-generated' }
-WARenderCanvas >> floatingPane: aBlock [
+WARenderCanvas >> dojoxFloatingPane: aBlock [
 	" Dojo widget: dojox.layout.FloatingPane "
 
-	self floatingPane with: aBlock
+	self dojoxFloatingPane with: aBlock
 ]
 
 { #category : #'*DojoToolkit-DojoX-generated' }
-WARenderCanvas >> widgetDialog [
+WARenderCanvas >> dojoxWidgetDialog [
 	" Dojo widget: dojox.widget.Dialog "
 
 	^ self div dojoType: DojoxWidgetDialog
 ]
 
 { #category : #'*DojoToolkit-DojoX-generated' }
-WARenderCanvas >> widgetDialog: aBlock [
+WARenderCanvas >> dojoxWidgetDialog: aBlock [
 	" Dojo widget: dojox.widget.Dialog "
 
-	self widgetDialog with: aBlock
+	self dojoxWidgetDialog with: aBlock
 ]

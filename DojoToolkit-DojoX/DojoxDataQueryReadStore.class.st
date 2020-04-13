@@ -180,7 +180,17 @@ DojoxDataQueryReadStore >> respondAutoCompleteData: autocompleteQueryBlock searc
 	| queryFields searchPattern strings |
 	queryFields := self requestContext request queryFields.
 	searchPattern := queryFields at: searchAttribute ifAbsent: [ '' ].
-	searchPattern := searchPattern copyReplaceAll: '\*' with: '*'.
+	searchPattern := String streamContents: 
+			[: writeStream | | readStream |
+				readStream := searchPattern readStream.
+				[ readStream atEnd ] whileFalse: 
+					[ | char |
+						char := readStream next.
+						char = $\ 
+							ifTrue: [ char := readStream next ].
+						writeStream nextPut: char
+					]
+			].
 	strings := autocompleteQueryBlock value: searchPattern.
 	^ self respondAutoCompleteStrings: strings searchAttribute: searchAttribute
 ]
