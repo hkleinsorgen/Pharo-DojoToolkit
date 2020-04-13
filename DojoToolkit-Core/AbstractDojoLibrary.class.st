@@ -44,17 +44,9 @@ AbstractDojoLibrary >> isUncompressed [
 { #category : #accessing }
 AbstractDojoLibrary >> libraryName [
 
-	^ self isCrossDomainLibrary 
-		ifTrue: 
-		[	self isUncompressed 
-				ifTrue: [ 'dojo.xd.js.uncompressed.js'  ]
-				ifFalse: [  'dojo.xd.js' ]
-		]
-		ifFalse: 
-		[	self isUncompressed 
-				ifTrue: [ 'dojo.js.uncompressed.js' ]
-				ifFalse: [ 'dojo.js' ]
-		]
+	^ self isUncompressed 
+		ifTrue: [  'dojo.js.uncompressed.js'  ]
+		ifFalse: [  'dojo.js'  ]
 ]
 
 { #category : #accessing }
@@ -74,5 +66,5 @@ AbstractDojoLibrary >> updateRoot: anHtmlRoot [
 { #category : #accessing }
 AbstractDojoLibrary >> version [
 
-	^ '1.5'
+	^ '1.7'
 ]

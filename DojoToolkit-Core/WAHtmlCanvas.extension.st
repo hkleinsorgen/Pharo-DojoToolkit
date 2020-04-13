@@ -1,7 +1,7 @@
-Extension { #name : #WARenderCanvas }
+Extension { #name : #WAHtmlCanvas }
 
 { #category : #'*DojoToolkit-Core' }
-WARenderCanvas >> dojoAjaxForm [
+WAHtmlCanvas >> dojoAjaxForm [
 	" a <form> tag for forms that are submitted with Ajax post requests "
 
 	^ self brush: DojoAjaxFormTag new
