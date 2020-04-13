@@ -1,735 +1,735 @@
-Extension { #name : #WARenderCanvas }
+Extension { #name : #WAHtmlCanvas }
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoAccordionContainer [
+WAHtmlCanvas >> dojoAccordionContainer [
 	" Dojo widget: dijit.layout.AccordionContainer "
 
 	^ self div dojoType: DijitAccordionContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoAccordionContainer: aBlock [
+WAHtmlCanvas >> dojoAccordionContainer: aBlock [
 	" Dojo widget: dijit.layout.AccordionContainer "
 
 	self dojoAccordionContainer with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoAccordionPane [
+WAHtmlCanvas >> dojoAccordionPane [
 	" Dojo widget: dijit.layout.AccordionPane "
 
 	^ self div dojoType: DijitAccordionPane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoAccordionPane: aBlock [
+WAHtmlCanvas >> dojoAccordionPane: aBlock [
 	" Dojo widget: dijit.layout.AccordionPane "
 
 	self dojoAccordionPane with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoBorderContainer [
+WAHtmlCanvas >> dojoBorderContainer [
 	" Dojo widget: dijit.layout.BorderContainer "
 
 	^ self div dojoType: DijitBorderContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoBorderContainer: aBlock [
+WAHtmlCanvas >> dojoBorderContainer: aBlock [
 	" Dojo widget: dijit.layout.BorderContainer "
 
 	self dojoBorderContainer with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoButton [
+WAHtmlCanvas >> dojoButton [
 	" Dojo widget: dijit.form.Button "
 
 	^ self button dojoType: DijitButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoButton: aBlock [
+WAHtmlCanvas >> dojoButton: aBlock [
 	" Dojo widget: dijit.form.Button "
 
 	self dojoButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCalendar [
+WAHtmlCanvas >> dojoCalendar [
 	" Dojo widget: dijit.Calendar "
 
 	^ self div dojoType: DijitCalendar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCalendar: aBlock [
+WAHtmlCanvas >> dojoCalendar: aBlock [
 	" Dojo widget: dijit.Calendar "
 
 	self dojoCalendar with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCheckBox [
+WAHtmlCanvas >> dojoCheckBox [
 	" Dojo widget: dijit.form.CheckBox "
 
 	^ self div dojoType: DijitCheckBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCheckBox: aBlock [
+WAHtmlCanvas >> dojoCheckBox: aBlock [
 	" Dojo widget: dijit.form.CheckBox "
 
 	self dojoCheckBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCheckedMenuItem [
+WAHtmlCanvas >> dojoCheckedMenuItem [
 	" Dojo widget: dijit.CheckedMenuItem "
 
 	^ self div dojoType: DijitCheckedMenuItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCheckedMenuItem: aBlock [
+WAHtmlCanvas >> dojoCheckedMenuItem: aBlock [
 	" Dojo widget: dijit.CheckedMenuItem "
 
 	self dojoCheckedMenuItem with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoColorPalette [
+WAHtmlCanvas >> dojoColorPalette [
 	" Dojo widget: dijit.ColorPalette "
 
 	^ self div dojoType: DijitColorPalette
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoColorPalette: aBlock [
+WAHtmlCanvas >> dojoColorPalette: aBlock [
 	" Dojo widget: dijit.ColorPalette "
 
 	self dojoColorPalette with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoComboBox [
+WAHtmlCanvas >> dojoComboBox [
 	" Dojo widget: dijit.form.ComboBox "
 
 	^ self textInput dojoType: DijitComboBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoComboBox: aBlock [
+WAHtmlCanvas >> dojoComboBox: aBlock [
 	" Dojo widget: dijit.form.ComboBox "
 
 	self dojoComboBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoComboButton [
+WAHtmlCanvas >> dojoComboButton [
 	" Dojo widget: dijit.form.ComboButton "
 
 	^ self div dojoType: DijitComboButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoComboButton: aBlock [
+WAHtmlCanvas >> dojoComboButton: aBlock [
 	" Dojo widget: dijit.form.ComboButton "
 
 	self dojoComboButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoContentPane [
+WAHtmlCanvas >> dojoContentPane [
 	" Dojo widget: dijit.layout.ContentPane "
 
 	^ self div dojoType: DijitContentPane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoContentPane: aBlock [
+WAHtmlCanvas >> dojoContentPane: aBlock [
 	" Dojo widget: dijit.layout.ContentPane "
 
 	self dojoContentPane with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCurrencyTextBox [
+WAHtmlCanvas >> dojoCurrencyTextBox [
 	" Dojo widget: dijit.form.CurrencyTextBox "
 
 	^ self textInput dojoType: DijitCurrencyTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoCurrencyTextBox: aBlock [
+WAHtmlCanvas >> dojoCurrencyTextBox: aBlock [
 	" Dojo widget: dijit.form.CurrencyTextBox "
 
 	self dojoCurrencyTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDateTextBox [
+WAHtmlCanvas >> dojoDateTextBox [
 	" Dojo widget: dijit.form.DateTextBox "
 
 	^ self textInput dojoType: DijitDateTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDateTextBox: aBlock [
+WAHtmlCanvas >> dojoDateTextBox: aBlock [
 	" Dojo widget: dijit.form.DateTextBox "
 
 	self dojoDateTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDateTimeTextBox [
+WAHtmlCanvas >> dojoDateTimeTextBox [
 	" Dojo widget: dijit.form.DateTimeTextBox "
 
 	^ self textInput dojoType: DijitDateTimeTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDateTimeTextBox: aBlock [
+WAHtmlCanvas >> dojoDateTimeTextBox: aBlock [
 	" Dojo widget: dijit.form.DateTimeTextBox "
 
 	self dojoDateTimeTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDeclaration [
+WAHtmlCanvas >> dojoDeclaration [
 	" Dojo widget: dijit.Declaration "
 
 	^ self div dojoType: DijitDeclaration
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDeclaration: aBlock [
+WAHtmlCanvas >> dojoDeclaration: aBlock [
 	" Dojo widget: dijit.Declaration "
 
 	self dojoDeclaration with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDialog [
+WAHtmlCanvas >> dojoDialog [
 	" Dojo widget: dijit.Dialog "
 
 	^ self div dojoType: DijitDialog
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDialog: aBlock [
+WAHtmlCanvas >> dojoDialog: aBlock [
 	" Dojo widget: dijit.Dialog "
 
 	self dojoDialog with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDialogUnderlay [
+WAHtmlCanvas >> dojoDialogUnderlay [
 	" Dojo widget: dijit.DialogUnderlay "
 
 	^ self div dojoType: DijitDialogUnderlay
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDialogUnderlay: aBlock [
+WAHtmlCanvas >> dojoDialogUnderlay: aBlock [
 	" Dojo widget: dijit.DialogUnderlay "
 
 	self dojoDialogUnderlay with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDropDownButton [
+WAHtmlCanvas >> dojoDropDownButton [
 	" Dojo widget: dijit.form.DropDownButton "
 
 	^ self div dojoType: DijitDropDownButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoDropDownButton: aBlock [
+WAHtmlCanvas >> dojoDropDownButton: aBlock [
 	" Dojo widget: dijit.form.DropDownButton "
 
 	self dojoDropDownButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoEditor [
+WAHtmlCanvas >> dojoEditor [
 	" Dojo widget: dijit.Editor "
 
 	^ self div dojoType: DijitEditor
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoEditor: aBlock [
+WAHtmlCanvas >> dojoEditor: aBlock [
 	" Dojo widget: dijit.Editor "
 
 	self dojoEditor with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoEditorRichText [
+WAHtmlCanvas >> dojoEditorRichText [
 	" Dojo widget: dijit.editor.RichText "
 
 	^ self div dojoType: DijitRichText
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoEditorRichText: aBlock [
+WAHtmlCanvas >> dojoEditorRichText: aBlock [
 	" Dojo widget: dijit.editor.RichText "
 
 	self dojoEditorRichText with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFilteringSelect [
+WAHtmlCanvas >> dojoFilteringSelect [
 	" Dojo widget: dijit.form.FilteringSelect "
 
 	^ self textInput dojoType: DijitFilteringSelect
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFilteringSelect: aBlock [
+WAHtmlCanvas >> dojoFilteringSelect: aBlock [
 	" Dojo widget: dijit.form.FilteringSelect "
 
 	self dojoFilteringSelect with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoForm [
+WAHtmlCanvas >> dojoForm [
 	" Dojo widget: dijit.form.Form "
 
 	^ (self brush: DojoWidgetFormTag new) dojoType: DijitForm
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoForm: aBlock [
+WAHtmlCanvas >> dojoForm: aBlock [
 	" Dojo widget: dijit.form.Form "
 
 	self dojoForm with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFormSelectWidget [
+WAHtmlCanvas >> dojoFormSelectWidget [
 	" Dojo widget: dijit.form.FormSelectWidget "
 
 	^ self div dojoType: DijitFormSelectWidget
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoFormSelectWidget: aBlock [
+WAHtmlCanvas >> dojoFormSelectWidget: aBlock [
 	" Dojo widget: dijit.form.FormSelectWidget "
 
 	self dojoFormSelectWidget with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoHorizontalRule [
+WAHtmlCanvas >> dojoHorizontalRule [
 	" Dojo widget: dijit.form.HorizontalRule "
 
 	^ self div dojoType: DijitHorizontalRule
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoHorizontalRule: aBlock [
+WAHtmlCanvas >> dojoHorizontalRule: aBlock [
 	" Dojo widget: dijit.form.HorizontalRule "
 
 	self dojoHorizontalRule with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoHorizontalRuleLabels [
+WAHtmlCanvas >> dojoHorizontalRuleLabels [
 	" Dojo widget: dijit.form.HorizontalRuleLabels "
 
 	^ self div dojoType: DijitHorizontalRuleLabels
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoHorizontalRuleLabels: aBlock [
+WAHtmlCanvas >> dojoHorizontalRuleLabels: aBlock [
 	" Dojo widget: dijit.form.HorizontalRuleLabels "
 
 	self dojoHorizontalRuleLabels with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoHorizontalSlider [
+WAHtmlCanvas >> dojoHorizontalSlider [
 	" Dojo widget: dijit.form.HorizontalSlider "
 
 	^ self div dojoType: DijitHorizontalSlider
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoHorizontalSlider: aBlock [
+WAHtmlCanvas >> dojoHorizontalSlider: aBlock [
 	" Dojo widget: dijit.form.HorizontalSlider "
 
 	self dojoHorizontalSlider with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoInlineEditBox [
+WAHtmlCanvas >> dojoInlineEditBox [
 	" Dojo widget: dijit.InlineEditBox "
 
 	^ self div dojoType: DijitInlineEditBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoInlineEditBox: aBlock [
+WAHtmlCanvas >> dojoInlineEditBox: aBlock [
 	" Dojo widget: dijit.InlineEditBox "
 
 	self dojoInlineEditBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoLayoutContainer [
+WAHtmlCanvas >> dojoLayoutContainer [
 	" Dojo widget: dijit.layout.LayoutContainer "
 
 	^ self div dojoType: DijitLayoutContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoLayoutContainer: aBlock [
+WAHtmlCanvas >> dojoLayoutContainer: aBlock [
 	" Dojo widget: dijit.layout.LayoutContainer "
 
 	self dojoLayoutContainer with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoLayoutWidget [
+WAHtmlCanvas >> dojoLayoutWidget [
 	" Dojo widget: dijit.layout.LayoutWidget "
 
 	^ self div dojoType: DijitLayoutWidget
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoLayoutWidget: aBlock [
+WAHtmlCanvas >> dojoLayoutWidget: aBlock [
 	" Dojo widget: dijit.layout.LayoutWidget "
 
 	self dojoLayoutWidget with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoLinkPane [
+WAHtmlCanvas >> dojoLinkPane [
 	" Dojo widget: dijit.layout.LinkPane "
 
 	^ self div dojoType: DijitLinkPane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoLinkPane: aBlock [
+WAHtmlCanvas >> dojoLinkPane: aBlock [
 	" Dojo widget: dijit.layout.LinkPane "
 
 	self dojoLinkPane with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMappedTextBox [
+WAHtmlCanvas >> dojoMappedTextBox [
 	" Dojo widget: dijit.form.MappedTextBox "
 
 	^ self textInput dojoType: DijitMappedTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMappedTextBox: aBlock [
+WAHtmlCanvas >> dojoMappedTextBox: aBlock [
 	" Dojo widget: dijit.form.MappedTextBox "
 
 	self dojoMappedTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenu [
+WAHtmlCanvas >> dojoMenu [
 	" Dojo widget: dijit.Menu "
 
 	^ self div dojoType: DijitMenu
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenu: aBlock [
+WAHtmlCanvas >> dojoMenu: aBlock [
 	" Dojo widget: dijit.Menu "
 
 	self dojoMenu with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuBar [
+WAHtmlCanvas >> dojoMenuBar [
 	" Dojo widget: dijit.MenuBar "
 
 	^ self div dojoType: DijitMenuBar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuBar: aBlock [
+WAHtmlCanvas >> dojoMenuBar: aBlock [
 	" Dojo widget: dijit.MenuBar "
 
 	self dojoMenuBar with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuBarItem [
+WAHtmlCanvas >> dojoMenuBarItem [
 	" Dojo widget: dijit.MenuBarItem "
 
 	^ self div dojoType: DijitMenuBarItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuBarItem: aBlock [
+WAHtmlCanvas >> dojoMenuBarItem: aBlock [
 	" Dojo widget: dijit.MenuBarItem "
 
 	self dojoMenuBarItem with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuBase [
+WAHtmlCanvas >> dojoMenuBase [
 	" Dojo widget: dijit.MenuBase "
 
 	^ self div dojoType: DijitMenuBase
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuBase: aBlock [
+WAHtmlCanvas >> dojoMenuBase: aBlock [
 	" Dojo widget: dijit.MenuBase "
 
 	self dojoMenuBase with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuItem [
+WAHtmlCanvas >> dojoMenuItem [
 	" Dojo widget: dijit.MenuItem "
 
 	^ self div dojoType: DijitMenuItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuItem: aBlock [
+WAHtmlCanvas >> dojoMenuItem: aBlock [
 	" Dojo widget: dijit.MenuItem "
 
 	self dojoMenuItem with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuSeparator [
+WAHtmlCanvas >> dojoMenuSeparator [
 	" Dojo widget: dijit.MenuSeparator "
 
 	^ self div dojoType: DijitMenuSeparator
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMenuSeparator: aBlock [
+WAHtmlCanvas >> dojoMenuSeparator: aBlock [
 	" Dojo widget: dijit.MenuSeparator "
 
 	self dojoMenuSeparator with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMultiSelect [
+WAHtmlCanvas >> dojoMultiSelect [
 	" Dojo widget: dijit.form.MultiSelect "
 
 	^ self div dojoType: DijitMultiSelect
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoMultiSelect: aBlock [
+WAHtmlCanvas >> dojoMultiSelect: aBlock [
 	" Dojo widget: dijit.form.MultiSelect "
 
 	self dojoMultiSelect with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoNumberSpinner [
+WAHtmlCanvas >> dojoNumberSpinner [
 	" Dojo widget: dijit.form.NumberSpinner "
 
 	^ self textInput dojoType: DijitNumberSpinner
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoNumberSpinner: aBlock [
+WAHtmlCanvas >> dojoNumberSpinner: aBlock [
 	" Dojo widget: dijit.form.NumberSpinner "
 
 	self dojoNumberSpinner with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoNumberTextBox [
+WAHtmlCanvas >> dojoNumberTextBox [
 	" Dojo widget: dijit.form.NumberTextBox "
 
 	^ self textInput dojoType: DijitNumberTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoNumberTextBox: aBlock [
+WAHtmlCanvas >> dojoNumberTextBox: aBlock [
 	" Dojo widget: dijit.form.NumberTextBox "
 
 	self dojoNumberTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoPopupMenuBarItem [
+WAHtmlCanvas >> dojoPopupMenuBarItem [
 	" Dojo widget: dijit.PopupMenuBarItem "
 
 	^ self div dojoType: DijitPopupMenuBarItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoPopupMenuBarItem: aBlock [
+WAHtmlCanvas >> dojoPopupMenuBarItem: aBlock [
 	" Dojo widget: dijit.PopupMenuBarItem "
 
 	self dojoPopupMenuBarItem with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoPopupMenuItem [
+WAHtmlCanvas >> dojoPopupMenuItem [
 	" Dojo widget: dijit.PopupMenuItem "
 
 	^ self div dojoType: DijitPopupMenuItem
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoPopupMenuItem: aBlock [
+WAHtmlCanvas >> dojoPopupMenuItem: aBlock [
 	" Dojo widget: dijit.PopupMenuItem "
 
 	self dojoPopupMenuItem with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoProgressBar [
+WAHtmlCanvas >> dojoProgressBar [
 	" Dojo widget: dijit.ProgressBar "
 
 	^ self div dojoType: DijitProgressBar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoProgressBar: aBlock [
+WAHtmlCanvas >> dojoProgressBar: aBlock [
 	" Dojo widget: dijit.ProgressBar "
 
 	self dojoProgressBar with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoRadioButton [
+WAHtmlCanvas >> dojoRadioButton [
 	" Dojo widget: dijit.form.RadioButton "
 
 	^ self div dojoType: DijitRadioButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoRadioButton: aBlock [
+WAHtmlCanvas >> dojoRadioButton: aBlock [
 	" Dojo widget: dijit.form.RadioButton "
 
 	self dojoRadioButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoRangeBoundTextBox [
+WAHtmlCanvas >> dojoRangeBoundTextBox [
 	" Dojo widget: dijit.form.RangeBoundTextBox "
 
 	^ self textInput dojoType: DijitRangeBoundTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoRangeBoundTextBox: aBlock [
+WAHtmlCanvas >> dojoRangeBoundTextBox: aBlock [
 	" Dojo widget: dijit.form.RangeBoundTextBox "
 
 	self dojoRangeBoundTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoScrollingTabController [
+WAHtmlCanvas >> dojoScrollingTabController [
 	" Dojo widget: dijit.layout.ScrollingTabController "
 
 	^ self div dojoType: DijitScrollingTabController
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoScrollingTabController: aBlock [
+WAHtmlCanvas >> dojoScrollingTabController: aBlock [
 	" Dojo widget: dijit.layout.ScrollingTabController "
 
 	self dojoScrollingTabController with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSelect [
+WAHtmlCanvas >> dojoSelect [
 	" Dojo widget: dijit.form.Select "
 
 	^ self div dojoType: DijitSelect
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSelect: aBlock [
+WAHtmlCanvas >> dojoSelect: aBlock [
 	" Dojo widget: dijit.form.Select "
 
 	self dojoSelect with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSimpleTextarea [
+WAHtmlCanvas >> dojoSimpleTextarea [
 	" Dojo widget: dijit.form.SimpleTextarea "
 
 	^ self textArea dojoType: DijitSimpleTextarea
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSimpleTextarea: aBlock [
+WAHtmlCanvas >> dojoSimpleTextarea: aBlock [
 	" Dojo widget: dijit.form.SimpleTextarea "
 
 	self dojoSimpleTextarea with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSpinner [
+WAHtmlCanvas >> dojoSpinner [
 	" Dojo widget: dijit.form.Spinner "
 
 	^ self textInput dojoType: DijitSpinner
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSpinner: aBlock [
+WAHtmlCanvas >> dojoSpinner: aBlock [
 	" Dojo widget: dijit.form.Spinner "
 
 	self dojoSpinner with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSplitContainer [
+WAHtmlCanvas >> dojoSplitContainer [
 	" Dojo widget: dijit.layout.SplitContainer "
 
 	^ self div dojoType: DijitSplitContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSplitContainer: aBlock [
+WAHtmlCanvas >> dojoSplitContainer: aBlock [
 	" Dojo widget: dijit.layout.SplitContainer "
 
 	self dojoSplitContainer with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoStackContainer [
+WAHtmlCanvas >> dojoStackContainer [
 	" Dojo widget: dijit.layout.StackContainer "
 
 	^ self div dojoType: DijitStackContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoStackContainer: aBlock [
+WAHtmlCanvas >> dojoStackContainer: aBlock [
 	" Dojo widget: dijit.layout.StackContainer "
 
 	self dojoStackContainer with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoStackController [
+WAHtmlCanvas >> dojoStackController [
 	" Dojo widget: dijit.layout.StackController "
 
 	^ self div dojoType: DijitStackController
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoStackController: aBlock [
+WAHtmlCanvas >> dojoStackController: aBlock [
 	" Dojo widget: dijit.layout.StackController "
 
 	self dojoStackController with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSubmitButton [
+WAHtmlCanvas >> dojoSubmitButton [
 	" Dojo widget: dijit.form.Button "
 	" does not use WASubmitButtonTag, because Dojo uses the contents of the <button> tag as label "
 
@@ -738,245 +738,245 @@ WARenderCanvas >> dojoSubmitButton [
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoSubmitButton: aBlock [
+WAHtmlCanvas >> dojoSubmitButton: aBlock [
 	" Dojo widget: dijit.form.Button "
 
 	self dojoSubmitButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTabContainer [
+WAHtmlCanvas >> dojoTabContainer [
 	" Dojo widget: dijit.layout.TabContainer "
 
 	^ self div dojoType: DijitTabContainer
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTabContainer: aBlock [
+WAHtmlCanvas >> dojoTabContainer: aBlock [
 	" Dojo widget: dijit.layout.TabContainer "
 
 	self dojoTabContainer with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTabContainerBase [
+WAHtmlCanvas >> dojoTabContainerBase [
 	" Dojo widget: dijit.layout.TabContainerBase "
 
 	^ self div dojoType: DijitTabContainerBase
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTabContainerBase: aBlock [
+WAHtmlCanvas >> dojoTabContainerBase: aBlock [
 	" Dojo widget: dijit.layout.TabContainerBase "
 
 	self dojoTabContainerBase with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTabController [
+WAHtmlCanvas >> dojoTabController [
 	" Dojo widget: dijit.layout.TabController "
 
 	^ self div dojoType: DijitTabController
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTabController: aBlock [
+WAHtmlCanvas >> dojoTabController: aBlock [
 	" Dojo widget: dijit.layout.TabController "
 
 	self dojoTabController with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTextBox [
+WAHtmlCanvas >> dojoTextBox [
 	" Dojo widget: dijit.form.TextBox "
 
 	^ self textInput dojoType: DijitTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTextBox: aBlock [
+WAHtmlCanvas >> dojoTextBox: aBlock [
 	" Dojo widget: dijit.form.TextBox "
 
 	self dojoTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTextarea [
+WAHtmlCanvas >> dojoTextarea [
 	" Dojo widget: dijit.form.Textarea "
 
 	^ self textArea dojoType: DijitTextarea
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTextarea: aBlock [
+WAHtmlCanvas >> dojoTextarea: aBlock [
 	" Dojo widget: dijit.form.Textarea "
 
 	self dojoTextarea with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTimeTextBox [
+WAHtmlCanvas >> dojoTimeTextBox [
 	" Dojo widget: dijit.form.TimeTextBox "
 
 	^ self textInput dojoType: DijitTimeTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTimeTextBox: aBlock [
+WAHtmlCanvas >> dojoTimeTextBox: aBlock [
 	" Dojo widget: dijit.form.TimeTextBox "
 
 	self dojoTimeTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTitlePane [
+WAHtmlCanvas >> dojoTitlePane [
 	" Dojo widget: dijit.TitlePane "
 
 	^ self div dojoType: DijitTitlePane
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTitlePane: aBlock [
+WAHtmlCanvas >> dojoTitlePane: aBlock [
 	" Dojo widget: dijit.TitlePane "
 
 	self dojoTitlePane with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoToggleButton [
+WAHtmlCanvas >> dojoToggleButton [
 	" Dojo widget: dijit.form.ToggleButton "
 
 	^ self div dojoType: DijitToggleButton
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoToggleButton: aBlock [
+WAHtmlCanvas >> dojoToggleButton: aBlock [
 	" Dojo widget: dijit.form.ToggleButton "
 
 	self dojoToggleButton with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoToolbar [
+WAHtmlCanvas >> dojoToolbar [
 	" Dojo widget: dijit.Toolbar "
 
 	^ self div dojoType: DijitToolbar
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoToolbar: aBlock [
+WAHtmlCanvas >> dojoToolbar: aBlock [
 	" Dojo widget: dijit.Toolbar "
 
 	self dojoToolbar with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoToolbarSeparator [
+WAHtmlCanvas >> dojoToolbarSeparator [
 	" Dojo widget: dijit.ToolbarSeparator "
 
 	^ self div dojoType: DijitToolbarSeparator
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoToolbarSeparator: aBlock [
+WAHtmlCanvas >> dojoToolbarSeparator: aBlock [
 	" Dojo widget: dijit.ToolbarSeparator "
 
 	self dojoToolbarSeparator with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTooltip [
+WAHtmlCanvas >> dojoTooltip [
 	" Dojo widget: dijit.Tooltip "
 
 	^ self div dojoType: DijitTooltip
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTooltip: aBlock [
+WAHtmlCanvas >> dojoTooltip: aBlock [
 	" Dojo widget: dijit.Tooltip "
 
 	self dojoTooltip with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTooltipDialog [
+WAHtmlCanvas >> dojoTooltipDialog [
 	" Dojo widget: dijit.TooltipDialog "
 
 	^ self div dojoType: DijitTooltipDialog
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTooltipDialog: aBlock [
+WAHtmlCanvas >> dojoTooltipDialog: aBlock [
 	" Dojo widget: dijit.TooltipDialog "
 
 	self dojoTooltipDialog with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTree [
+WAHtmlCanvas >> dojoTree [
 	" Dojo widget: dijit.Tree "
 
 	^ self div dojoType: DijitTree
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoTree: aBlock [
+WAHtmlCanvas >> dojoTree: aBlock [
 	" Dojo widget: dijit.Tree "
 
 	self dojoTree with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoValidationTextBox [
+WAHtmlCanvas >> dojoValidationTextBox [
 	" Dojo widget: dijit.form.ValidationTextBox "
 
 	^ self textInput dojoType: DijitValidationTextBox
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoValidationTextBox: aBlock [
+WAHtmlCanvas >> dojoValidationTextBox: aBlock [
 	" Dojo widget: dijit.form.ValidationTextBox "
 
 	self dojoValidationTextBox with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoVerticalRule [
+WAHtmlCanvas >> dojoVerticalRule [
 	" Dojo widget: dijit.form.VerticalRule "
 
 	^ self div dojoType: DijitVerticalRule
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoVerticalRule: aBlock [
+WAHtmlCanvas >> dojoVerticalRule: aBlock [
 	" Dojo widget: dijit.form.VerticalRule "
 
 	self dojoVerticalRule with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoVerticalRuleLabels [
+WAHtmlCanvas >> dojoVerticalRuleLabels [
 	" Dojo widget: dijit.form.VerticalRuleLabels "
 
 	^ self div dojoType: DijitVerticalRuleLabels
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoVerticalRuleLabels: aBlock [
+WAHtmlCanvas >> dojoVerticalRuleLabels: aBlock [
 	" Dojo widget: dijit.form.VerticalRuleLabels "
 
 	self dojoVerticalRuleLabels with: aBlock
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoVerticalSlider [
+WAHtmlCanvas >> dojoVerticalSlider [
 	" Dojo widget: dijit.form.VerticalSlider "
 
 	^ self div dojoType: DijitVerticalSlider
 ]
 
 { #category : #'*DojoToolkit-Widgets-generated' }
-WARenderCanvas >> dojoVerticalSlider: aBlock [
+WAHtmlCanvas >> dojoVerticalSlider: aBlock [
 	" Dojo widget: dijit.form.VerticalSlider "
 
 	self dojoVerticalSlider with: aBlock
