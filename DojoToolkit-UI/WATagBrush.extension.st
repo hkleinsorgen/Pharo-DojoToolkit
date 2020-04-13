@@ -13,7 +13,7 @@ WATagBrush >> dojoConfiguration: configurationBlock [
 	dojoClass := DojoConstructableObject allSubclasses 
 			detect: [: subclass | subclass functionName = dojoType ]
 			ifNone: [ DojoError signal: 'Unknown Dojo type: ' , dojoType printString ].
-	dojoObject := dojoClass new.
+	dojoObject := dojoClass context: canvas context.
 	configurationBlock value: dojoObject.
 	self dojoConfigurationFrom: dojoObject
 ]
@@ -31,12 +31,13 @@ WATagBrush >> dojoConfigurationFrom: aDojoObject [
 WATagBrush >> dojoType: aDojoClass [ 
 	" Used for declarative markup. Adds the necessary attributes. "
 
-	| type dojo |
+	| dojo |
 	dojo := canvas dojo.
 	dojo dojoConfiguration parseOnLoad: true.
-	type := aDojoClass functionName.
-	dojo require: type.
-	self attributes at: 'dojoType' put: type.
+	aDojoClass requiredPackages do: [ : packageName |
+		dojo require: packageName
+	].
+	self attributes at: 'dojoType' put: aDojoClass functionName.
 ]
 
 { #category : #'*DojoToolkit-UI' }
